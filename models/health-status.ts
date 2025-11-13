@@ -13,19 +13,18 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { BaseResponse } from './base-response';
-// May contain unused imports in some cases
-// @ts-ignore
-import type { BaseResponseDetails } from './base-response-details';
-// May contain unused imports in some cases
-// @ts-ignore
-import type { Root200ResponseAllOfData } from './root200-response-all-of-data';
 
 /**
- * @type Root200Response
+ * Health status of a component or the overall system
  */
-export type Root200Response = BaseResponse;
+
+export const HealthStatus = {
+    Healthy: 'healthy',
+    Degraded: 'degraded',
+    Unhealthy: 'unhealthy'
+} as const;
+
+export type HealthStatus = typeof HealthStatus[keyof typeof HealthStatus];
+
 
 

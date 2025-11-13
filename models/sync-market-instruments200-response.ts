@@ -21,11 +21,11 @@ import type { BaseResponse } from './base-response';
 import type { BaseResponseDetails } from './base-response-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Root200ResponseAllOfData } from './root200-response-all-of-data';
+import type { SyncMarketInstrumentsResponseData } from './sync-market-instruments-response-data';
 
 /**
- * @type Root200Response
+ * @type SyncMarketInstruments200Response
  */
-export type Root200Response = BaseResponse;
+export type SyncMarketInstruments200Response = BaseResponse;
 
 

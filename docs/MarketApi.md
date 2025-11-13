@@ -1,6 +1,6 @@
 # MarketApi
 
-All URIs are relative to *https://cadenza-fermata-uat.algo724.com*
+All URIs are relative to *https://cadenza-api-uat.algo724.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
@@ -17,7 +17,7 @@ All URIs are relative to *https://cadenza-fermata-uat.algo724.com*
 |[**syncMarketSecurities**](#syncmarketsecurities) | **POST** /api/v3/market/security/sync | Sync market securities|
 
 # **deleteMarketInstrument**
-> Root200Response deleteMarketInstrument()
+> DeleteMarketInstrument200Response deleteMarketInstrument()
 
 Delete a market instrument
 
@@ -49,7 +49,7 @@ const { status, data } = await apiInstance.deleteMarketInstrument(
 
 ### Return type
 
-**Root200Response**
+**DeleteMarketInstrument200Response**
 
 ### Authorization
 
@@ -560,7 +560,7 @@ This endpoint does not have any parameters.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **syncMarketInstruments**
-> Root200Response syncMarketInstruments()
+> SyncMarketInstruments200Response syncMarketInstruments()
 
 Synchronize market instruments from exchanges
 
@@ -592,7 +592,7 @@ const { status, data } = await apiInstance.syncMarketInstruments(
 
 ### Return type
 
-**Root200Response**
+**SyncMarketInstruments200Response**
 
 ### Authorization
 
@@ -607,7 +607,7 @@ const { status, data } = await apiInstance.syncMarketInstruments(
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-|**200** | Simple successful response |  -  |
+|**200** | Sync market instruments response |  -  |
 |**400** | Bad request |  -  |
 |**401** | Unauthorized - Authentication required |  -  |
 |**403** | Forbidden - Insufficient permissions |  -  |
@@ -617,7 +617,7 @@ const { status, data } = await apiInstance.syncMarketInstruments(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **syncMarketSecurities**
-> Root200Response syncMarketSecurities()
+> DeleteMarketInstrument200Response syncMarketSecurities()
 
 Synchronize financial securities from exchanges
 
@@ -649,7 +649,7 @@ const { status, data } = await apiInstance.syncMarketSecurities(
 
 ### Return type
 
-**Root200Response**
+**DeleteMarketInstrument200Response**
 
 ### Authorization
 

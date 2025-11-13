@@ -22,6 +22,10 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { Health200Response } from '../models';
+// @ts-ignore
+import type { Health503Response } from '../models';
+// @ts-ignore
 import type { Root200Response } from '../models';
 // @ts-ignore
 import type { Root400Response } from '../models';
@@ -39,7 +43,7 @@ import type { Root500Response } from '../models';
 export const UtilityApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Health check endpoint
+         * Health check endpoint for monitoring service status and dependencies. No authentication required - designed for load balancers, Kubernetes probes, and monitoring systems.
          * @summary Health check
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -57,10 +61,6 @@ export const UtilityApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            // authentication SupabaseOAuth2BearerAuth required
-            // http bearer authentication required
-            await setBearerAuthToObject(localVarHeaderParameter, configuration)
-
 
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
@@ -73,7 +73,7 @@ export const UtilityApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * Root endpoint, information about the API
+         * Root endpoint providing API metadata, version information, and available endpoints
          * @summary Root, Information about the API
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -116,19 +116,19 @@ export const UtilityApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = UtilityApiAxiosParamCreator(configuration)
     return {
         /**
-         * Health check endpoint
+         * Health check endpoint for monitoring service status and dependencies. No authentication required - designed for load balancers, Kubernetes probes, and monitoring systems.
          * @summary Health check
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async health(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Root200Response>> {
+        async health(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Health200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.health(options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['UtilityApi.health']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Root endpoint, information about the API
+         * Root endpoint providing API metadata, version information, and available endpoints
          * @summary Root, Information about the API
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -149,16 +149,16 @@ export const UtilityApiFactory = function (configuration?: Configuration, basePa
     const localVarFp = UtilityApiFp(configuration)
     return {
         /**
-         * Health check endpoint
+         * Health check endpoint for monitoring service status and dependencies. No authentication required - designed for load balancers, Kubernetes probes, and monitoring systems.
          * @summary Health check
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        health(options?: RawAxiosRequestConfig): AxiosPromise<Root200Response> {
+        health(options?: RawAxiosRequestConfig): AxiosPromise<Health200Response> {
             return localVarFp.health(options).then((request) => request(axios, basePath));
         },
         /**
-         * Root endpoint, information about the API
+         * Root endpoint providing API metadata, version information, and available endpoints
          * @summary Root, Information about the API
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -174,7 +174,7 @@ export const UtilityApiFactory = function (configuration?: Configuration, basePa
  */
 export class UtilityApi extends BaseAPI {
     /**
-     * Health check endpoint
+     * Health check endpoint for monitoring service status and dependencies. No authentication required - designed for load balancers, Kubernetes probes, and monitoring systems.
      * @summary Health check
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -184,7 +184,7 @@ export class UtilityApi extends BaseAPI {
     }
 
     /**
-     * Root endpoint, information about the API
+     * Root endpoint providing API metadata, version information, and available endpoints
      * @summary Root, Information about the API
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

@@ -1,6 +1,6 @@
 # UtilityApi
 
-All URIs are relative to *https://cadenza-fermata-uat.algo724.com*
+All URIs are relative to *https://cadenza-api-uat.algo724.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
@@ -8,9 +8,9 @@ All URIs are relative to *https://cadenza-fermata-uat.algo724.com*
 |[**root**](#root) | **GET** /api/v3 | Root, Information about the API|
 
 # **health**
-> Root200Response health()
+> Health200Response health()
 
-Health check endpoint
+Health check endpoint for monitoring service status and dependencies. No authentication required - designed for load balancers, Kubernetes probes, and monitoring systems.
 
 ### Example
 
@@ -32,11 +32,11 @@ This endpoint does not have any parameters.
 
 ### Return type
 
-**Root200Response**
+**Health200Response**
 
 ### Authorization
 
-[SupabaseOAuth2BearerAuth](../README.md#SupabaseOAuth2BearerAuth)
+No authorization required
 
 ### HTTP request headers
 
@@ -47,19 +47,15 @@ This endpoint does not have any parameters.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-|**200** | Simple successful response |  -  |
-|**400** | Bad request |  -  |
-|**401** | Unauthorized - Authentication required |  -  |
-|**403** | Forbidden - Insufficient permissions |  -  |
-|**404** | Not found |  -  |
-|**500** | Internal server error |  -  |
+|**200** | Health check response with system status (200 &#x3D; healthy, 503 &#x3D; unhealthy) |  -  |
+|**503** | Service unavailable - system is unhealthy |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **root**
 > Root200Response root()
 
-Root endpoint, information about the API
+Root endpoint providing API metadata, version information, and available endpoints
 
 ### Example
 
@@ -96,7 +92,7 @@ This endpoint does not have any parameters.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-|**200** | Simple successful response |  -  |
+|**200** | Root endpoint response with API information |  -  |
 |**400** | Bad request |  -  |
 |**401** | Unauthorized - Authentication required |  -  |
 |**403** | Forbidden - Insufficient permissions |  -  |

@@ -15,17 +15,14 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BaseResponse } from './base-response';
-// May contain unused imports in some cases
-// @ts-ignore
-import type { BaseResponseDetails } from './base-response-details';
-// May contain unused imports in some cases
-// @ts-ignore
-import type { Root200ResponseAllOfData } from './root200-response-all-of-data';
+import type { HealthCheckComponent } from './health-check-component';
 
 /**
- * @type Root200Response
+ * Health status of individual components
  */
-export type Root200Response = BaseResponse;
-
+export interface Health200ResponseChecks {
+    'database'?: HealthCheckComponent;
+    'temporal'?: HealthCheckComponent;
+    'redis'?: HealthCheckComponent;
+}
 

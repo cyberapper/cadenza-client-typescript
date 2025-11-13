@@ -1,4 +1,4 @@
-# Root200Response
+# DeleteMarketInstrument200Response
 
 
 ## Properties
@@ -8,19 +8,17 @@ Name | Type | Description | Notes
 **success** | **boolean** | Indicates if the operation was successful | [default to undefined]
 **errno** | **number** | Error code (0 for success, negative for errors) | [default to undefined]
 **error** | **string** | Error message (null for successful operations) | [default to undefined]
-**details** | [**BaseResponseDetails**](BaseResponseDetails.md) |  | [optional] [default to undefined]
-**data** | [**Root200ResponseAllOfData**](Root200ResponseAllOfData.md) |  | [optional] [default to undefined]
+**data** | **string** |  | [optional] [default to undefined]
 
 ## Example
 
 ```typescript
-import { Root200Response } from '@cyberapper/cadenza-client';
+import { DeleteMarketInstrument200Response } from '@cyberapper/cadenza-client';
 
-const instance: Root200Response = {
+const instance: DeleteMarketInstrument200Response = {
     success,
     errno,
     error,
-    details,
     data,
 };
 ```

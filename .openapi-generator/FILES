@@ -1,6 +1,5 @@
 .gitignore
 .npmignore
-.openapi-generator-ignore
 README.md
 api.ts
 api/market-api.ts
@@ -30,6 +29,7 @@ docs/ConnectTradingAccountRequest.md
 docs/CreateTradingAccountCredential201Response.md
 docs/CreateTradingAccountCredentialRequest.md
 docs/CredentialType.md
+docs/DeleteMarketInstrument200Response.md
 docs/DeleteMarketInstrumentRequest.md
 docs/DeleteMarketSecurity200Response.md
 docs/DeleteMarketSecurityRequest.md
@@ -46,6 +46,11 @@ docs/GetMarketOrderBook200Response.md
 docs/GetTradeOrderQuery.md
 docs/GetTradeOrderQueryData.md
 docs/GetTradeOrderResponseEvent.md
+docs/Health200Response.md
+docs/Health200ResponseChecks.md
+docs/Health503Response.md
+docs/HealthCheckComponent.md
+docs/HealthStatus.md
 docs/InlineObject.md
 docs/Instrument.md
 docs/InstrumentStatus.md
@@ -84,6 +89,7 @@ docs/ResponseError.md
 docs/ResponseMetadata.md
 docs/RevokeTradingAccountCredentialRequest.md
 docs/Root200Response.md
+docs/Root200ResponseAllOfData.md
 docs/Root400Response.md
 docs/Root401Response.md
 docs/Root403Response.md
@@ -103,7 +109,9 @@ docs/SubscribeTradingAccountRequest.md
 docs/Subscription.md
 docs/SubscriptionStatus.md
 docs/SubscriptionType.md
+docs/SyncMarketInstruments200Response.md
 docs/SyncMarketInstrumentsRequest.md
+docs/SyncMarketInstrumentsResponseData.md
 docs/SyncMarketSecuritiesRequest.md
 docs/TimeInForce.md
 docs/TradeExecution.md
@@ -148,6 +156,7 @@ models/create-trading-account-credential-request.ts
 models/create-trading-account-credential201-response.ts
 models/credential-type.ts
 models/delete-market-instrument-request.ts
+models/delete-market-instrument200-response.ts
 models/delete-market-security-request.ts
 models/delete-market-security200-response.ts
 models/disable-market-instrument-request.ts
@@ -163,6 +172,11 @@ models/get-market-order-book200-response.ts
 models/get-trade-order-query-data.ts
 models/get-trade-order-query.ts
 models/get-trade-order-response-event.ts
+models/health-check-component.ts
+models/health-status.ts
+models/health200-response-checks.ts
+models/health200-response.ts
+models/health503-response.ts
 models/index.ts
 models/inline-object.ts
 models/instrument-status.ts
@@ -199,6 +213,7 @@ models/query-metadata.ts
 models/response-error.ts
 models/response-metadata.ts
 models/revoke-trading-account-credential-request.ts
+models/root200-response-all-of-data.ts
 models/root200-response.ts
 models/root400-response.ts
 models/root401-response.ts
@@ -220,6 +235,8 @@ models/subscription-status.ts
 models/subscription-type.ts
 models/subscription.ts
 models/sync-market-instruments-request.ts
+models/sync-market-instruments-response-data.ts
+models/sync-market-instruments200-response.ts
 models/sync-market-securities-request.ts
 models/time-in-force.ts
 models/trade-execution.ts

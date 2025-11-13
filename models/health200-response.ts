@@ -15,17 +15,27 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BaseResponse } from './base-response';
+import type { Health200ResponseChecks } from './health200-response-checks';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { BaseResponseDetails } from './base-response-details';
-// May contain unused imports in some cases
-// @ts-ignore
-import type { Root200ResponseAllOfData } from './root200-response-all-of-data';
+import type { HealthStatus } from './health-status';
 
-/**
- * @type Root200Response
- */
-export type Root200Response = BaseResponse;
+export interface Health200Response {
+    'status': HealthStatus;
+    /**
+     * Health check timestamp in milliseconds
+     */
+    'timestamp': number;
+    /**
+     * Health check timestamp in ISO 8601 format
+     */
+    'timestampISO': string;
+    /**
+     * API version
+     */
+    'version': string;
+    'checks'?: Health200ResponseChecks;
+}
+
 
 

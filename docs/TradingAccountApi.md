@@ -1,6 +1,6 @@
 # TradingAccountApi
 
-All URIs are relative to *https://cadenza-fermata-uat.algo724.com*
+All URIs are relative to *https://cadenza-api-uat.algo724.com*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|

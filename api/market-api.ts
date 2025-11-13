@@ -22,6 +22,8 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { DeleteMarketInstrument200Response } from '../models';
+// @ts-ignore
 import type { DeleteMarketInstrumentRequest } from '../models';
 // @ts-ignore
 import type { DeleteMarketSecurity200Response } from '../models';
@@ -46,8 +48,6 @@ import type { ListMarketSecurities200Response } from '../models';
 // @ts-ignore
 import type { ListMarketVenues200Response } from '../models';
 // @ts-ignore
-import type { Root200Response } from '../models';
-// @ts-ignore
 import type { Root400Response } from '../models';
 // @ts-ignore
 import type { Root401Response } from '../models';
@@ -59,6 +59,8 @@ import type { Root404Response } from '../models';
 import type { Root500Response } from '../models';
 // @ts-ignore
 import type { SecurityType } from '../models';
+// @ts-ignore
+import type { SyncMarketInstruments200Response } from '../models';
 // @ts-ignore
 import type { SyncMarketInstrumentsRequest } from '../models';
 // @ts-ignore
@@ -574,7 +576,7 @@ export const MarketApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async deleteMarketInstrument(deleteMarketInstrumentRequest?: DeleteMarketInstrumentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Root200Response>> {
+        async deleteMarketInstrument(deleteMarketInstrumentRequest?: DeleteMarketInstrumentRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteMarketInstrument200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.deleteMarketInstrument(deleteMarketInstrumentRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MarketApi.deleteMarketInstrument']?.[localVarOperationServerIndex]?.url;
@@ -704,7 +706,7 @@ export const MarketApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async syncMarketInstruments(syncMarketInstrumentsRequest?: SyncMarketInstrumentsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Root200Response>> {
+        async syncMarketInstruments(syncMarketInstrumentsRequest?: SyncMarketInstrumentsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SyncMarketInstruments200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.syncMarketInstruments(syncMarketInstrumentsRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MarketApi.syncMarketInstruments']?.[localVarOperationServerIndex]?.url;
@@ -717,7 +719,7 @@ export const MarketApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async syncMarketSecurities(syncMarketSecuritiesRequest?: SyncMarketSecuritiesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Root200Response>> {
+        async syncMarketSecurities(syncMarketSecuritiesRequest?: SyncMarketSecuritiesRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeleteMarketInstrument200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.syncMarketSecurities(syncMarketSecuritiesRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MarketApi.syncMarketSecurities']?.[localVarOperationServerIndex]?.url;
@@ -739,7 +741,7 @@ export const MarketApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        deleteMarketInstrument(deleteMarketInstrumentRequest?: DeleteMarketInstrumentRequest, options?: RawAxiosRequestConfig): AxiosPromise<Root200Response> {
+        deleteMarketInstrument(deleteMarketInstrumentRequest?: DeleteMarketInstrumentRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeleteMarketInstrument200Response> {
             return localVarFp.deleteMarketInstrument(deleteMarketInstrumentRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -842,7 +844,7 @@ export const MarketApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        syncMarketInstruments(syncMarketInstrumentsRequest?: SyncMarketInstrumentsRequest, options?: RawAxiosRequestConfig): AxiosPromise<Root200Response> {
+        syncMarketInstruments(syncMarketInstrumentsRequest?: SyncMarketInstrumentsRequest, options?: RawAxiosRequestConfig): AxiosPromise<SyncMarketInstruments200Response> {
             return localVarFp.syncMarketInstruments(syncMarketInstrumentsRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -852,7 +854,7 @@ export const MarketApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        syncMarketSecurities(syncMarketSecuritiesRequest?: SyncMarketSecuritiesRequest, options?: RawAxiosRequestConfig): AxiosPromise<Root200Response> {
+        syncMarketSecurities(syncMarketSecuritiesRequest?: SyncMarketSecuritiesRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeleteMarketInstrument200Response> {
             return localVarFp.syncMarketSecurities(syncMarketSecuritiesRequest, options).then((request) => request(axios, basePath));
         },
     };

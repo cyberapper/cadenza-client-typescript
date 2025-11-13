@@ -19,7 +19,7 @@ import type { Configuration } from './configuration';
 import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 
-export const BASE_PATH = "https://cadenza-fermata-uat.algo724.com".replace(/\/+$/, "");
+export const BASE_PATH = "https://cadenza-api-uat.algo724.com".replace(/\/+$/, "");
 
 export const COLLECTION_FORMATS = {
     csv: ",",
