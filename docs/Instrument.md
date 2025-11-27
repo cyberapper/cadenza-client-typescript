@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**instrumentId** | **string** | Instrument ID. {venue}:{symbol} | [default to undefined]
+**instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [default to undefined]
 **venue** | [**Venue**](Venue.md) |  | [default to undefined]
 **symbol** | **string** | Human-readable symbol format | [default to undefined]
 **externalSymbol** | **string** | Symbol format used by the exchange | [default to undefined]
@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **status** | [**InstrumentStatus**](InstrumentStatus.md) |  | [default to undefined]
 **baseAsset** | **string** |  | [default to undefined]
 **quoteAsset** | **string** |  | [default to undefined]
+**baseSecurityType** | [**SecurityType**](SecurityType.md) |  | [default to undefined]
+**quoteSecurityType** | [**SecurityType**](SecurityType.md) |  | [default to undefined]
 **basePrecision** | **number** | Base asset precision | [default to undefined]
 **quotePrecision** | **number** | Quote asset precision | [default to undefined]
 **baseMaxSignificant** | **number** | Maximum significant digits for base asset | [default to undefined]
@@ -30,16 +32,12 @@ Name | Type | Description | Notes
 **orderTypes** | [**Array&lt;OrderType&gt;**](OrderType.md) |  | [default to undefined]
 **timeInForceOptions** | [**Array&lt;TimeInForce&gt;**](TimeInForce.md) |  | [default to undefined]
 **tradingHours** | **object** | Trading hours and schedule information | [optional] [default to undefined]
-**isIcebergAllowed** | **boolean** | Whether iceberg orders are allowed | [default to undefined]
+**isIcebergAllowed** | **boolean** | Whether iceberg orders are allowed | [optional] [default to undefined]
 **icebergMinQuantity** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
 **deliveryDate** | **number** | Unix timestamp in milliseconds | [optional] [default to undefined]
 **deliveryDateTime** | **string** | Delivery date in ISO 8601 format for derivatives | [optional] [default to undefined]
 **exerciseStyle** | **string** | Exercise style for options | [optional] [default to undefined]
 **strikePrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
-**createdAt** | **number** | Unix timestamp in milliseconds | [default to undefined]
-**createdAtDateTime** | **string** | Creation timestamp in ISO 8601 format | [optional] [default to undefined]
-**updatedAt** | **number** | Unix timestamp in milliseconds | [default to undefined]
-**updatedAtDateTime** | **string** | Last update timestamp in ISO 8601 format | [optional] [default to undefined]
 
 ## Example
 
@@ -56,6 +54,8 @@ const instance: Instrument = {
     status,
     baseAsset,
     quoteAsset,
+    baseSecurityType,
+    quoteSecurityType,
     basePrecision,
     quotePrecision,
     baseMaxSignificant,
@@ -78,10 +78,6 @@ const instance: Instrument = {
     deliveryDateTime,
     exerciseStyle,
     strikePrice,
-    createdAt,
-    createdAtDateTime,
-    updatedAt,
-    updatedAtDateTime,
 };
 ```
 

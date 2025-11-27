@@ -15,13 +15,15 @@
 
 
 /**
- * Credential type
+ * Type of API credential
  */
 
 export const CredentialType = {
     Empty: '',
     ApiKey: 'API_KEY',
+    Hmac: 'HMAC',
     Oauth: 'OAUTH',
+    Rsa: 'RSA',
     Ed25519: 'ED25519'
 } as const;
 

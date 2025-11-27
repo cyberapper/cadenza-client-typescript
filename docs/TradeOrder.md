@@ -9,11 +9,8 @@ Name | Type | Description | Notes
 **tradingAccountId** | **string** | UUID string | [default to undefined]
 **venue** | [**Venue**](Venue.md) |  | [default to undefined]
 **positionId** | **string** | UUID string | [optional] [default to undefined]
-**instrumentId** | **string** | Instrument ID. {venue}:{symbol} | [default to undefined]
+**instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [default to undefined]
 **quoteId** | **string** | UUID string | [optional] [default to undefined]
-**symbol** | **string** |  | [default to undefined]
-**baseCurrency** | **string** | DEPRECATED: Use baseAsset instead. Will be removed in v4.0.0 | [optional] [default to undefined]
-**quoteCurrency** | **string** | DEPRECATED: Use quoteAsset instead. Will be removed in v4.0.0 | [optional] [default to undefined]
 **baseAsset** | **string** | Base asset in the trading pair | [default to undefined]
 **quoteAsset** | **string** | Quote asset in the trading pair | [default to undefined]
 **orderSide** | [**OrderSide**](OrderSide.md) |  | [default to undefined]
@@ -30,8 +27,6 @@ Name | Type | Description | Notes
 **executedPrice** | **string** | Decimal value as string to preserve precision | [default to undefined]
 **executedQuantity** | **string** | Decimal value as string to preserve precision | [default to undefined]
 **executedCost** | **string** | Decimal value as string to preserve precision | [default to undefined]
-**cost** | [**SecurityQuantity**](SecurityQuantity.md) |  | [default to undefined]
-**filled** | [**SecurityQuantity**](SecurityQuantity.md) |  | [default to undefined]
 **fees** | [**Array&lt;SecurityQuantity&gt;**](SecurityQuantity.md) | Aggregated fees across all executions | [default to undefined]
 **executions** | [**Array&lt;TradeExecution&gt;**](TradeExecution.md) | Detailed breakdown of executions across different venues | [optional] [default to undefined]
 **createdAt** | **number** | Unix timestamp in milliseconds | [default to undefined]
@@ -55,9 +50,6 @@ const instance: TradeOrder = {
     positionId,
     instrumentId,
     quoteId,
-    symbol,
-    baseCurrency,
-    quoteCurrency,
     baseAsset,
     quoteAsset,
     orderSide,
@@ -74,8 +66,6 @@ const instance: TradeOrder = {
     executedPrice,
     executedQuantity,
     executedCost,
-    cost,
-    filled,
     fees,
     executions,
     createdAt,

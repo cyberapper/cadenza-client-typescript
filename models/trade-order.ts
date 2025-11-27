@@ -56,24 +56,13 @@ export interface TradeOrder {
      */
     'positionId'?: string;
     /**
-     * Instrument ID. {venue}:{symbol}
+     * Instrument ID in format {VENUE}:{BASE}/{QUOTE}
      */
     'instrumentId': string;
     /**
      * UUID string
      */
     'quoteId'?: string;
-    'symbol': string;
-    /**
-     * DEPRECATED: Use baseAsset instead. Will be removed in v4.0.0
-     * @deprecated
-     */
-    'baseCurrency'?: string;
-    /**
-     * DEPRECATED: Use quoteAsset instead. Will be removed in v4.0.0
-     * @deprecated
-     */
-    'quoteCurrency'?: string;
     /**
      * Base asset in the trading pair
      */
@@ -120,8 +109,6 @@ export interface TradeOrder {
      * Decimal value as string to preserve precision
      */
     'executedCost': string;
-    'cost': SecurityQuantity;
-    'filled': SecurityQuantity;
     /**
      * Aggregated fees across all executions
      */

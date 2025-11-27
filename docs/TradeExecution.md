@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **executionId** | **string** | UUID string | [default to undefined]
 **externalTradeId** | **string** | Exchange\&#39;s execution identifier | [optional] [default to undefined]
 **venue** | [**Venue**](Venue.md) |  | [default to undefined]
-**instrumentId** | **string** | Instrument ID. {venue}:{symbol} | [default to undefined]
+**instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [default to undefined]
 **orderSide** | [**OrderSide**](OrderSide.md) |  | [optional] [default to undefined]
 **executedQuantity** | **string** | Decimal value as string to preserve precision | [default to undefined]
 **executedPrice** | **string** | Decimal value as string to preserve precision | [default to undefined]

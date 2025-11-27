@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**instrumentId** | **string** | Instrument ID. {venue}:{symbol} | [optional] [default to undefined]
+**instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [optional] [default to undefined]
 **venue** | [**Venue**](Venue.md) |  | [default to undefined]
 **symbol** | **string** |  | [default to undefined]
 **asks** | **Array&lt;Array&lt;string&gt;&gt;** |  | [default to undefined]

@@ -13,7 +13,7 @@ All URIs are relative to *https://cadenza-api-uat.algo724.com*
 |[**updateTradingAccount**](#updatetradingaccount) | **POST** /api/v3/tradingAccount/update | Update trading account|
 
 # **connectTradingAccount**
-> ConnectTradingAccount201Response connectTradingAccount()
+> ConnectTradingAccount200Response connectTradingAccount()
 
 Connect to a trading account
 
@@ -45,7 +45,7 @@ const { status, data } = await apiInstance.connectTradingAccount(
 
 ### Return type
 
-**ConnectTradingAccount201Response**
+**ConnectTradingAccount200Response**
 
 ### Authorization
 
@@ -60,7 +60,7 @@ const { status, data } = await apiInstance.connectTradingAccount(
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-|**201** | Connect trading account response |  -  |
+|**200** | Connect trading account response |  -  |
 |**400** | Bad request |  -  |
 |**401** | Unauthorized - Authentication required |  -  |
 |**403** | Forbidden - Insufficient permissions |  -  |
@@ -70,7 +70,7 @@ const { status, data } = await apiInstance.connectTradingAccount(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **disableTradingAccount**
-> ConnectTradingAccount201Response disableTradingAccount()
+> ConnectTradingAccount200Response disableTradingAccount()
 
 Disable a trading account, the trading account will be disabled and no longer available for trading.
 
@@ -102,7 +102,7 @@ const { status, data } = await apiInstance.disableTradingAccount(
 
 ### Return type
 
-**ConnectTradingAccount201Response**
+**ConnectTradingAccount200Response**
 
 ### Authorization
 
@@ -127,7 +127,7 @@ const { status, data } = await apiInstance.disableTradingAccount(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **disconnectTradingAccount**
-> ConnectTradingAccount201Response disconnectTradingAccount()
+> ConnectTradingAccount200Response disconnectTradingAccount()
 
 Disconnect from a trading account, all trading functions and the event stream notification will be stopped. The trading account will be archived and no longer available for trading. If the same trading account need to be connected again, please use the connect trading account API to create another new trading account.
 
@@ -159,7 +159,7 @@ const { status, data } = await apiInstance.disconnectTradingAccount(
 
 ### Return type
 
-**ConnectTradingAccount201Response**
+**ConnectTradingAccount200Response**
 
 ### Authorization
 
@@ -184,7 +184,7 @@ const { status, data } = await apiInstance.disconnectTradingAccount(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **enableTradingAccount**
-> ConnectTradingAccount201Response enableTradingAccount()
+> ConnectTradingAccount200Response enableTradingAccount()
 
 Enable a trading account, the trading account will be enabled and available for trading.
 
@@ -216,7 +216,7 @@ const { status, data } = await apiInstance.enableTradingAccount(
 
 ### Return type
 
-**ConnectTradingAccount201Response**
+**ConnectTradingAccount200Response**
 
 ### Authorization
 
@@ -383,7 +383,7 @@ const { status, data } = await apiInstance.listTradingAccounts(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateTradingAccount**
-> ConnectTradingAccount201Response updateTradingAccount()
+> ConnectTradingAccount200Response updateTradingAccount()
 
 Update trading account information
 
@@ -415,7 +415,7 @@ const { status, data } = await apiInstance.updateTradingAccount(
 
 ### Return type
 
-**ConnectTradingAccount201Response**
+**ConnectTradingAccount200Response**
 
 ### Authorization
 

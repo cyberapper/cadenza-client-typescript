@@ -15,7 +15,7 @@
 
 
 /**
- * Venue, sandbox environment should be treated as a separate venue
+ * Trading venue identifier. Sandbox environments are treated as separate venues.
  */
 
 export const Venue = {

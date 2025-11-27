@@ -19,7 +19,7 @@ import type { Venue } from './venue';
 
 export interface Orderbook {
     /**
-     * Instrument ID. {venue}:{symbol}
+     * Instrument ID in format {VENUE}:{BASE}/{QUOTE}
      */
     'instrumentId'?: string;
     'venue': Venue;

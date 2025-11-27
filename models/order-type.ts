@@ -22,11 +22,15 @@ export const OrderType = {
     Empty: '',
     Market: 'MARKET',
     Limit: 'LIMIT',
+    Stop: 'STOP',
+    StopLimit: 'STOP_LIMIT',
     StopLoss: 'STOP_LOSS',
     StopLossLimit: 'STOP_LOSS_LIMIT',
     TakeProfit: 'TAKE_PROFIT',
     TakeProfitLimit: 'TAKE_PROFIT_LIMIT',
-    Quoted: 'QUOTED'
+    TrailingStop: 'TRAILING_STOP',
+    Quoted: 'QUOTED',
+    Unknown: 'UNKNOWN'
 } as const;
 
 export type OrderType = typeof OrderType[keyof typeof OrderType];

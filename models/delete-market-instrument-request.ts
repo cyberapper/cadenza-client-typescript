@@ -16,7 +16,7 @@
 
 export interface DeleteMarketInstrumentRequest {
     /**
-     * Instrument ID. {venue}:{symbol}
+     * Instrument ID in format {VENUE}:{BASE}/{QUOTE}
      */
     'instrumentId': string;
 }

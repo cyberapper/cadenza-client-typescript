@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **securitySymbol** | **string** | Security symbol | [default to undefined]
 **externalPositionId** | **string** | External position ID from the exchange | [optional] [default to undefined]
 **tradingAccountId** | **string** | UUID string | [default to undefined]
-**instrumentId** | **string** | Instrument ID. {venue}:{symbol} | [optional] [default to undefined]
+**instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [optional] [default to undefined]
 **securityType** | [**SecurityType**](SecurityType.md) |  | [default to undefined]
 **status** | [**PositionStatus**](PositionStatus.md) |  | [default to undefined]
 **quantity** | **string** | Decimal value as string to preserve precision | [default to undefined]

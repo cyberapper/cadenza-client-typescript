@@ -15,7 +15,7 @@
 
 
 /**
- * Security type
+ * Type of security (base asset)
  */
 
 export const SecurityType = {
@@ -23,11 +23,16 @@ export const SecurityType = {
     Cash: 'CASH',
     Stock: 'STOCK',
     Crypto: 'CRYPTO',
+    Currency: 'CURRENCY',
+    Commodity: 'COMMODITY',
+    Index: 'INDEX',
+    Bond: 'BOND',
     Derivative: 'DERIVATIVE',
     Option: 'OPTION',
     Future: 'FUTURE',
-    Forex: 'FOREX',
-    Commodity: 'COMMODITY'
+    Futures: 'FUTURES',
+    Perpetual: 'PERPETUAL',
+    Forex: 'FOREX'
 } as const;
 
 export type SecurityType = typeof SecurityType[keyof typeof SecurityType];

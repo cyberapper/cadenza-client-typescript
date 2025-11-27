@@ -22,4 +22,5 @@ export * from './api/trading-account-credential-api';
 export * from './api/trading-account-portfolio-api';
 export * from './api/trading-account-subscription-api';
 export * from './api/utility-api';
+export * from './api/web-socket-api';
 

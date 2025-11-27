@@ -31,7 +31,8 @@ export const OrderStatus = {
     PendingReplace: 'PENDING_REPLACE',
     Rejected: 'REJECTED',
     Expired: 'EXPIRED',
-    Revoked: 'REVOKED'
+    Revoked: 'REVOKED',
+    Unknown: 'UNKNOWN'
 } as const;
 
 export type OrderStatus = typeof OrderStatus[keyof typeof OrderStatus];

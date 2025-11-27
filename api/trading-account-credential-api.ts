@@ -22,7 +22,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { CreateTradingAccountCredential201Response } from '../models';
+import type { CreateTradingAccountCredential200Response } from '../models';
 // @ts-ignore
 import type { CreateTradingAccountCredentialRequest } from '../models';
 // @ts-ignore
@@ -271,7 +271,7 @@ export const TradingAccountCredentialApiFp = function(configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createTradingAccountCredential(createTradingAccountCredentialRequest?: CreateTradingAccountCredentialRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateTradingAccountCredential201Response>> {
+        async createTradingAccountCredential(createTradingAccountCredentialRequest?: CreateTradingAccountCredentialRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateTradingAccountCredential200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createTradingAccountCredential(createTradingAccountCredentialRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TradingAccountCredentialApi.createTradingAccountCredential']?.[localVarOperationServerIndex]?.url;
@@ -299,7 +299,7 @@ export const TradingAccountCredentialApiFp = function(configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async revokeTradingAccountCredential(revokeTradingAccountCredentialRequest?: RevokeTradingAccountCredentialRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateTradingAccountCredential201Response>> {
+        async revokeTradingAccountCredential(revokeTradingAccountCredentialRequest?: RevokeTradingAccountCredentialRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateTradingAccountCredential200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.revokeTradingAccountCredential(revokeTradingAccountCredentialRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TradingAccountCredentialApi.revokeTradingAccountCredential']?.[localVarOperationServerIndex]?.url;
@@ -312,7 +312,7 @@ export const TradingAccountCredentialApiFp = function(configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async rotateTradingAccountCredential(rotateTradingAccountCredentialRequest?: RotateTradingAccountCredentialRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateTradingAccountCredential201Response>> {
+        async rotateTradingAccountCredential(rotateTradingAccountCredentialRequest?: RotateTradingAccountCredentialRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreateTradingAccountCredential200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.rotateTradingAccountCredential(rotateTradingAccountCredentialRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TradingAccountCredentialApi.rotateTradingAccountCredential']?.[localVarOperationServerIndex]?.url;
@@ -347,7 +347,7 @@ export const TradingAccountCredentialApiFactory = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createTradingAccountCredential(createTradingAccountCredentialRequest?: CreateTradingAccountCredentialRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateTradingAccountCredential201Response> {
+        createTradingAccountCredential(createTradingAccountCredentialRequest?: CreateTradingAccountCredentialRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateTradingAccountCredential200Response> {
             return localVarFp.createTradingAccountCredential(createTradingAccountCredentialRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -369,7 +369,7 @@ export const TradingAccountCredentialApiFactory = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        revokeTradingAccountCredential(revokeTradingAccountCredentialRequest?: RevokeTradingAccountCredentialRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateTradingAccountCredential201Response> {
+        revokeTradingAccountCredential(revokeTradingAccountCredentialRequest?: RevokeTradingAccountCredentialRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateTradingAccountCredential200Response> {
             return localVarFp.revokeTradingAccountCredential(revokeTradingAccountCredentialRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -379,7 +379,7 @@ export const TradingAccountCredentialApiFactory = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        rotateTradingAccountCredential(rotateTradingAccountCredentialRequest?: RotateTradingAccountCredentialRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateTradingAccountCredential201Response> {
+        rotateTradingAccountCredential(rotateTradingAccountCredentialRequest?: RotateTradingAccountCredentialRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateTradingAccountCredential200Response> {
             return localVarFp.rotateTradingAccountCredential(rotateTradingAccountCredentialRequest, options).then((request) => request(axios, basePath));
         },
         /**

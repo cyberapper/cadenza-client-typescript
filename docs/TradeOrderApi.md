@@ -197,7 +197,6 @@ const { status, data } = await apiInstance.submitTradeOrder(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Submit trade order response |  -  |
-|**201** | Submit trade order response |  -  |
 |**400** | Bad request |  -  |
 |**401** | Unauthorized - Authentication required |  -  |
 |**403** | Forbidden - Insufficient permissions |  -  |

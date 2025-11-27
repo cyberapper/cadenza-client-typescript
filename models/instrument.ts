@@ -24,6 +24,9 @@ import type { InstrumentType } from './instrument-type';
 import type { OrderType } from './order-type';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { SecurityType } from './security-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { TimeInForce } from './time-in-force';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -31,7 +34,7 @@ import type { Venue } from './venue';
 
 export interface Instrument {
     /**
-     * Instrument ID. {venue}:{symbol}
+     * Instrument ID in format {VENUE}:{BASE}/{QUOTE}
      */
     'instrumentId': string;
     'venue': Venue;
@@ -51,6 +54,8 @@ export interface Instrument {
     'status': InstrumentStatus;
     'baseAsset': string;
     'quoteAsset': string;
+    'baseSecurityType': SecurityType;
+    'quoteSecurityType': SecurityType;
     /**
      * Base asset precision
      */
@@ -62,11 +67,11 @@ export interface Instrument {
     /**
      * Maximum significant digits for base asset
      */
-    'baseMaxSignificant': number;
+    'baseMaxSignificant': number | null;
     /**
      * Maximum significant digits for quote asset
      */
-    'quoteMaxSignificant': number;
+    'quoteMaxSignificant': number | null;
     /**
      * Decimal value as string to preserve precision
      */
@@ -78,11 +83,11 @@ export interface Instrument {
     /**
      * Base asset scale factor
      */
-    'baseScale': number;
+    'baseScale': number | null;
     /**
      * Quote asset scale factor
      */
-    'quoteScale': number;
+    'quoteScale': number | null;
     /**
      * Decimal value as string to preserve precision
      */
@@ -112,7 +117,7 @@ export interface Instrument {
     /**
      * Whether iceberg orders are allowed
      */
-    'isIcebergAllowed': boolean;
+    'isIcebergAllowed'?: boolean;
     /**
      * Decimal value as string to preserve precision
      */
@@ -133,22 +138,6 @@ export interface Instrument {
      * Decimal value as string to preserve precision
      */
     'strikePrice'?: string;
-    /**
-     * Unix timestamp in milliseconds
-     */
-    'createdAt': number;
-    /**
-     * Creation timestamp in ISO 8601 format
-     */
-    'createdAtDateTime'?: string;
-    /**
-     * Unix timestamp in milliseconds
-     */
-    'updatedAt': number;
-    /**
-     * Last update timestamp in ISO 8601 format
-     */
-    'updatedAtDateTime'?: string;
 }
 
 export const InstrumentExerciseStyleEnum = {

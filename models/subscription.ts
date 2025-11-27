@@ -34,7 +34,7 @@ export interface Subscription {
      */
     'tradingAccountId'?: string;
     /**
-     * Instrument ID. {venue}:{symbol}
+     * Instrument ID in format {VENUE}:{BASE}/{QUOTE}
      */
     'instrumentId'?: string;
     'subscriptionType': SubscriptionType;

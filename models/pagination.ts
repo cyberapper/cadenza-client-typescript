@@ -14,22 +14,29 @@
 
 
 
+/**
+ * Pagination parameters and metadata
+ */
 export interface Pagination {
     /**
-     * Current offset
+     * Number of items to skip
      */
     'offset'?: number;
     /**
-     * Current limit
+     * Maximum number of items to return
      */
     'limit'?: number;
     /**
-     * Total number of items
+     * Total number of items available
      */
     'total'?: number;
     /**
      * Cursor for next page (optional)
      */
-    'cursor'?: string | null;
+    'cursor'?: string;
+    /**
+     * Whether there are more items
+     */
+    'hasNext'?: boolean;
 }
 

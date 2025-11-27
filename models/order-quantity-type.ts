@@ -15,13 +15,14 @@
 
 
 /**
- * Quantity type
+ * How order quantity is specified
  */
 
 export const OrderQuantityType = {
     Base: 'BASE',
     Quote: 'QUOTE',
-    PositionRatio: 'POSITION_RATIO'
+    PositionRatio: 'POSITION_RATIO',
+    PositionPercentage: 'POSITION_PERCENTAGE'
 } as const;
 
 export type OrderQuantityType = typeof OrderQuantityType[keyof typeof OrderQuantityType];

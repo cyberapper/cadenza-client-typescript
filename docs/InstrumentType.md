@@ -1,10 +1,16 @@
 # InstrumentType
 
-Instrument type
+Type of financial instrument
 
 ## Enum
 
 * `Spot` (value: `'SPOT'`)
+
+* `Futures` (value: `'FUTURES'`)
+
+* `Option` (value: `'OPTION'`)
+
+* `Perpetual` (value: `'PERPETUAL'`)
 
 * `Derivative` (value: `'DERIVATIVE'`)
 

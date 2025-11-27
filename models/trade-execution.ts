@@ -34,7 +34,7 @@ export interface TradeExecution {
     'externalTradeId'?: string;
     'venue': Venue;
     /**
-     * Instrument ID. {venue}:{symbol}
+     * Instrument ID in format {VENUE}:{BASE}/{QUOTE}
      */
     'instrumentId': string;
     'orderSide'?: OrderSide;

@@ -1,14 +1,16 @@
 # Pagination
 
+Pagination parameters and metadata
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**offset** | **number** | Current offset | [optional] [default to undefined]
-**limit** | **number** | Current limit | [optional] [default to undefined]
-**total** | **number** | Total number of items | [optional] [default to undefined]
+**offset** | **number** | Number of items to skip | [optional] [default to undefined]
+**limit** | **number** | Maximum number of items to return | [optional] [default to undefined]
+**total** | **number** | Total number of items available | [optional] [default to undefined]
 **cursor** | **string** | Cursor for next page (optional) | [optional] [default to undefined]
+**hasNext** | **boolean** | Whether there are more items | [optional] [default to undefined]
 
 ## Example
 
@@ -20,6 +22,7 @@ const instance: Pagination = {
     limit,
     total,
     cursor,
+    hasNext,
 };
 ```
 

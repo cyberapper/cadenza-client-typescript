@@ -15,15 +15,13 @@
 
 
 /**
- * Position status
+ * Position entry status
  */
 
 export const PositionStatus = {
-    Empty: '',
     Open: 'OPEN',
     Closed: 'CLOSED',
-    Closing: 'CLOSING',
-    Suspended: 'SUSPENDED'
+    Liquidated: 'LIQUIDATED'
 } as const;
 
 export type PositionStatus = typeof PositionStatus[keyof typeof PositionStatus];

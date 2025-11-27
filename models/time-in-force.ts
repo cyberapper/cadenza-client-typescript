@@ -15,25 +15,26 @@
 
 
 /**
- * Time in force
+ * Time in force - specifies how long an order remains active
  */
 
 export const TimeInForce = {
     Empty: '',
-    Day: 'DAY',
     Gtc: 'GTC',
-    Gtx: 'GTX',
-    Gtd: 'GTD',
-    Opg: 'OPG',
-    Cls: 'CLS',
     Ioc: 'IOC',
     Fok: 'FOK',
+    Gtd: 'GTD',
+    Day: 'DAY',
+    Gtx: 'GTX',
+    Opg: 'OPG',
+    Cls: 'CLS',
     Gfa: 'GFA',
     Gfs: 'GFS',
     Gtm: 'GTM',
     Moo: 'MOO',
     Moc: 'MOC',
-    Ext: 'EXT'
+    Ext: 'EXT',
+    Unknown: 'UNKNOWN'
 } as const;
 
 export type TimeInForce = typeof TimeInForce[keyof typeof TimeInForce];

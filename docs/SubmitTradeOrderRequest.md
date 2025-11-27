@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tradingAccountId** | **string** | UUID string | [default to undefined]
-**instrumentId** | **string** | Instrument ID. {venue}:{symbol} | [default to undefined]
-**idempotencyKey** | **string** | Alias of clientOrderId Idempotency key is used to ensure that the same request is not processed more than once. If the same request is received again, the server will return the same response as the first time. | [optional] [default to undefined]
-**clientOrderId** | **string** | Client order ID, will be used as the idempotency key of the request, same of the idempotency key in the header. If not provided, a random string will be generated. | [optional] [default to undefined]
+**instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [default to undefined]
+**idempotencyKey** | **string** | Idempotency key to prevent duplicate request processing | [optional] [default to undefined]
+**clientOrderId** | **string** | Client-provided order ID, used as idempotency key | [optional] [default to undefined]
 **orderSide** | [**OrderSide**](OrderSide.md) |  | [default to undefined]
 **orderType** | [**OrderType**](OrderType.md) |  | [default to undefined]
 **limitPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]

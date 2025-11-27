@@ -11,7 +11,7 @@ All URIs are relative to *https://cadenza-api-uat.algo724.com*
 |[**verifyTradingAccountCredential**](#verifytradingaccountcredential) | **POST** /api/v3/credential/verify | Verify trading account credential|
 
 # **createTradingAccountCredential**
-> CreateTradingAccountCredential201Response createTradingAccountCredential()
+> CreateTradingAccountCredential200Response createTradingAccountCredential()
 
 Create credentials for a trading account
 
@@ -43,7 +43,7 @@ const { status, data } = await apiInstance.createTradingAccountCredential(
 
 ### Return type
 
-**CreateTradingAccountCredential201Response**
+**CreateTradingAccountCredential200Response**
 
 ### Authorization
 
@@ -58,7 +58,7 @@ const { status, data } = await apiInstance.createTradingAccountCredential(
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-|**201** | Save trading account credential response |  -  |
+|**200** | Save trading account credential response |  -  |
 |**400** | Bad request |  -  |
 |**401** | Unauthorized - Authentication required |  -  |
 |**403** | Forbidden - Insufficient permissions |  -  |
@@ -127,7 +127,7 @@ const { status, data } = await apiInstance.listTradingAccountCredentials(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **revokeTradingAccountCredential**
-> CreateTradingAccountCredential201Response revokeTradingAccountCredential()
+> CreateTradingAccountCredential200Response revokeTradingAccountCredential()
 
 Revoke credentials for a trading account.
 
@@ -159,7 +159,7 @@ const { status, data } = await apiInstance.revokeTradingAccountCredential(
 
 ### Return type
 
-**CreateTradingAccountCredential201Response**
+**CreateTradingAccountCredential200Response**
 
 ### Authorization
 
@@ -184,7 +184,7 @@ const { status, data } = await apiInstance.revokeTradingAccountCredential(
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **rotateTradingAccountCredential**
-> CreateTradingAccountCredential201Response rotateTradingAccountCredential()
+> CreateTradingAccountCredential200Response rotateTradingAccountCredential()
 
 Rotate credentials for a trading account, the credential will be rotated to the new api key, api secret and api passphrase, other fields are not editable.
 
@@ -216,7 +216,7 @@ const { status, data } = await apiInstance.rotateTradingAccountCredential(
 
 ### Return type
 
-**CreateTradingAccountCredential201Response**
+**CreateTradingAccountCredential200Response**
 
 ### Authorization
 

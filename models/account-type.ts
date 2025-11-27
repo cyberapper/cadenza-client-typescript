@@ -15,7 +15,7 @@
 
 
 /**
- * Type of account
+ * Type of trading account
  */
 
 export const AccountType = {

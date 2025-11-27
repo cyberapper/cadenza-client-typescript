@@ -15,15 +15,13 @@
 
 
 /**
- * Balance status
+ * Balance entry status
  */
 
 export const BalanceStatus = {
-    Empty: '',
     Active: 'ACTIVE',
     Inactive: 'INACTIVE',
-    Frozen: 'FROZEN',
-    Suspended: 'SUSPENDED'
+    Frozen: 'FROZEN'
 } as const;
 
 export type BalanceStatus = typeof BalanceStatus[keyof typeof BalanceStatus];

@@ -1,6 +1,6 @@
 # SubscriptionType
 
-Subscription type
+Type of data subscription
 
 ## Enum
 
@@ -11,6 +11,12 @@ Subscription type
 * `MarketSubscriptionTicker` (value: `'MARKET.SUBSCRIPTION.TICKER'`)
 
 * `MarketSubscriptionKline` (value: `'MARKET.SUBSCRIPTION.KLINE'`)
+
+* `TradingAccountSubscriptionUserData` (value: `'TRADING_ACCOUNT.SUBSCRIPTION.USER_DATA'`)
+
+* `TradingAccountSubscriptionPortfolio` (value: `'TRADING_ACCOUNT.SUBSCRIPTION.PORTFOLIO'`)
+
+* `TradingAccountSubscriptionExecutionReport` (value: `'TRADING_ACCOUNT.SUBSCRIPTION.EXECUTION_REPORT'`)
 
 * `TradingAccountSubscriptionTradingAccount` (value: `'TRADING_ACCOUNT.SUBSCRIPTION.TRADING_ACCOUNT'`)
 

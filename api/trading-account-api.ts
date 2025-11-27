@@ -22,7 +22,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { ConnectTradingAccount201Response } from '../models';
+import type { ConnectTradingAccount200Response } from '../models';
 // @ts-ignore
 import type { ConnectTradingAccountRequest } from '../models';
 // @ts-ignore
@@ -392,7 +392,7 @@ export const TradingAccountApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async connectTradingAccount(connectTradingAccountRequest?: ConnectTradingAccountRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConnectTradingAccount201Response>> {
+        async connectTradingAccount(connectTradingAccountRequest?: ConnectTradingAccountRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConnectTradingAccount200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.connectTradingAccount(connectTradingAccountRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TradingAccountApi.connectTradingAccount']?.[localVarOperationServerIndex]?.url;
@@ -405,7 +405,7 @@ export const TradingAccountApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async disableTradingAccount(disableTradingAccountRequest?: DisableTradingAccountRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConnectTradingAccount201Response>> {
+        async disableTradingAccount(disableTradingAccountRequest?: DisableTradingAccountRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConnectTradingAccount200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.disableTradingAccount(disableTradingAccountRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TradingAccountApi.disableTradingAccount']?.[localVarOperationServerIndex]?.url;
@@ -418,7 +418,7 @@ export const TradingAccountApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async disconnectTradingAccount(disconnectTradingAccountRequest?: DisconnectTradingAccountRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConnectTradingAccount201Response>> {
+        async disconnectTradingAccount(disconnectTradingAccountRequest?: DisconnectTradingAccountRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConnectTradingAccount200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.disconnectTradingAccount(disconnectTradingAccountRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TradingAccountApi.disconnectTradingAccount']?.[localVarOperationServerIndex]?.url;
@@ -431,7 +431,7 @@ export const TradingAccountApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async enableTradingAccount(enableTradingAccountRequest?: EnableTradingAccountRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConnectTradingAccount201Response>> {
+        async enableTradingAccount(enableTradingAccountRequest?: EnableTradingAccountRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConnectTradingAccount200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.enableTradingAccount(enableTradingAccountRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TradingAccountApi.enableTradingAccount']?.[localVarOperationServerIndex]?.url;
@@ -480,7 +480,7 @@ export const TradingAccountApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async updateTradingAccount(updateTradingAccountRequest?: UpdateTradingAccountRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConnectTradingAccount201Response>> {
+        async updateTradingAccount(updateTradingAccountRequest?: UpdateTradingAccountRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConnectTradingAccount200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.updateTradingAccount(updateTradingAccountRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TradingAccountApi.updateTradingAccount']?.[localVarOperationServerIndex]?.url;
@@ -502,7 +502,7 @@ export const TradingAccountApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        connectTradingAccount(connectTradingAccountRequest?: ConnectTradingAccountRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConnectTradingAccount201Response> {
+        connectTradingAccount(connectTradingAccountRequest?: ConnectTradingAccountRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConnectTradingAccount200Response> {
             return localVarFp.connectTradingAccount(connectTradingAccountRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -512,7 +512,7 @@ export const TradingAccountApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        disableTradingAccount(disableTradingAccountRequest?: DisableTradingAccountRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConnectTradingAccount201Response> {
+        disableTradingAccount(disableTradingAccountRequest?: DisableTradingAccountRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConnectTradingAccount200Response> {
             return localVarFp.disableTradingAccount(disableTradingAccountRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -522,7 +522,7 @@ export const TradingAccountApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        disconnectTradingAccount(disconnectTradingAccountRequest?: DisconnectTradingAccountRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConnectTradingAccount201Response> {
+        disconnectTradingAccount(disconnectTradingAccountRequest?: DisconnectTradingAccountRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConnectTradingAccount200Response> {
             return localVarFp.disconnectTradingAccount(disconnectTradingAccountRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -532,7 +532,7 @@ export const TradingAccountApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        enableTradingAccount(enableTradingAccountRequest?: EnableTradingAccountRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConnectTradingAccount201Response> {
+        enableTradingAccount(enableTradingAccountRequest?: EnableTradingAccountRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConnectTradingAccount200Response> {
             return localVarFp.enableTradingAccount(enableTradingAccountRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -572,7 +572,7 @@ export const TradingAccountApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateTradingAccount(updateTradingAccountRequest?: UpdateTradingAccountRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConnectTradingAccount201Response> {
+        updateTradingAccount(updateTradingAccountRequest?: UpdateTradingAccountRequest, options?: RawAxiosRequestConfig): AxiosPromise<ConnectTradingAccount200Response> {
             return localVarFp.updateTradingAccount(updateTradingAccountRequest, options).then((request) => request(axios, basePath));
         },
     };

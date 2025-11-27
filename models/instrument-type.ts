@@ -15,11 +15,14 @@
 
 
 /**
- * Instrument type
+ * Type of financial instrument
  */
 
 export const InstrumentType = {
     Spot: 'SPOT',
+    Futures: 'FUTURES',
+    Option: 'OPTION',
+    Perpetual: 'PERPETUAL',
     Derivative: 'DERIVATIVE'
 } as const;
 

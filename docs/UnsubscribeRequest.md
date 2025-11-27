@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **subscriptionId** | **string** | UUID string | [optional] [default to undefined]
 **tradingAccountId** | **string** | UUID string | [optional] [default to undefined]
-**instrumentId** | **string** | Instrument ID. {venue}:{symbol} | [optional] [default to undefined]
+**instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [optional] [default to undefined]
 
 ## Example
 

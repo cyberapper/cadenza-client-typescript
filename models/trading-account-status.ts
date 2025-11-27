@@ -19,11 +19,14 @@
  */
 
 export const TradingAccountStatus = {
+    Setup: 'SETUP',
     Active: 'ACTIVE',
     Inactive: 'INACTIVE',
+    Locked: 'LOCKED',
     Disconnected: 'DISCONNECTED',
     Suspended: 'SUSPENDED',
-    Deleted: 'DELETED'
+    Deleted: 'DELETED',
+    Unknown: 'UNKNOWN'
 } as const;
 
 export type TradingAccountStatus = typeof TradingAccountStatus[keyof typeof TradingAccountStatus];

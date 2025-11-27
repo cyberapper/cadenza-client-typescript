@@ -1,6 +1,6 @@
 # CredentialType
 
-Credential type
+Type of API credential
 
 ## Enum
 
@@ -8,7 +8,11 @@ Credential type
 
 * `ApiKey` (value: `'API_KEY'`)
 
+* `Hmac` (value: `'HMAC'`)
+
 * `Oauth` (value: `'OAUTH'`)
+
+* `Rsa` (value: `'RSA'`)
 
 * `Ed25519` (value: `'ED25519'`)
 

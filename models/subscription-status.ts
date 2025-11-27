@@ -15,12 +15,14 @@
 
 
 /**
- * Subscription status
+ * Status of a subscription
  */
 
 export const SubscriptionStatus = {
+    Inactive: 'INACTIVE',
     Active: 'ACTIVE',
-    Inactive: 'INACTIVE'
+    Paused: 'PAUSED',
+    Terminated: 'TERMINATED'
 } as const;
 
 export type SubscriptionStatus = typeof SubscriptionStatus[keyof typeof SubscriptionStatus];

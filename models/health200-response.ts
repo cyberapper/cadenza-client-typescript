@@ -29,7 +29,7 @@ export interface Health200Response {
     /**
      * Health check timestamp in ISO 8601 format
      */
-    'timestampISO': string;
+    'datetime'?: string;
     /**
      * API version
      */

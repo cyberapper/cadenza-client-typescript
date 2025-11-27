@@ -15,12 +15,13 @@
 
 
 /**
- * Order side
+ * Order side (buy or sell)
  */
 
 export const OrderSide = {
     Buy: 'BUY',
-    Sell: 'SELL'
+    Sell: 'SELL',
+    Unknown: 'UNKNOWN'
 } as const;
 
 export type OrderSide = typeof OrderSide[keyof typeof OrderSide];
