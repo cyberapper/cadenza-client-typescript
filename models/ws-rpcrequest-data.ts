@@ -27,97 +27,97 @@ import type { OrderSide } from './order-side';
 import type { OrderType } from './order-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcCancelTradeOrderRequest } from './rpc-cancel-trade-order-request';
+import type { RpcCancelTradeOrderParams } from './rpc-cancel-trade-order-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcConnectTradingAccountRequest } from './rpc-connect-trading-account-request';
+import type { RpcConnectTradingAccountParams } from './rpc-connect-trading-account-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcCreateCredentialRequest } from './rpc-create-credential-request';
+import type { RpcCreateCredentialParams } from './rpc-create-credential-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcCreateSubscriptionRequest } from './rpc-create-subscription-request';
+import type { RpcCreateSubscriptionParams } from './rpc-create-subscription-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcCreateTradingAccountRequest } from './rpc-create-trading-account-request';
+import type { RpcCreateTradingAccountParams } from './rpc-create-trading-account-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcDeleteInstrumentRequest } from './rpc-delete-instrument-request';
+import type { RpcDeleteInstrumentParams } from './rpc-delete-instrument-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcDeleteSecuritiesRequest } from './rpc-delete-securities-request';
+import type { RpcDeleteSecuritiesParams } from './rpc-delete-securities-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcDeleteTradingAccountRequest } from './rpc-delete-trading-account-request';
+import type { RpcDeleteTradingAccountParams } from './rpc-delete-trading-account-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcDisableInstrumentRequest } from './rpc-disable-instrument-request';
+import type { RpcDisableInstrumentParams } from './rpc-disable-instrument-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcDisableTradingAccountRequest } from './rpc-disable-trading-account-request';
+import type { RpcDisableTradingAccountParams } from './rpc-disable-trading-account-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcDisconnectTradingAccountRequest } from './rpc-disconnect-trading-account-request';
+import type { RpcDisconnectTradingAccountParams } from './rpc-disconnect-trading-account-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcEnableInstrumentRequest } from './rpc-enable-instrument-request';
+import type { RpcEnableInstrumentParams } from './rpc-enable-instrument-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcEnableTradingAccountRequest } from './rpc-enable-trading-account-request';
+import type { RpcEnableTradingAccountParams } from './rpc-enable-trading-account-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcGetOrderBookRequest } from './rpc-get-order-book-request';
+import type { RpcGetOrderBookParams } from './rpc-get-order-book-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcGetPortfolioRequest } from './rpc-get-portfolio-request';
+import type { RpcGetPortfolioParams } from './rpc-get-portfolio-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcGetTradeOrderByIdRequest } from './rpc-get-trade-order-by-id-request';
+import type { RpcGetTradeOrderByIdParams } from './rpc-get-trade-order-by-id-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcGetTradeOrderRequest } from './rpc-get-trade-order-request';
+import type { RpcGetTradeOrderParams } from './rpc-get-trade-order-params';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { RpcKline } from './rpc-kline';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListCredentialsRequest } from './rpc-list-credentials-request';
+import type { RpcListCredentialsParams } from './rpc-list-credentials-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListInstrumentsRequest } from './rpc-list-instruments-request';
+import type { RpcListInstrumentsParams } from './rpc-list-instruments-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListKlinesRequest } from './rpc-list-klines-request';
+import type { RpcListKlinesParams } from './rpc-list-klines-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListOrderBookSubscriptionsRequest } from './rpc-list-order-book-subscriptions-request';
+import type { RpcListOrderBookSubscriptionsParams } from './rpc-list-order-book-subscriptions-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListOrderBooksRequest } from './rpc-list-order-books-request';
+import type { RpcListOrderBooksParams } from './rpc-list-order-books-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListPortfoliosRequest } from './rpc-list-portfolios-request';
+import type { RpcListPortfoliosParams } from './rpc-list-portfolios-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListSecuritiesRequest } from './rpc-list-securities-request';
+import type { RpcListSecuritiesParams } from './rpc-list-securities-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListSubscriptionsRequest } from './rpc-list-subscriptions-request';
+import type { RpcListSubscriptionsParams } from './rpc-list-subscriptions-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListTickersRequest } from './rpc-list-tickers-request';
+import type { RpcListTickersParams } from './rpc-list-tickers-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListTradeOrdersRequest } from './rpc-list-trade-orders-request';
+import type { RpcListTradeOrdersParams } from './rpc-list-trade-orders-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListTradingAccountOperationsRequest } from './rpc-list-trading-account-operations-request';
+import type { RpcListTradingAccountOperationsParams } from './rpc-list-trading-account-operations-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListTradingAccountSubscriptionsRequest } from './rpc-list-trading-account-subscriptions-request';
+import type { RpcListTradingAccountSubscriptionsParams } from './rpc-list-trading-account-subscriptions-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListTradingAccountsRequest } from './rpc-list-trading-accounts-request';
+import type { RpcListTradingAccountsParams } from './rpc-list-trading-accounts-params';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { RpcOrderBook } from './rpc-order-book';
@@ -129,52 +129,52 @@ import type { RpcPagination } from './rpc-pagination';
 import type { RpcPortfolio } from './rpc-portfolio';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcRevokeCredentialRequest } from './rpc-revoke-credential-request';
+import type { RpcRevokeCredentialParams } from './rpc-revoke-credential-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcRotateCredentialRequest } from './rpc-rotate-credential-request';
+import type { RpcRotateCredentialParams } from './rpc-rotate-credential-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveCredentialRequest } from './rpc-save-credential-request';
+import type { RpcSaveCredentialParams } from './rpc-save-credential-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveInstrumentsRequest } from './rpc-save-instruments-request';
+import type { RpcSaveInstrumentsParams } from './rpc-save-instruments-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveKlinesRequest } from './rpc-save-klines-request';
+import type { RpcSaveKlinesParams } from './rpc-save-klines-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveOrderBooksRequest } from './rpc-save-order-books-request';
+import type { RpcSaveOrderBooksParams } from './rpc-save-order-books-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSavePortfolioRequest } from './rpc-save-portfolio-request';
+import type { RpcSavePortfolioParams } from './rpc-save-portfolio-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveSecuritiesRequest } from './rpc-save-securities-request';
+import type { RpcSaveSecuritiesParams } from './rpc-save-securities-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveTickersRequest } from './rpc-save-tickers-request';
+import type { RpcSaveTickersParams } from './rpc-save-tickers-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveTradeOrderRequest } from './rpc-save-trade-order-request';
+import type { RpcSaveTradeOrderParams } from './rpc-save-trade-order-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveTradingAccountsRequest } from './rpc-save-trading-accounts-request';
+import type { RpcSaveTradingAccountsParams } from './rpc-save-trading-accounts-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSubmitTradeOrderRequest } from './rpc-submit-trade-order-request';
+import type { RpcSubmitTradeOrderParams } from './rpc-submit-trade-order-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSubscribeOrderBookRequest } from './rpc-subscribe-order-book-request';
+import type { RpcSubscribeOrderBookParams } from './rpc-subscribe-order-book-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSubscribeTradingAccountStreamRequest } from './rpc-subscribe-trading-account-stream-request';
+import type { RpcSubscribeTradingAccountStreamParams } from './rpc-subscribe-trading-account-stream-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSyncInstrumentsRequest } from './rpc-sync-instruments-request';
+import type { RpcSyncInstrumentsParams } from './rpc-sync-instruments-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSyncSecuritiesRequest } from './rpc-sync-securities-request';
+import type { RpcSyncSecuritiesParams } from './rpc-sync-securities-params';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { RpcTicker } from './rpc-ticker';
@@ -189,19 +189,19 @@ import type { RpcTradingAccount } from './rpc-trading-account';
 import type { RpcTradingAccountCredential } from './rpc-trading-account-credential';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcUnsubscribeOrderBookRequest } from './rpc-unsubscribe-order-book-request';
+import type { RpcUnsubscribeOrderBookParams } from './rpc-unsubscribe-order-book-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcUnsubscribeTradingAccountStreamRequest } from './rpc-unsubscribe-trading-account-stream-request';
+import type { RpcUnsubscribeTradingAccountStreamParams } from './rpc-unsubscribe-trading-account-stream-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcUpdateTradingAccountRequest } from './rpc-update-trading-account-request';
+import type { RpcUpdateTradingAccountParams } from './rpc-update-trading-account-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcValidateTradingAccountRequest } from './rpc-validate-trading-account-request';
+import type { RpcValidateTradingAccountParams } from './rpc-validate-trading-account-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcVerifyCredentialRequest } from './rpc-verify-credential-request';
+import type { RpcVerifyCredentialParams } from './rpc-verify-credential-params';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { SubscriptionType } from './subscription-type';
@@ -213,6 +213,6 @@ import type { Venue } from './venue';
  * @type WsRPCRequestData
  * RPC request payload. Schema depends on the method being called.
  */
-export type WsRPCRequestData = RpcCancelTradeOrderRequest | RpcConnectTradingAccountRequest | RpcCreateCredentialRequest | RpcCreateSubscriptionRequest | RpcCreateTradingAccountRequest | RpcDeleteInstrumentRequest | RpcDeleteSecuritiesRequest | RpcDeleteTradingAccountRequest | RpcDisableInstrumentRequest | RpcDisableTradingAccountRequest | RpcDisconnectTradingAccountRequest | RpcEnableInstrumentRequest | RpcEnableTradingAccountRequest | RpcGetOrderBookRequest | RpcGetPortfolioRequest | RpcGetTradeOrderByIdRequest | RpcGetTradeOrderRequest | RpcListCredentialsRequest | RpcListInstrumentsRequest | RpcListKlinesRequest | RpcListOrderBookSubscriptionsRequest | RpcListOrderBooksRequest | RpcListPortfoliosRequest | RpcListSecuritiesRequest | RpcListSubscriptionsRequest | RpcListTickersRequest | RpcListTradeOrdersRequest | RpcListTradingAccountOperationsRequest | RpcListTradingAccountSubscriptionsRequest | RpcListTradingAccountsRequest | RpcRevokeCredentialRequest | RpcRotateCredentialRequest | RpcSaveCredentialRequest | RpcSaveInstrumentsRequest | RpcSaveKlinesRequest | RpcSaveOrderBooksRequest | RpcSavePortfolioRequest | RpcSaveSecuritiesRequest | RpcSaveTickersRequest | RpcSaveTradeOrderRequest | RpcSaveTradingAccountsRequest | RpcSubmitTradeOrderRequest | RpcSubscribeOrderBookRequest | RpcSubscribeTradingAccountStreamRequest | RpcSyncInstrumentsRequest | RpcSyncSecuritiesRequest | RpcUnsubscribeOrderBookRequest | RpcUnsubscribeTradingAccountStreamRequest | RpcUpdateTradingAccountRequest | RpcValidateTradingAccountRequest | RpcVerifyCredentialRequest | object;
+export type WsRPCRequestData = RpcCancelTradeOrderParams | RpcConnectTradingAccountParams | RpcCreateCredentialParams | RpcCreateSubscriptionParams | RpcCreateTradingAccountParams | RpcDeleteInstrumentParams | RpcDeleteSecuritiesParams | RpcDeleteTradingAccountParams | RpcDisableInstrumentParams | RpcDisableTradingAccountParams | RpcDisconnectTradingAccountParams | RpcEnableInstrumentParams | RpcEnableTradingAccountParams | RpcGetOrderBookParams | RpcGetPortfolioParams | RpcGetTradeOrderByIdParams | RpcGetTradeOrderParams | RpcListCredentialsParams | RpcListInstrumentsParams | RpcListKlinesParams | RpcListOrderBookSubscriptionsParams | RpcListOrderBooksParams | RpcListPortfoliosParams | RpcListSecuritiesParams | RpcListSubscriptionsParams | RpcListTickersParams | RpcListTradeOrdersParams | RpcListTradingAccountOperationsParams | RpcListTradingAccountSubscriptionsParams | RpcListTradingAccountsParams | RpcRevokeCredentialParams | RpcRotateCredentialParams | RpcSaveCredentialParams | RpcSaveInstrumentsParams | RpcSaveKlinesParams | RpcSaveOrderBooksParams | RpcSavePortfolioParams | RpcSaveSecuritiesParams | RpcSaveTickersParams | RpcSaveTradeOrderParams | RpcSaveTradingAccountsParams | RpcSubmitTradeOrderParams | RpcSubscribeOrderBookParams | RpcSubscribeTradingAccountStreamParams | RpcSyncInstrumentsParams | RpcSyncSecuritiesParams | RpcUnsubscribeOrderBookParams | RpcUnsubscribeTradingAccountStreamParams | RpcUpdateTradingAccountParams | RpcValidateTradingAccountParams | RpcVerifyCredentialParams | object;
 
 

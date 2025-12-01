@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | [**HealthStatus**](HealthStatus.md) |  | [default to undefined]
 **timestamp** | **number** | Health check timestamp in milliseconds | [default to undefined]
-**datetime** | **string** | Health check timestamp in ISO 8601 format | [optional] [default to undefined]
+**isoDateTime** | **string** | Health check timestamp in ISO 8601 format | [optional] [default to undefined]
 **version** | **string** | API version | [default to undefined]
 **checks** | [**Health200ResponseChecks**](Health200ResponseChecks.md) |  | [optional] [default to undefined]
 
@@ -19,7 +19,7 @@ import { Health200Response } from '@cyberapper/cadenza-client';
 const instance: Health200Response = {
     status,
     timestamp,
-    datetime,
+    isoDateTime,
     version,
     checks,
 };

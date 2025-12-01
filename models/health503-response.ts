@@ -23,7 +23,7 @@ import type { HealthStatus } from './health-status';
 export interface Health503Response {
     'status'?: HealthStatus;
     'timestamp'?: number;
-    'datetime'?: string;
+    'isoDateTime'?: string;
     'version'?: string;
     /**
      * Details about failed health checks

@@ -1,0 +1,21 @@
+# RpcDeleteInstrumentParams
+
+Request to delete an instrument
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**instrumentId** | **string** | Instrument ID (format: VENUE:BASE/QUOTE) | [default to undefined]
+
+## Example
+
+```typescript
+import { RpcDeleteInstrumentParams } from '@cyberapper/cadenza-client';
+
+const instance: RpcDeleteInstrumentParams = {
+    instrumentId,
+};
+```
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

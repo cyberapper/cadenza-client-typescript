@@ -15,180 +15,180 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcCancelTradeOrderResponse } from './rpc-cancel-trade-order-response';
+import type { RpcCancelTradeOrderResult } from './rpc-cancel-trade-order-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcConnectTradingAccountResponse } from './rpc-connect-trading-account-response';
+import type { RpcConnectTradingAccountResult } from './rpc-connect-trading-account-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcCreateCredentialResponse } from './rpc-create-credential-response';
+import type { RpcCreateCredentialResult } from './rpc-create-credential-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcCreateSubscriptionResponse } from './rpc-create-subscription-response';
+import type { RpcCreateSubscriptionResult } from './rpc-create-subscription-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcCreateTradingAccountResponse } from './rpc-create-trading-account-response';
+import type { RpcCreateTradingAccountResult } from './rpc-create-trading-account-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcDeleteInstrumentResponse } from './rpc-delete-instrument-response';
+import type { RpcDeleteInstrumentResult } from './rpc-delete-instrument-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcDeleteSecuritiesResponse } from './rpc-delete-securities-response';
+import type { RpcDeleteSecuritiesResult } from './rpc-delete-securities-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcDeleteTradingAccountResponse } from './rpc-delete-trading-account-response';
+import type { RpcDeleteTradingAccountResult } from './rpc-delete-trading-account-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcDisableInstrumentResponse } from './rpc-disable-instrument-response';
+import type { RpcDisableInstrumentResult } from './rpc-disable-instrument-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcDisableTradingAccountResponse } from './rpc-disable-trading-account-response';
+import type { RpcDisableTradingAccountResult } from './rpc-disable-trading-account-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcDisconnectTradingAccountResponse } from './rpc-disconnect-trading-account-response';
+import type { RpcDisconnectTradingAccountResult } from './rpc-disconnect-trading-account-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcEnableInstrumentResponse } from './rpc-enable-instrument-response';
+import type { RpcEnableInstrumentResult } from './rpc-enable-instrument-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcEnableTradingAccountResponse } from './rpc-enable-trading-account-response';
+import type { RpcEnableTradingAccountResult } from './rpc-enable-trading-account-result';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { RpcError } from './rpc-error';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcGetOrderBookResponse } from './rpc-get-order-book-response';
+import type { RpcGetOrderBookResult } from './rpc-get-order-book-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcGetPortfolioResponse } from './rpc-get-portfolio-response';
+import type { RpcGetPortfolioResult } from './rpc-get-portfolio-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcGetSystemInfoResponse } from './rpc-get-system-info-response';
+import type { RpcGetSystemInfoResult } from './rpc-get-system-info-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcGetTradeOrderByIdResponse } from './rpc-get-trade-order-by-id-response';
+import type { RpcGetTradeOrderByIdResult } from './rpc-get-trade-order-by-id-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcGetTradeOrderResponse } from './rpc-get-trade-order-response';
+import type { RpcGetTradeOrderResult } from './rpc-get-trade-order-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcHealthCheckResponse } from './rpc-health-check-response';
+import type { RpcHealthCheckResult } from './rpc-health-check-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListCredentialsResponse } from './rpc-list-credentials-response';
+import type { RpcListCredentialsResult } from './rpc-list-credentials-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListInstrumentsResponse } from './rpc-list-instruments-response';
+import type { RpcListInstrumentsResult } from './rpc-list-instruments-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListKlinesResponse } from './rpc-list-klines-response';
+import type { RpcListKlinesResult } from './rpc-list-klines-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListOrderBookSubscriptionsResponse } from './rpc-list-order-book-subscriptions-response';
+import type { RpcListOrderBookSubscriptionsResult } from './rpc-list-order-book-subscriptions-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListOrderBooksResponse } from './rpc-list-order-books-response';
+import type { RpcListOrderBooksResult } from './rpc-list-order-books-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListPortfoliosResponse } from './rpc-list-portfolios-response';
+import type { RpcListPortfoliosResult } from './rpc-list-portfolios-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListSecuritiesResponse } from './rpc-list-securities-response';
+import type { RpcListSecuritiesResult } from './rpc-list-securities-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListSubscriptionsResponse } from './rpc-list-subscriptions-response';
+import type { RpcListSubscriptionsResult } from './rpc-list-subscriptions-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListTickersResponse } from './rpc-list-tickers-response';
+import type { RpcListTickersResult } from './rpc-list-tickers-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListTradeOrdersResponse } from './rpc-list-trade-orders-response';
+import type { RpcListTradeOrdersResult } from './rpc-list-trade-orders-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListTradingAccountOperationsResponse } from './rpc-list-trading-account-operations-response';
+import type { RpcListTradingAccountOperationsResult } from './rpc-list-trading-account-operations-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListTradingAccountSubscriptionsResponse } from './rpc-list-trading-account-subscriptions-response';
+import type { RpcListTradingAccountSubscriptionsResult } from './rpc-list-trading-account-subscriptions-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListTradingAccountsResponse } from './rpc-list-trading-accounts-response';
+import type { RpcListTradingAccountsResult } from './rpc-list-trading-accounts-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcListVenuesResponse } from './rpc-list-venues-response';
+import type { RpcListVenuesResult } from './rpc-list-venues-result';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { RpcPagination } from './rpc-pagination';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcRevokeCredentialResponse } from './rpc-revoke-credential-response';
+import type { RpcRevokeCredentialResult } from './rpc-revoke-credential-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcRotateCredentialResponse } from './rpc-rotate-credential-response';
+import type { RpcRotateCredentialResult } from './rpc-rotate-credential-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveCredentialResponse } from './rpc-save-credential-response';
+import type { RpcSaveCredentialResult } from './rpc-save-credential-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveInstrumentsResponse } from './rpc-save-instruments-response';
+import type { RpcSaveInstrumentsResult } from './rpc-save-instruments-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveKlinesResponse } from './rpc-save-klines-response';
+import type { RpcSaveKlinesResult } from './rpc-save-klines-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveOrderBooksResponse } from './rpc-save-order-books-response';
+import type { RpcSaveOrderBooksResult } from './rpc-save-order-books-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSavePortfolioResponse } from './rpc-save-portfolio-response';
+import type { RpcSavePortfolioResult } from './rpc-save-portfolio-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveSecuritiesResponse } from './rpc-save-securities-response';
+import type { RpcSaveSecuritiesResult } from './rpc-save-securities-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveTickersResponse } from './rpc-save-tickers-response';
+import type { RpcSaveTickersResult } from './rpc-save-tickers-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveTradeOrderResponse } from './rpc-save-trade-order-response';
+import type { RpcSaveTradeOrderResult } from './rpc-save-trade-order-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSaveTradingAccountsResponse } from './rpc-save-trading-accounts-response';
+import type { RpcSaveTradingAccountsResult } from './rpc-save-trading-accounts-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSubmitTradeOrderResponse } from './rpc-submit-trade-order-response';
+import type { RpcSubmitTradeOrderResult } from './rpc-submit-trade-order-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSubscribeOrderBookResponse } from './rpc-subscribe-order-book-response';
+import type { RpcSubscribeOrderBookResult } from './rpc-subscribe-order-book-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSubscribeTradingAccountStreamResponse } from './rpc-subscribe-trading-account-stream-response';
+import type { RpcSubscribeTradingAccountStreamResult } from './rpc-subscribe-trading-account-stream-result';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { RpcSubscription } from './rpc-subscription';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSyncInstrumentsResponse } from './rpc-sync-instruments-response';
+import type { RpcSyncInstrumentsResult } from './rpc-sync-instruments-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcSyncSecuritiesResponse } from './rpc-sync-securities-response';
+import type { RpcSyncSecuritiesResult } from './rpc-sync-securities-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcUnsubscribeOrderBookResponse } from './rpc-unsubscribe-order-book-response';
+import type { RpcUnsubscribeOrderBookResult } from './rpc-unsubscribe-order-book-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcUnsubscribeTradingAccountStreamResponse } from './rpc-unsubscribe-trading-account-stream-response';
+import type { RpcUnsubscribeTradingAccountStreamResult } from './rpc-unsubscribe-trading-account-stream-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcUpdateTradingAccountResponse } from './rpc-update-trading-account-response';
+import type { RpcUpdateTradingAccountResult } from './rpc-update-trading-account-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcValidateTradingAccountResponse } from './rpc-validate-trading-account-response';
+import type { RpcValidateTradingAccountResult } from './rpc-validate-trading-account-result';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcVerifyCredentialResponse } from './rpc-verify-credential-response';
+import type { RpcVerifyCredentialResult } from './rpc-verify-credential-result';
 
 /**
  * @type WsRPCResultData
  * RPC response payload. Schema depends on the method that was called.
  */
-export type WsRPCResultData = RpcCancelTradeOrderResponse | RpcConnectTradingAccountResponse | RpcCreateCredentialResponse | RpcCreateSubscriptionResponse | RpcCreateTradingAccountResponse | RpcDeleteInstrumentResponse | RpcDeleteSecuritiesResponse | RpcDeleteTradingAccountResponse | RpcDisableInstrumentResponse | RpcDisableTradingAccountResponse | RpcDisconnectTradingAccountResponse | RpcEnableInstrumentResponse | RpcEnableTradingAccountResponse | RpcGetOrderBookResponse | RpcGetPortfolioResponse | RpcGetSystemInfoResponse | RpcGetTradeOrderByIdResponse | RpcGetTradeOrderResponse | RpcHealthCheckResponse | RpcListCredentialsResponse | RpcListInstrumentsResponse | RpcListKlinesResponse | RpcListOrderBookSubscriptionsResponse | RpcListOrderBooksResponse | RpcListPortfoliosResponse | RpcListSecuritiesResponse | RpcListSubscriptionsResponse | RpcListTickersResponse | RpcListTradeOrdersResponse | RpcListTradingAccountOperationsResponse | RpcListTradingAccountSubscriptionsResponse | RpcListTradingAccountsResponse | RpcListVenuesResponse | RpcRevokeCredentialResponse | RpcRotateCredentialResponse | RpcSaveCredentialResponse | RpcSaveInstrumentsResponse | RpcSaveKlinesResponse | RpcSaveOrderBooksResponse | RpcSavePortfolioResponse | RpcSaveSecuritiesResponse | RpcSaveTickersResponse | RpcSaveTradeOrderResponse | RpcSaveTradingAccountsResponse | RpcSubmitTradeOrderResponse | RpcSubscribeOrderBookResponse | RpcSubscribeTradingAccountStreamResponse | RpcSyncInstrumentsResponse | RpcSyncSecuritiesResponse | RpcUnsubscribeOrderBookResponse | RpcUnsubscribeTradingAccountStreamResponse | RpcUpdateTradingAccountResponse | RpcValidateTradingAccountResponse | RpcVerifyCredentialResponse;
+export type WsRPCResultData = RpcCancelTradeOrderResult | RpcConnectTradingAccountResult | RpcCreateCredentialResult | RpcCreateSubscriptionResult | RpcCreateTradingAccountResult | RpcDeleteInstrumentResult | RpcDeleteSecuritiesResult | RpcDeleteTradingAccountResult | RpcDisableInstrumentResult | RpcDisableTradingAccountResult | RpcDisconnectTradingAccountResult | RpcEnableInstrumentResult | RpcEnableTradingAccountResult | RpcGetOrderBookResult | RpcGetPortfolioResult | RpcGetSystemInfoResult | RpcGetTradeOrderByIdResult | RpcGetTradeOrderResult | RpcHealthCheckResult | RpcListCredentialsResult | RpcListInstrumentsResult | RpcListKlinesResult | RpcListOrderBookSubscriptionsResult | RpcListOrderBooksResult | RpcListPortfoliosResult | RpcListSecuritiesResult | RpcListSubscriptionsResult | RpcListTickersResult | RpcListTradeOrdersResult | RpcListTradingAccountOperationsResult | RpcListTradingAccountSubscriptionsResult | RpcListTradingAccountsResult | RpcListVenuesResult | RpcRevokeCredentialResult | RpcRotateCredentialResult | RpcSaveCredentialResult | RpcSaveInstrumentsResult | RpcSaveKlinesResult | RpcSaveOrderBooksResult | RpcSavePortfolioResult | RpcSaveSecuritiesResult | RpcSaveTickersResult | RpcSaveTradeOrderResult | RpcSaveTradingAccountsResult | RpcSubmitTradeOrderResult | RpcSubscribeOrderBookResult | RpcSubscribeTradingAccountStreamResult | RpcSyncInstrumentsResult | RpcSyncSecuritiesResult | RpcUnsubscribeOrderBookResult | RpcUnsubscribeTradingAccountStreamResult | RpcUpdateTradingAccountResult | RpcValidateTradingAccountResult | RpcVerifyCredentialResult;
 
 

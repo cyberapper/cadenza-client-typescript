@@ -24,8 +24,6 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { Health200Response } from '../models';
 // @ts-ignore
-import type { Health503Response } from '../models';
-// @ts-ignore
 import type { Root200Response } from '../models';
 // @ts-ignore
 import type { Root400Response } from '../models';

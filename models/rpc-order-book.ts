@@ -42,9 +42,9 @@ export interface RpcOrderBook {
      */
     'asks'?: Array<RpcOrderBookLevel>;
     /**
-     * Order book timestamp in milliseconds
+     * Timestamp in ISO 8601 format (RFC3339). This is the native format used by Go\'s time.Time.
      */
-    'timestamp'?: number;
+    'timestamp'?: string;
     /**
      * Sequence number for ordering updates
      */

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | [**HealthStatus**](HealthStatus.md) |  | [optional] [default to undefined]
 **timestamp** | **number** |  | [optional] [default to undefined]
-**datetime** | **string** |  | [optional] [default to undefined]
+**isoDateTime** | **string** |  | [optional] [default to undefined]
 **version** | **string** |  | [optional] [default to undefined]
 **checks** | [**{ [key: string]: HealthCheckComponent; }**](HealthCheckComponent.md) | Details about failed health checks | [optional] [default to undefined]
 
@@ -19,7 +19,7 @@ import { Health503Response } from '@cyberapper/cadenza-client';
 const instance: Health503Response = {
     status,
     timestamp,
-    datetime,
+    isoDateTime,
     version,
     checks,
 };

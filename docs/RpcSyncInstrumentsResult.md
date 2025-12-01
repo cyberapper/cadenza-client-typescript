@@ -1,0 +1,23 @@
+# RpcSyncInstrumentsResult
+
+Response for instrument sync
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**data** | [**RpcSyncInstrumentsResultData**](RpcSyncInstrumentsResultData.md) |  | [optional] [default to undefined]
+**error** | [**RpcError**](RpcError.md) |  | [optional] [default to undefined]
+
+## Example
+
+```typescript
+import { RpcSyncInstrumentsResult } from '@cyberapper/cadenza-client';
+
+const instance: RpcSyncInstrumentsResult = {
+    data,
+    error,
+};
+```
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
