@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.1](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.1.0...v3.1.1) (2026-01-26)
+
+
+### Miscellaneous
+
+* test release workflow ([3c9064d](https://github.com/cyberapper/cadenza-client-typescript/commit/3c9064d45d0718b651a20f0351b7ac265ff41a7e))
+
 ## [3.1.0](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.0.0...v3.1.0) (2026-01-26)
 
 
