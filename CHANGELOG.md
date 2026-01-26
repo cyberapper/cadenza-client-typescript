@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.3](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.1.2...v3.1.3) (2026-01-26)
+
+
+### Miscellaneous
+
+* ignore local Claude Code files ([#5](https://github.com/cyberapper/cadenza-client-typescript/issues/5)) ([5562b99](https://github.com/cyberapper/cadenza-client-typescript/commit/5562b99a922384f77bef7c9bad46712506637c9c))
+
 ## [3.1.2](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.1.1...v3.1.2) (2026-01-26)
 
 
