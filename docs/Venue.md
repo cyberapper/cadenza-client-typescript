@@ -1,6 +1,6 @@
 # Venue
 
-Trading venue identifier. Sandbox environments are treated as separate venues.
+Trading venue identifier. UAT/sandbox environments are treated as separate venues. Note: _SANDBOX and _PAPER suffixes are deprecated. Use _UAT suffix for new integrations. 
 
 ## Enum
 
@@ -26,7 +26,7 @@ Trading venue identifier. Sandbox environments are treated as separate venues.
 
 * `Okx` (value: `'OKX'`)
 
-* `BinanceSandbox` (value: `'BINANCE_SANDBOX'`)
+* `BinanceUat` (value: `'BINANCE_UAT'`)
 
 * `B2C2Uat` (value: `'B2C2_UAT'`)
 
@@ -38,12 +38,22 @@ Trading venue identifier. Sandbox environments are treated as separate venues.
 
 * `CumberlandUat` (value: `'CUMBERLAND_UAT'`)
 
-* `IbkrPaper` (value: `'IBKR_PAPER'`)
+* `IbkrUat` (value: `'IBKR_UAT'`)
 
 * `DeribitUat` (value: `'DERIBIT_UAT'`)
 
 * `BitfinexUat` (value: `'BITFINEX_UAT'`)
 
 * `OkxUat` (value: `'OKX_UAT'`)
+
+* `BinanceSandbox` (value: `'BINANCE_SANDBOX'`)
+
+* `B2C2Sandbox` (value: `'B2C2_SANDBOX'`)
+
+* `IbkrPaper` (value: `'IBKR_PAPER'`)
+
+* `Mock` (value: `'MOCK'`)
+
+* `Paper` (value: `'PAPER'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

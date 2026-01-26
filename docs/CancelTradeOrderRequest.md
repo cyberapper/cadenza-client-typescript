@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**tradingAccountId** | **string** | UUID string | [default to undefined]
 **tradeOrderId** | **string** | UUID string | [default to undefined]
 
 ## Example
@@ -13,6 +14,7 @@ Name | Type | Description | Notes
 import { CancelTradeOrderRequest } from '@cyberapper/cadenza-client';
 
 const instance: CancelTradeOrderRequest = {
+    tradingAccountId,
     tradeOrderId,
 };
 ```

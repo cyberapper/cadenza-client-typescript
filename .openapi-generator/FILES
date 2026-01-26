@@ -22,6 +22,7 @@ docs/BaseResponse.md
 docs/BaseResponseDetails.md
 docs/CancelTradeOrder200Response.md
 docs/CancelTradeOrderRequest.md
+docs/CollateralMode.md
 docs/ConnectTradingAccount200Response.md
 docs/ConnectTradingAccountRequest.md
 docs/CreateTradingAccountCredential200Response.md
@@ -58,6 +59,7 @@ docs/ListTradingAccountOperations200Response.md
 docs/ListTradingAccountPortfolios200Response.md
 docs/ListTradingAccountSubscriptions200Response.md
 docs/ListTradingAccounts200Response.md
+docs/MarginMode.md
 docs/MarketApi.md
 docs/MarketSubscriptionApi.md
 docs/MarketVenue.md
@@ -72,6 +74,7 @@ docs/Pagination.md
 docs/Portfolio.md
 docs/PortfolioSummary.md
 docs/PositionEntry.md
+docs/PositionMode.md
 docs/PositionStatus.md
 docs/QuantityRounding.md
 docs/QuantityType.md
@@ -314,6 +317,7 @@ models/base-response-details.ts
 models/base-response.ts
 models/cancel-trade-order-request.ts
 models/cancel-trade-order200-response.ts
+models/collateral-mode.ts
 models/connect-trading-account-request.ts
 models/connect-trading-account200-response.ts
 models/create-trading-account-credential-request.ts
@@ -351,6 +355,7 @@ models/list-trading-account-operations200-response.ts
 models/list-trading-account-portfolios200-response.ts
 models/list-trading-account-subscriptions200-response.ts
 models/list-trading-accounts200-response.ts
+models/margin-mode.ts
 models/market-venue.ts
 models/operation-status.ts
 models/operation-type.ts
@@ -363,6 +368,7 @@ models/pagination.ts
 models/portfolio-summary.ts
 models/portfolio.ts
 models/position-entry.ts
+models/position-mode.ts
 models/position-status.ts
 models/quantity-rounding.ts
 models/quantity-type.ts

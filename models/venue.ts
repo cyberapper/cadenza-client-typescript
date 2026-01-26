@@ -15,7 +15,7 @@
 
 
 /**
- * Trading venue identifier. Sandbox environments are treated as separate venues.
+ * Trading venue identifier. UAT/sandbox environments are treated as separate venues. Note: _SANDBOX and _PAPER suffixes are deprecated. Use _UAT suffix for new integrations. 
  */
 
 export const Venue = {
@@ -30,16 +30,21 @@ export const Venue = {
     Deribit: 'DERIBIT',
     Bitfinex: 'BITFINEX',
     Okx: 'OKX',
-    BinanceSandbox: 'BINANCE_SANDBOX',
+    BinanceUat: 'BINANCE_UAT',
     B2C2Uat: 'B2C2_UAT',
     WintermuteUat: 'WINTERMUTE_UAT',
     BlockfillsUat: 'BLOCKFILLS_UAT',
     StonexUat: 'STONEX_UAT',
     CumberlandUat: 'CUMBERLAND_UAT',
-    IbkrPaper: 'IBKR_PAPER',
+    IbkrUat: 'IBKR_UAT',
     DeribitUat: 'DERIBIT_UAT',
     BitfinexUat: 'BITFINEX_UAT',
-    OkxUat: 'OKX_UAT'
+    OkxUat: 'OKX_UAT',
+    BinanceSandbox: 'BINANCE_SANDBOX',
+    B2C2Sandbox: 'B2C2_SANDBOX',
+    IbkrPaper: 'IBKR_PAPER',
+    Mock: 'MOCK',
+    Paper: 'PAPER'
 } as const;
 
 export type Venue = typeof Venue[keyof typeof Venue];

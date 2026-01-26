@@ -10,6 +10,10 @@ Name | Type | Description | Notes
 **venue** | [**Venue**](Venue.md) |  | [default to undefined]
 **nickname** | **string** | Nickname of the trading account | [default to undefined]
 **accountType** | [**AccountType**](AccountType.md) |  | [default to undefined]
+**externalAccountType** | **string** | Type of account on the exchange (set by market connector) | [default to undefined]
+**positionMode** | [**PositionMode**](PositionMode.md) |  | [optional] [default to undefined]
+**collateralMode** | [**CollateralMode**](CollateralMode.md) |  | [optional] [default to undefined]
+**marginMode** | [**MarginMode**](MarginMode.md) |  | [optional] [default to undefined]
 **credentials** | [**Array&lt;TradingAccountCredential&gt;**](TradingAccountCredential.md) |  | [default to undefined]
 **status** | [**TradingAccountStatus**](TradingAccountStatus.md) |  | [default to undefined]
 **createdAt** | **number** | Unix timestamp in milliseconds | [default to undefined]
@@ -28,6 +32,10 @@ const instance: TradingAccount = {
     venue,
     nickname,
     accountType,
+    externalAccountType,
+    positionMode,
+    collateralMode,
+    marginMode,
     credentials,
     status,
     createdAt,

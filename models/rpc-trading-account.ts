@@ -15,6 +15,15 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { CollateralMode } from './collateral-mode';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { MarginMode } from './margin-mode';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PositionMode } from './position-mode';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { RpcTradingAccountConfig } from './rpc-trading-account-config';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -38,9 +47,13 @@ export interface RpcTradingAccount {
      */
     'tradingAccountId'?: string;
     /**
-     * Client/user ID
+     * User ID
      */
-    'clientId'?: string;
+    'userId'?: string;
+    /**
+     * Tenant identifier for multi-tenancy
+     */
+    'tenantId'?: string;
     /**
      * Account nickname
      */
@@ -52,6 +65,13 @@ export interface RpcTradingAccount {
     'venue'?: Venue;
     'status'?: TradingAccountStatus;
     'accountType'?: TradingAccountType;
+    /**
+     * Type of account on the exchange (set by market connector)
+     */
+    'externalAccountType'?: string;
+    'positionMode'?: PositionMode;
+    'collateralMode'?: CollateralMode;
+    'marginMode'?: MarginMode;
     /**
      * Account credentials
      */

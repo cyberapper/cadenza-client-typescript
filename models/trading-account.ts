@@ -18,6 +18,15 @@
 import type { AccountType } from './account-type';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { CollateralMode } from './collateral-mode';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { MarginMode } from './margin-mode';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { PositionMode } from './position-mode';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { TradingAccountCredential } from './trading-account-credential';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -41,6 +50,13 @@ export interface TradingAccount {
      */
     'nickname': string;
     'accountType': AccountType;
+    /**
+     * Type of account on the exchange (set by market connector)
+     */
+    'externalAccountType': string;
+    'positionMode'?: PositionMode;
+    'collateralMode'?: CollateralMode;
+    'marginMode'?: MarginMode;
     'credentials': Array<TradingAccountCredential>;
     'status': TradingAccountStatus;
     /**

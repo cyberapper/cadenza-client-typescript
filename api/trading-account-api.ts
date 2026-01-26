@@ -18,7 +18,7 @@ import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
-import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
+import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction, replaceWithSerializableTypeIfNeeded } from '../common';
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
@@ -82,9 +82,8 @@ export const TradingAccountApiAxiosParamCreator = function (configuration?: Conf
             // http bearer authentication required
             await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -120,9 +119,8 @@ export const TradingAccountApiAxiosParamCreator = function (configuration?: Conf
             // http bearer authentication required
             await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -158,9 +156,8 @@ export const TradingAccountApiAxiosParamCreator = function (configuration?: Conf
             // http bearer authentication required
             await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -196,9 +193,8 @@ export const TradingAccountApiAxiosParamCreator = function (configuration?: Conf
             // http bearer authentication required
             await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -268,8 +264,8 @@ export const TradingAccountApiAxiosParamCreator = function (configuration?: Conf
                 localVarQueryParameter['cursor'] = cursor;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -285,12 +281,14 @@ export const TradingAccountApiAxiosParamCreator = function (configuration?: Conf
          * @param {string} [tradingAccountId] Trading account ID
          * @param {Venue} [venue] Exchange type
          * @param {TradingAccountStatus} [accountStatus] Account status
+         * @param {string} [userId] Filter by user ID
+         * @param {string} [tenantId] Filter by tenant ID
          * @param {number} [limit] Limit the number of returned results
          * @param {number} [offset] Offset of the returned results
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTradingAccounts: async (tradingAccountId?: string, venue?: Venue, accountStatus?: TradingAccountStatus, limit?: number, offset?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listTradingAccounts: async (tradingAccountId?: string, venue?: Venue, accountStatus?: TradingAccountStatus, userId?: string, tenantId?: string, limit?: number, offset?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v3/tradingAccount/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -319,6 +317,14 @@ export const TradingAccountApiAxiosParamCreator = function (configuration?: Conf
                 localVarQueryParameter['accountStatus'] = accountStatus;
             }
 
+            if (userId !== undefined) {
+                localVarQueryParameter['userId'] = userId;
+            }
+
+            if (tenantId !== undefined) {
+                localVarQueryParameter['tenantId'] = tenantId;
+            }
+
             if (limit !== undefined) {
                 localVarQueryParameter['limit'] = limit;
             }
@@ -327,8 +333,8 @@ export const TradingAccountApiAxiosParamCreator = function (configuration?: Conf
                 localVarQueryParameter['offset'] = offset;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -362,9 +368,8 @@ export const TradingAccountApiAxiosParamCreator = function (configuration?: Conf
             // http bearer authentication required
             await setBearerAuthToObject(localVarHeaderParameter, configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -462,13 +467,15 @@ export const TradingAccountApiFp = function(configuration?: Configuration) {
          * @param {string} [tradingAccountId] Trading account ID
          * @param {Venue} [venue] Exchange type
          * @param {TradingAccountStatus} [accountStatus] Account status
+         * @param {string} [userId] Filter by user ID
+         * @param {string} [tenantId] Filter by tenant ID
          * @param {number} [limit] Limit the number of returned results
          * @param {number} [offset] Offset of the returned results
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTradingAccounts(tradingAccountId?: string, venue?: Venue, accountStatus?: TradingAccountStatus, limit?: number, offset?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListTradingAccounts200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listTradingAccounts(tradingAccountId, venue, accountStatus, limit, offset, options);
+        async listTradingAccounts(tradingAccountId?: string, venue?: Venue, accountStatus?: TradingAccountStatus, userId?: string, tenantId?: string, limit?: number, offset?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListTradingAccounts200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listTradingAccounts(tradingAccountId, venue, accountStatus, userId, tenantId, limit, offset, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TradingAccountApi.listTradingAccounts']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -557,13 +564,15 @@ export const TradingAccountApiFactory = function (configuration?: Configuration,
          * @param {string} [tradingAccountId] Trading account ID
          * @param {Venue} [venue] Exchange type
          * @param {TradingAccountStatus} [accountStatus] Account status
+         * @param {string} [userId] Filter by user ID
+         * @param {string} [tenantId] Filter by tenant ID
          * @param {number} [limit] Limit the number of returned results
          * @param {number} [offset] Offset of the returned results
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTradingAccounts(tradingAccountId?: string, venue?: Venue, accountStatus?: TradingAccountStatus, limit?: number, offset?: number, options?: RawAxiosRequestConfig): AxiosPromise<ListTradingAccounts200Response> {
-            return localVarFp.listTradingAccounts(tradingAccountId, venue, accountStatus, limit, offset, options).then((request) => request(axios, basePath));
+        listTradingAccounts(tradingAccountId?: string, venue?: Venue, accountStatus?: TradingAccountStatus, userId?: string, tenantId?: string, limit?: number, offset?: number, options?: RawAxiosRequestConfig): AxiosPromise<ListTradingAccounts200Response> {
+            return localVarFp.listTradingAccounts(tradingAccountId, venue, accountStatus, userId, tenantId, limit, offset, options).then((request) => request(axios, basePath));
         },
         /**
          * Update trading account information
@@ -649,13 +658,15 @@ export class TradingAccountApi extends BaseAPI {
      * @param {string} [tradingAccountId] Trading account ID
      * @param {Venue} [venue] Exchange type
      * @param {TradingAccountStatus} [accountStatus] Account status
+     * @param {string} [userId] Filter by user ID
+     * @param {string} [tenantId] Filter by tenant ID
      * @param {number} [limit] Limit the number of returned results
      * @param {number} [offset] Offset of the returned results
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public listTradingAccounts(tradingAccountId?: string, venue?: Venue, accountStatus?: TradingAccountStatus, limit?: number, offset?: number, options?: RawAxiosRequestConfig) {
-        return TradingAccountApiFp(this.configuration).listTradingAccounts(tradingAccountId, venue, accountStatus, limit, offset, options).then((request) => request(this.axios, this.basePath));
+    public listTradingAccounts(tradingAccountId?: string, venue?: Venue, accountStatus?: TradingAccountStatus, userId?: string, tenantId?: string, limit?: number, offset?: number, options?: RawAxiosRequestConfig) {
+        return TradingAccountApiFp(this.configuration).listTradingAccounts(tradingAccountId, venue, accountStatus, userId, tenantId, limit, offset, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

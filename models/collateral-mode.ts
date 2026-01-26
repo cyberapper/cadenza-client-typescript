@@ -14,14 +14,17 @@
 
 
 
-export interface CancelTradeOrderRequest {
-    /**
-     * UUID string
-     */
-    'tradingAccountId': string;
-    /**
-     * UUID string
-     */
-    'tradeOrderId': string;
-}
+/**
+ * Collateral mode - how margin is shared across positions
+ */
+
+export const CollateralMode = {
+    Empty: '',
+    Cross: 'CROSS',
+    Isolated: 'ISOLATED'
+} as const;
+
+export type CollateralMode = typeof CollateralMode[keyof typeof CollateralMode];
+
+
 

@@ -14,14 +14,17 @@
 
 
 
-export interface CancelTradeOrderRequest {
-    /**
-     * UUID string
-     */
-    'tradingAccountId': string;
-    /**
-     * UUID string
-     */
-    'tradeOrderId': string;
-}
+/**
+ * Margin mode - account-level margin calculation type
+ */
+
+export const MarginMode = {
+    Empty: '',
+    Standard: 'STANDARD',
+    Portfolio: 'PORTFOLIO'
+} as const;
+
+export type MarginMode = typeof MarginMode[keyof typeof MarginMode];
+
+
 

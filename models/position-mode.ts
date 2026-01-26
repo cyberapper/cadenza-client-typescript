@@ -14,14 +14,17 @@
 
 
 
-export interface CancelTradeOrderRequest {
-    /**
-     * UUID string
-     */
-    'tradingAccountId': string;
-    /**
-     * UUID string
-     */
-    'tradeOrderId': string;
-}
+/**
+ * Position mode setting - how positions are handled
+ */
+
+export const PositionMode = {
+    Empty: '',
+    Hedge: 'HEDGE',
+    Netting: 'NETTING'
+} as const;
+
+export type PositionMode = typeof PositionMode[keyof typeof PositionMode];
+
+
 

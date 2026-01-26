@@ -333,6 +333,8 @@ const apiInstance = new TradingAccountApi(configuration);
 let tradingAccountId: string; //Trading account ID (optional) (default to undefined)
 let venue: Venue; //Exchange type (optional) (default to undefined)
 let accountStatus: TradingAccountStatus; //Account status (optional) (default to undefined)
+let userId: string; //Filter by user ID (optional) (default to undefined)
+let tenantId: string; //Filter by tenant ID (optional) (default to undefined)
 let limit: number; //Limit the number of returned results (optional) (default to 50)
 let offset: number; //Offset of the returned results (optional) (default to 0)
 
@@ -340,6 +342,8 @@ const { status, data } = await apiInstance.listTradingAccounts(
     tradingAccountId,
     venue,
     accountStatus,
+    userId,
+    tenantId,
     limit,
     offset
 );
@@ -352,6 +356,8 @@ const { status, data } = await apiInstance.listTradingAccounts(
 | **tradingAccountId** | [**string**] | Trading account ID | (optional) defaults to undefined|
 | **venue** | **Venue** | Exchange type | (optional) defaults to undefined|
 | **accountStatus** | **TradingAccountStatus** | Account status | (optional) defaults to undefined|
+| **userId** | [**string**] | Filter by user ID | (optional) defaults to undefined|
+| **tenantId** | [**string**] | Filter by tenant ID | (optional) defaults to undefined|
 | **limit** | [**number**] | Limit the number of returned results | (optional) defaults to 50|
 | **offset** | [**number**] | Offset of the returned results | (optional) defaults to 0|
 
