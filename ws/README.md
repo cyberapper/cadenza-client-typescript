@@ -7,7 +7,7 @@ Re-exports the [centrifuge-js](https://github.com/centrifugal/centrifuge-js) SDK
 ```typescript
 import { Centrifuge } from '@cyberapper/cadenza-client/ws';
 
-const client = new Centrifuge('ws://localhost:8000/connection/websocket', {
+const client = new Centrifuge('wss://cadenza-ws.algo724.com', {
   token: 'your-token'
 });
 
