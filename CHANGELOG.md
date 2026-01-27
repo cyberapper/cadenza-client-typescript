@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.2](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.1...v3.2.2) (2026-01-27)
+
+
+### Continuous Integration
+
+* skip workflow for release-please PRs ([#10](https://github.com/cyberapper/cadenza-client-typescript/issues/10)) ([e99e953](https://github.com/cyberapper/cadenza-client-typescript/commit/e99e953835550d471c86338f0d0bccc1eedf6671))
+
 ## [3.2.1](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.0...v3.2.1) (2026-01-27)
 
 
