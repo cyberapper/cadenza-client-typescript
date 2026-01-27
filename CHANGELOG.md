@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.3](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.2...v3.2.3) (2026-01-27)
+
+
+### Bug Fixes
+
+* add missing centrifuge dependency ([#12](https://github.com/cyberapper/cadenza-client-typescript/issues/12)) ([9132ef5](https://github.com/cyberapper/cadenza-client-typescript/commit/9132ef5b195cad27213040ce55a00f3b77066c24))
+
 ## [3.2.2](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.1...v3.2.2) (2026-01-27)
 
 
