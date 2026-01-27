@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.1](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.0...v3.2.1) (2026-01-27)
+
+
+### Miscellaneous
+
+* protect package.json from openapi-generator overwrite ([#8](https://github.com/cyberapper/cadenza-client-typescript/issues/8)) ([522cd31](https://github.com/cyberapper/cadenza-client-typescript/commit/522cd31c161be7ff63c9f107557af5317f256053))
+
 ## [3.2.0](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.1.3...v3.2.0) (2026-01-27)
 
 
