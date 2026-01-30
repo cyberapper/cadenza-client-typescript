@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.4](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.3...v3.2.4) (2026-01-30)
+
+
+### Miscellaneous
+
+* add .worktrees/ to gitignore ([#14](https://github.com/cyberapper/cadenza-client-typescript/issues/14)) ([3ea602d](https://github.com/cyberapper/cadenza-client-typescript/commit/3ea602dee3b00a59f3425ce74ad6092340137a40))
+
 ## [3.2.3](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.2...v3.2.3) (2026-01-27)
 
 
