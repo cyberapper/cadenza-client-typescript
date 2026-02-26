@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.5](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.4...v3.2.5) (2026-02-26)
+
+
+### Miscellaneous
+
+* regenerate TypeScript client for CDZ-400 ([#16](https://github.com/cyberapper/cadenza-client-typescript/issues/16)) ([4f927bf](https://github.com/cyberapper/cadenza-client-typescript/commit/4f927bfc02d8f33d1e39f967159d85d994e9ed24))
+
 ## [3.2.4](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.3...v3.2.4) (2026-01-30)
 
 
