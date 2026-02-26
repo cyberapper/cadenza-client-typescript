@@ -5,8 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**success** | **boolean** | Indicates if the operation was successful | [default to undefined]
-**errno** | **number** | Error code (0 for success, negative for errors) | [default to undefined]
+**errno** | **number** | Error code (0 for success, non-zero indicates error). Format: AABBB where AA is the module code and BBB is the error code | [default to undefined]
 **error** | **string** | Error message (null for successful operations) | [optional] [default to undefined]
 **data** | **string** |  | [optional] [default to undefined]
 
@@ -16,7 +15,6 @@ Name | Type | Description | Notes
 import { DeleteMarketInstrument200Response } from '@cyberapper/cadenza-client';
 
 const instance: DeleteMarketInstrument200Response = {
-    success,
     errno,
     error,
     data,

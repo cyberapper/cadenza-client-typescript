@@ -15,7 +15,7 @@ All URIs are relative to *https://cadenza-api-uat.algo724.com*
 # **connectTradingAccount**
 > ConnectTradingAccount200Response connectTradingAccount()
 
-Connect to a trading account
+Connect to a trading account. Returns 409 Conflict if the external account is already connected by another user.
 
 ### Example
 

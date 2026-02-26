@@ -40,11 +40,7 @@ import type { AuthSignupRequest } from '../models';
 // @ts-ignore
 import type { AuthUpdateUserRequest } from '../models';
 // @ts-ignore
-import type { Root400Response } from '../models';
-// @ts-ignore
-import type { Root401Response } from '../models';
-// @ts-ignore
-import type { Root500Response } from '../models';
+import type { BaseResponse } from '../models';
 /**
  * AuthenticationApi - axios parameter creator
  */

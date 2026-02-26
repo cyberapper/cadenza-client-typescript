@@ -19,7 +19,7 @@
  */
 export interface RpcError {
     /**
-     * Error code
+     * Error code (non-zero indicates error). Format: AABBB where AA is the module code and BBB is the error code
      */
     'code': number;
     /**

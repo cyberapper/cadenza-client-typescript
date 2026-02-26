@@ -6,7 +6,7 @@ RPC error response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **number** | Error code | [default to undefined]
+**code** | **number** | Error code (non-zero indicates error). Format: AABBB where AA is the module code and BBB is the error code | [default to undefined]
 **message** | **string** | Error message | [default to undefined]
 **temporary** | **boolean** | Whether the error is temporary and retryable | [optional] [default to undefined]
 

@@ -22,6 +22,8 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { BaseResponse } from '../models';
+// @ts-ignore
 import type { ConnectTradingAccount200Response } from '../models';
 // @ts-ignore
 import type { ConnectTradingAccountRequest } from '../models';
@@ -38,16 +40,6 @@ import type { ListTradingAccounts200Response } from '../models';
 // @ts-ignore
 import type { OperationType } from '../models';
 // @ts-ignore
-import type { Root400Response } from '../models';
-// @ts-ignore
-import type { Root401Response } from '../models';
-// @ts-ignore
-import type { Root403Response } from '../models';
-// @ts-ignore
-import type { Root404Response } from '../models';
-// @ts-ignore
-import type { Root500Response } from '../models';
-// @ts-ignore
 import type { TradingAccountStatus } from '../models';
 // @ts-ignore
 import type { UpdateTradingAccountRequest } from '../models';
@@ -59,7 +51,7 @@ import type { Venue } from '../models';
 export const TradingAccountApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Connect to a trading account
+         * Connect to a trading account. Returns 409 Conflict if the external account is already connected by another user.
          * @summary Connect trading account
          * @param {ConnectTradingAccountRequest} [connectTradingAccountRequest] 
          * @param {*} [options] Override http request option.
@@ -391,7 +383,7 @@ export const TradingAccountApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = TradingAccountApiAxiosParamCreator(configuration)
     return {
         /**
-         * Connect to a trading account
+         * Connect to a trading account. Returns 409 Conflict if the external account is already connected by another user.
          * @summary Connect trading account
          * @param {ConnectTradingAccountRequest} [connectTradingAccountRequest] 
          * @param {*} [options] Override http request option.
@@ -503,7 +495,7 @@ export const TradingAccountApiFactory = function (configuration?: Configuration,
     const localVarFp = TradingAccountApiFp(configuration)
     return {
         /**
-         * Connect to a trading account
+         * Connect to a trading account. Returns 409 Conflict if the external account is already connected by another user.
          * @summary Connect trading account
          * @param {ConnectTradingAccountRequest} [connectTradingAccountRequest] 
          * @param {*} [options] Override http request option.
@@ -592,7 +584,7 @@ export const TradingAccountApiFactory = function (configuration?: Configuration,
  */
 export class TradingAccountApi extends BaseAPI {
     /**
-     * Connect to a trading account
+     * Connect to a trading account. Returns 409 Conflict if the external account is already connected by another user.
      * @summary Connect trading account
      * @param {ConnectTradingAccountRequest} [connectTradingAccountRequest] 
      * @param {*} [options] Override http request option.

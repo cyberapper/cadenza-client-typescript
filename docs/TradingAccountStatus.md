@@ -6,8 +6,6 @@ Status of the trading account
 
 * `New` (value: `'NEW'`)
 
-* `Setup` (value: `'SETUP'`)
-
 * `Active` (value: `'ACTIVE'`)
 
 * `Inactive` (value: `'INACTIVE'`)
@@ -16,12 +14,6 @@ Status of the trading account
 
 * `Disconnected` (value: `'DISCONNECTED'`)
 
-* `Suspended` (value: `'SUSPENDED'`)
-
-* `Deleted` (value: `'DELETED'`)
-
 * `Unavailable` (value: `'UNAVAILABLE'`)
-
-* `Unknown` (value: `'UNKNOWN'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
