@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AuthUser } from './auth-user';
+import type { AuthSession } from './auth-session';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { BaseResponse } from './base-response';

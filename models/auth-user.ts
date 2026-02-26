@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { AuthUserAppMetadata } from './auth-user-app-metadata';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { AuthUserIdentitiesInner } from './auth-user-identities-inner';
 
 /**
  * Authenticated user information
@@ -62,5 +65,9 @@ export interface AuthUser {
      * User-defined metadata
      */
     'userMetadata'?: { [key: string]: any; };
+    /**
+     * User identity providers (Supabase specific)
+     */
+    'identities'?: Array<AuthUserIdentitiesInner> | null;
 }
 

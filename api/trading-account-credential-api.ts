@@ -22,6 +22,8 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { BaseResponse } from '../models';
+// @ts-ignore
 import type { CreateTradingAccountCredential200Response } from '../models';
 // @ts-ignore
 import type { CreateTradingAccountCredentialRequest } from '../models';
@@ -31,16 +33,6 @@ import type { CredentialType } from '../models';
 import type { ListTradingAccountCredentials200Response } from '../models';
 // @ts-ignore
 import type { RevokeTradingAccountCredentialRequest } from '../models';
-// @ts-ignore
-import type { Root400Response } from '../models';
-// @ts-ignore
-import type { Root401Response } from '../models';
-// @ts-ignore
-import type { Root403Response } from '../models';
-// @ts-ignore
-import type { Root404Response } from '../models';
-// @ts-ignore
-import type { Root500Response } from '../models';
 // @ts-ignore
 import type { RotateTradingAccountCredentialRequest } from '../models';
 // @ts-ignore
@@ -215,7 +207,7 @@ export const TradingAccountCredentialApiAxiosParamCreator = function (configurat
             };
         },
         /**
-         * Verify credentials and list all supported trading accounts that the credential have permissions to access
+         * Verify credentials and list all supported trading accounts that the credential have permissions to access. Each returned account includes a status indicating its state relative to Cadenza: NEW (not yet connected), ACTIVE or current status (connected by the current user), or UNAVAILABLE (connected by another user).
          * @summary Verify trading account credential
          * @param {VerifyTradingAccountCredentialRequest} [verifyTradingAccountCredentialRequest] 
          * @param {*} [options] Override http request option.
@@ -315,7 +307,7 @@ export const TradingAccountCredentialApiFp = function(configuration?: Configurat
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Verify credentials and list all supported trading accounts that the credential have permissions to access
+         * Verify credentials and list all supported trading accounts that the credential have permissions to access. Each returned account includes a status indicating its state relative to Cadenza: NEW (not yet connected), ACTIVE or current status (connected by the current user), or UNAVAILABLE (connected by another user).
          * @summary Verify trading account credential
          * @param {VerifyTradingAccountCredentialRequest} [verifyTradingAccountCredentialRequest] 
          * @param {*} [options] Override http request option.
@@ -379,7 +371,7 @@ export const TradingAccountCredentialApiFactory = function (configuration?: Conf
             return localVarFp.rotateTradingAccountCredential(rotateTradingAccountCredentialRequest, options).then((request) => request(axios, basePath));
         },
         /**
-         * Verify credentials and list all supported trading accounts that the credential have permissions to access
+         * Verify credentials and list all supported trading accounts that the credential have permissions to access. Each returned account includes a status indicating its state relative to Cadenza: NEW (not yet connected), ACTIVE or current status (connected by the current user), or UNAVAILABLE (connected by another user).
          * @summary Verify trading account credential
          * @param {VerifyTradingAccountCredentialRequest} [verifyTradingAccountCredentialRequest] 
          * @param {*} [options] Override http request option.
@@ -442,7 +434,7 @@ export class TradingAccountCredentialApi extends BaseAPI {
     }
 
     /**
-     * Verify credentials and list all supported trading accounts that the credential have permissions to access
+     * Verify credentials and list all supported trading accounts that the credential have permissions to access. Each returned account includes a status indicating its state relative to Cadenza: NEW (not yet connected), ACTIVE or current status (connected by the current user), or UNAVAILABLE (connected by another user).
      * @summary Verify trading account credential
      * @param {VerifyTradingAccountCredentialRequest} [verifyTradingAccountCredentialRequest] 
      * @param {*} [options] Override http request option.

@@ -22,7 +22,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { AuthLogin200Response } from '../models';
+import type { AuthGetUser200Response } from '../models';
 // @ts-ignore
 import type { AuthLoginRequest } from '../models';
 // @ts-ignore
@@ -40,11 +40,7 @@ import type { AuthSignupRequest } from '../models';
 // @ts-ignore
 import type { AuthUpdateUserRequest } from '../models';
 // @ts-ignore
-import type { Root400Response } from '../models';
-// @ts-ignore
-import type { Root401Response } from '../models';
-// @ts-ignore
-import type { Root500Response } from '../models';
+import type { BaseResponse } from '../models';
 /**
  * AuthenticationApi - axios parameter creator
  */
@@ -312,7 +308,7 @@ export const AuthenticationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async authGetUser(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthSignup200Response>> {
+        async authGetUser(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthGetUser200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.authGetUser(options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AuthenticationApi.authGetUser']?.[localVarOperationServerIndex]?.url;
@@ -325,7 +321,7 @@ export const AuthenticationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async authLogin(authLoginRequest: AuthLoginRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthLogin200Response>> {
+        async authLogin(authLoginRequest: AuthLoginRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthSignup200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.authLogin(authLoginRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AuthenticationApi.authLogin']?.[localVarOperationServerIndex]?.url;
@@ -363,7 +359,7 @@ export const AuthenticationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async authRefreshToken(authRefreshTokenRequest: AuthRefreshTokenRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthLogin200Response>> {
+        async authRefreshToken(authRefreshTokenRequest: AuthRefreshTokenRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthSignup200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.authRefreshToken(authRefreshTokenRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AuthenticationApi.authRefreshToken']?.[localVarOperationServerIndex]?.url;
@@ -389,7 +385,7 @@ export const AuthenticationApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async authUpdateUser(authUpdateUserRequest: AuthUpdateUserRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthSignup200Response>> {
+        async authUpdateUser(authUpdateUserRequest: AuthUpdateUserRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthGetUser200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.authUpdateUser(authUpdateUserRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['AuthenticationApi.authUpdateUser']?.[localVarOperationServerIndex]?.url;
@@ -410,7 +406,7 @@ export const AuthenticationApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        authGetUser(options?: RawAxiosRequestConfig): AxiosPromise<AuthSignup200Response> {
+        authGetUser(options?: RawAxiosRequestConfig): AxiosPromise<AuthGetUser200Response> {
             return localVarFp.authGetUser(options).then((request) => request(axios, basePath));
         },
         /**
@@ -420,7 +416,7 @@ export const AuthenticationApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        authLogin(authLoginRequest: AuthLoginRequest, options?: RawAxiosRequestConfig): AxiosPromise<AuthLogin200Response> {
+        authLogin(authLoginRequest: AuthLoginRequest, options?: RawAxiosRequestConfig): AxiosPromise<AuthSignup200Response> {
             return localVarFp.authLogin(authLoginRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -449,7 +445,7 @@ export const AuthenticationApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        authRefreshToken(authRefreshTokenRequest: AuthRefreshTokenRequest, options?: RawAxiosRequestConfig): AxiosPromise<AuthLogin200Response> {
+        authRefreshToken(authRefreshTokenRequest: AuthRefreshTokenRequest, options?: RawAxiosRequestConfig): AxiosPromise<AuthSignup200Response> {
             return localVarFp.authRefreshToken(authRefreshTokenRequest, options).then((request) => request(axios, basePath));
         },
         /**
@@ -469,7 +465,7 @@ export const AuthenticationApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        authUpdateUser(authUpdateUserRequest: AuthUpdateUserRequest, options?: RawAxiosRequestConfig): AxiosPromise<AuthSignup200Response> {
+        authUpdateUser(authUpdateUserRequest: AuthUpdateUserRequest, options?: RawAxiosRequestConfig): AxiosPromise<AuthGetUser200Response> {
             return localVarFp.authUpdateUser(authUpdateUserRequest, options).then((request) => request(axios, basePath));
         },
     };

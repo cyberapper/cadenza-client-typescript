@@ -22,17 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { BaseResponse } from '../models';
+// @ts-ignore
 import type { ListTradingAccountSubscriptions200Response } from '../models';
-// @ts-ignore
-import type { Root400Response } from '../models';
-// @ts-ignore
-import type { Root401Response } from '../models';
-// @ts-ignore
-import type { Root403Response } from '../models';
-// @ts-ignore
-import type { Root404Response } from '../models';
-// @ts-ignore
-import type { Root500Response } from '../models';
 // @ts-ignore
 import type { SubscribeTradingAccount200Response } from '../models';
 // @ts-ignore

@@ -1,4 +1,4 @@
-# ConnectTradingAccount200Response
+# AuthGetUser200Response
 
 
 ## Properties
@@ -9,14 +9,14 @@ Name | Type | Description | Notes
 **errno** | **number** | Error code (0 for success, non-zero indicates error). Format: AABBB where AA is the module code and BBB is the error code | [default to undefined]
 **error** | **string** | Error message (null for successful operations) | [optional] [default to undefined]
 **details** | [**BaseResponseDetails**](BaseResponseDetails.md) |  | [optional] [default to undefined]
-**data** | [**TradingAccount**](TradingAccount.md) |  | [optional] [default to undefined]
+**data** | [**AuthUser**](AuthUser.md) |  | [optional] [default to undefined]
 
 ## Example
 
 ```typescript
-import { ConnectTradingAccount200Response } from '@cyberapper/cadenza-client';
+import { AuthGetUser200Response } from '@cyberapper/cadenza-client';
 
-const instance: ConnectTradingAccount200Response = {
+const instance: AuthGetUser200Response = {
     success,
     errno,
     error,
