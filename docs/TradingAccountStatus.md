@@ -4,6 +4,8 @@ Status of the trading account
 
 ## Enum
 
+* `New` (value: `'NEW'`)
+
 * `Setup` (value: `'SETUP'`)
 
 * `Active` (value: `'ACTIVE'`)
@@ -17,6 +19,8 @@ Status of the trading account
 * `Suspended` (value: `'SUSPENDED'`)
 
 * `Deleted` (value: `'DELETED'`)
+
+* `Unavailable` (value: `'UNAVAILABLE'`)
 
 * `Unknown` (value: `'UNKNOWN'`)
 

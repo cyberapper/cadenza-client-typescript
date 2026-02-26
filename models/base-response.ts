@@ -29,7 +29,7 @@ export interface BaseResponse {
     /**
      * Error message (null for successful operations)
      */
-    'error': string | null;
+    'error'?: string | null;
     'details'?: BaseResponseDetails | null;
 }
 

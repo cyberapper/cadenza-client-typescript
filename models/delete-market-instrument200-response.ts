@@ -26,7 +26,7 @@ export interface DeleteMarketInstrument200Response {
     /**
      * Error message (null for successful operations)
      */
-    'error': string | null;
+    'error'?: string | null;
     'data'?: string;
 }
 

@@ -13,7 +13,7 @@ All URIs are relative to *https://cadenza-api-uat.algo724.com*
 |[**authUpdateUser**](#authupdateuser) | **PUT** /api/v3/auth/user | Update current user|
 
 # **authGetUser**
-> AuthSignup200Response authGetUser()
+> AuthGetUser200Response authGetUser()
 
 Get the currently authenticated user\'s information
 
@@ -37,7 +37,7 @@ This endpoint does not have any parameters.
 
 ### Return type
 
-**AuthSignup200Response**
+**AuthGetUser200Response**
 
 ### Authorization
 
@@ -59,7 +59,7 @@ This endpoint does not have any parameters.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authLogin**
-> AuthLogin200Response authLogin(authLoginRequest)
+> AuthSignup200Response authLogin(authLoginRequest)
 
 Authenticate user and return access/refresh tokens
 
@@ -91,7 +91,7 @@ const { status, data } = await apiInstance.authLogin(
 
 ### Return type
 
-**AuthLogin200Response**
+**AuthSignup200Response**
 
 ### Authorization
 
@@ -216,7 +216,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authRefreshToken**
-> AuthLogin200Response authRefreshToken(authRefreshTokenRequest)
+> AuthSignup200Response authRefreshToken(authRefreshTokenRequest)
 
 Get new access token using refresh token
 
@@ -248,7 +248,7 @@ const { status, data } = await apiInstance.authRefreshToken(
 
 ### Return type
 
-**AuthLogin200Response**
+**AuthSignup200Response**
 
 ### Authorization
 
@@ -318,7 +318,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-|**200** | Authentication user response |  -  |
+|**200** | Authentication session response with tokens |  -  |
 |**400** | Bad request |  -  |
 |**429** | Too many requests - Rate limited |  -  |
 |**500** | Internal server error |  -  |
@@ -326,7 +326,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authUpdateUser**
-> AuthSignup200Response authUpdateUser(authUpdateUserRequest)
+> AuthGetUser200Response authUpdateUser(authUpdateUserRequest)
 
 Update the currently authenticated user\'s information
 
@@ -358,7 +358,7 @@ const { status, data } = await apiInstance.authUpdateUser(
 
 ### Return type
 
-**AuthSignup200Response**
+**AuthGetUser200Response**
 
 ### Authorization
 

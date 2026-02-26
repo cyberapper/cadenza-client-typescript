@@ -1,4 +1,4 @@
-# SubscribeTradingAccount200Response
+# AuthGetUser200Response
 
 
 ## Properties
@@ -9,14 +9,14 @@ Name | Type | Description | Notes
 **errno** | **number** | Error code (0 for success, negative for errors) | [default to undefined]
 **error** | **string** | Error message (null for successful operations) | [optional] [default to undefined]
 **details** | [**BaseResponseDetails**](BaseResponseDetails.md) |  | [optional] [default to undefined]
-**data** | [**Subscription**](Subscription.md) |  | [optional] [default to undefined]
+**data** | [**AuthUser**](AuthUser.md) |  | [optional] [default to undefined]
 
 ## Example
 
 ```typescript
-import { SubscribeTradingAccount200Response } from '@cyberapper/cadenza-client';
+import { AuthGetUser200Response } from '@cyberapper/cadenza-client';
 
-const instance: SubscribeTradingAccount200Response = {
+const instance: AuthGetUser200Response = {
     success,
     errno,
     error,

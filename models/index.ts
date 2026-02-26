@@ -1,6 +1,6 @@
 export * from './account-operation';
 export * from './account-type';
-export * from './auth-login200-response';
+export * from './auth-get-user200-response';
 export * from './auth-login-request';
 export * from './auth-logout200-response';
 export * from './auth-recover-request';
@@ -12,6 +12,7 @@ export * from './auth-signup-request';
 export * from './auth-update-user-request';
 export * from './auth-user';
 export * from './auth-user-app-metadata';
+export * from './auth-user-identities-inner';
 export * from './balance-entry';
 export * from './balance-status';
 export * from './base-response';
