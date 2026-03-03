@@ -4,7 +4,7 @@ Status of the trading account
 
 ## Enum
 
-* `Setup` (value: `'SETUP'`)
+* `New` (value: `'NEW'`)
 
 * `Active` (value: `'ACTIVE'`)
 
@@ -14,10 +14,6 @@ Status of the trading account
 
 * `Disconnected` (value: `'DISCONNECTED'`)
 
-* `Suspended` (value: `'SUSPENDED'`)
-
-* `Deleted` (value: `'DELETED'`)
-
-* `Unknown` (value: `'UNKNOWN'`)
+* `Unavailable` (value: `'UNAVAILABLE'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

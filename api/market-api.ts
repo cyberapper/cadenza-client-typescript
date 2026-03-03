@@ -22,6 +22,8 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { BaseResponse } from '../models';
+// @ts-ignore
 import type { DeleteMarketInstrument200Response } from '../models';
 // @ts-ignore
 import type { DeleteMarketInstrumentRequest } from '../models';
@@ -47,16 +49,6 @@ import type { ListMarketOrderBooks200Response } from '../models';
 import type { ListMarketSecurities200Response } from '../models';
 // @ts-ignore
 import type { ListMarketVenues200Response } from '../models';
-// @ts-ignore
-import type { Root400Response } from '../models';
-// @ts-ignore
-import type { Root401Response } from '../models';
-// @ts-ignore
-import type { Root403Response } from '../models';
-// @ts-ignore
-import type { Root404Response } from '../models';
-// @ts-ignore
-import type { Root500Response } from '../models';
 // @ts-ignore
 import type { SecurityType } from '../models';
 // @ts-ignore

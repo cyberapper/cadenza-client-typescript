@@ -16,17 +16,13 @@
 
 export interface DeleteMarketInstrument200Response {
     /**
-     * Indicates if the operation was successful
-     */
-    'success': boolean;
-    /**
-     * Error code (0 for success, negative for errors)
+     * Error code (0 for success, non-zero indicates error). Format: AABBB where AA is the module code and BBB is the error code
      */
     'errno': number;
     /**
      * Error message (null for successful operations)
      */
-    'error': string | null;
+    'error'?: string | null;
     'data'?: string;
 }
 

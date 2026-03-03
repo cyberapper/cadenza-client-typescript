@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **updatedAt** | **string** | Account last update timestamp | [optional] [default to undefined]
 **appMetadata** | [**AuthUserAppMetadata**](AuthUserAppMetadata.md) |  | [optional] [default to undefined]
 **userMetadata** | **{ [key: string]: any; }** | User-defined metadata | [optional] [default to undefined]
+**identities** | [**Array&lt;AuthUserIdentitiesInner&gt;**](AuthUserIdentitiesInner.md) | User identity providers (Supabase specific) | [optional] [default to undefined]
 
 ## Example
 
@@ -35,6 +36,7 @@ const instance: AuthUser = {
     updatedAt,
     appMetadata,
     userMetadata,
+    identities,
 };
 ```
 

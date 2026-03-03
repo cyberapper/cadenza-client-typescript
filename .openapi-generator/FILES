@@ -16,7 +16,7 @@ common.ts
 configuration.ts
 docs/AccountOperation.md
 docs/AccountType.md
-docs/AuthLogin200Response.md
+docs/AuthGetUser200Response.md
 docs/AuthLoginRequest.md
 docs/AuthLogout200Response.md
 docs/AuthRecoverRequest.md
@@ -28,6 +28,7 @@ docs/AuthSignupRequest.md
 docs/AuthUpdateUserRequest.md
 docs/AuthUser.md
 docs/AuthUserAppMetadata.md
+docs/AuthUserIdentitiesInner.md
 docs/AuthenticationApi.md
 docs/BalanceEntry.md
 docs/BalanceStatus.md
@@ -95,11 +96,6 @@ docs/ResponseError.md
 docs/RevokeTradingAccountCredentialRequest.md
 docs/Root200Response.md
 docs/Root200ResponseAllOfData.md
-docs/Root400Response.md
-docs/Root401Response.md
-docs/Root403Response.md
-docs/Root404Response.md
-docs/Root500Response.md
 docs/RotateTradingAccountCredentialRequest.md
 docs/RpcBalanceEntry.md
 docs/RpcCancelTradeOrderParams.md
@@ -324,8 +320,8 @@ git_push.sh
 index.ts
 models/account-operation.ts
 models/account-type.ts
+models/auth-get-user200-response.ts
 models/auth-login-request.ts
-models/auth-login200-response.ts
 models/auth-logout200-response.ts
 models/auth-recover-request.ts
 models/auth-refresh-token-request.ts
@@ -335,6 +331,7 @@ models/auth-signup200-response.ts
 models/auth-signup429-response.ts
 models/auth-update-user-request.ts
 models/auth-user-app-metadata.ts
+models/auth-user-identities-inner.ts
 models/auth-user.ts
 models/balance-entry.ts
 models/balance-status.ts
@@ -401,11 +398,6 @@ models/response-error.ts
 models/revoke-trading-account-credential-request.ts
 models/root200-response-all-of-data.ts
 models/root200-response.ts
-models/root400-response.ts
-models/root401-response.ts
-models/root403-response.ts
-models/root404-response.ts
-models/root500-response.ts
 models/rotate-trading-account-credential-request.ts
 models/rpc-balance-entry.ts
 models/rpc-cancel-trade-order-params.ts
@@ -619,6 +611,5 @@ models/ws-subscribe-request.ts
 models/ws-subscribe-result.ts
 models/ws-unsubscribe-push.ts
 models/ws-unsubscribe-request.ts
-package.json
 tsconfig.esm.json
 tsconfig.json

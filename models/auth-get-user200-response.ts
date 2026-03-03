@@ -13,21 +13,19 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { AuthUser } from './auth-user';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { BaseResponse } from './base-response';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { BaseResponseDetails } from './base-response-details';
 
 /**
- * Status of the trading account
+ * @type AuthGetUser200Response
  */
-
-export const TradingAccountStatus = {
-    New: 'NEW',
-    Active: 'ACTIVE',
-    Inactive: 'INACTIVE',
-    Locked: 'LOCKED',
-    Disconnected: 'DISCONNECTED',
-    Unavailable: 'UNAVAILABLE'
-} as const;
-
-export type TradingAccountStatus = typeof TradingAccountStatus[keyof typeof TradingAccountStatus];
-
+export type AuthGetUser200Response = BaseResponse;
 
 

@@ -15,7 +15,7 @@ All URIs are relative to *https://cadenza-api-uat.algo724.com*
 # **connectTradingAccount**
 > ConnectTradingAccount200Response connectTradingAccount()
 
-Connect to a trading account
+Connect to a trading account. Returns 409 Conflict if the external account is already connected by another user.
 
 ### Example
 
@@ -65,6 +65,7 @@ const { status, data } = await apiInstance.connectTradingAccount(
 |**401** | Unauthorized - Authentication required |  -  |
 |**403** | Forbidden - Insufficient permissions |  -  |
 |**404** | Not found |  -  |
+|**409** | Bad request |  -  |
 |**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
