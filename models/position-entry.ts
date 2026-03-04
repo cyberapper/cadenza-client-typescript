@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { PositionSide } from './position-side';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { PositionStatus } from './position-status';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -43,6 +46,7 @@ export interface PositionEntry {
     'instrumentId'?: string;
     'securityType': SecurityType;
     'status': PositionStatus;
+    'positionSide': PositionSide;
     /**
      * Decimal value as string to preserve precision
      */

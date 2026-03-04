@@ -19,7 +19,6 @@
  */
 
 export const CollateralMode = {
-    Empty: '',
     Cross: 'CROSS',
     Isolated: 'ISOLATED'
 } as const;

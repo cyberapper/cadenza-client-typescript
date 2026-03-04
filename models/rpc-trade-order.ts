@@ -87,7 +87,7 @@ export interface RpcTradeOrder {
      * Quote asset
      */
     'quoteAsset'?: string;
-    'orderType'?: OrderType;
+    'orderType'?: OrderType | null;
     'orderSide'?: OrderSide;
     'quantityType'?: QuantityType;
     /**
@@ -111,8 +111,8 @@ export interface RpcTradeOrder {
      * Stop price (decimal string)
      */
     'stopPrice'?: string;
-    'timeInForce'?: TimeInForce;
-    'status'?: OrderStatus;
+    'timeInForce'?: TimeInForce | null;
+    'status'?: OrderStatus | null;
     /**
      * Average executed price
      */

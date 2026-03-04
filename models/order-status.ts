@@ -19,7 +19,6 @@
  */
 
 export const OrderStatus = {
-    Empty: '',
     Created: 'CREATED',
     Submitted: 'SUBMITTED',
     Accepted: 'ACCEPTED',

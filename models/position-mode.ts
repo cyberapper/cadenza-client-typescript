@@ -19,7 +19,6 @@
  */
 
 export const PositionMode = {
-    Empty: '',
     Hedge: 'HEDGE',
     Netting: 'NETTING'
 } as const;

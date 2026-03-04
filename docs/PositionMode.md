@@ -4,8 +4,6 @@ Position mode setting - how positions are handled
 
 ## Enum
 
-* `Empty` (value: `''`)
-
 * `Hedge` (value: `'HEDGE'`)
 
 * `Netting` (value: `'NETTING'`)

@@ -4,8 +4,6 @@ Collateral mode - how margin is shared across positions
 
 ## Enum
 
-* `Empty` (value: `''`)
-
 * `Cross` (value: `'CROSS'`)
 
 * `Isolated` (value: `'ISOLATED'`)

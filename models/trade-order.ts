@@ -72,9 +72,9 @@ export interface TradeOrder {
      */
     'quoteAsset': string;
     'orderSide': OrderSide;
-    'orderType': OrderType;
-    'timeInForce': TimeInForce;
-    'status': OrderStatus;
+    'orderType': OrderType | null;
+    'timeInForce': TimeInForce | null;
+    'status': OrderStatus | null;
     /**
      * Reason for order rejection
      */

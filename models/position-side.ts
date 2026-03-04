@@ -15,17 +15,15 @@
 
 
 /**
- * Status of the trading account credential
+ * Side of a position
  */
 
-export const TradingAccountCredentialStatus = {
-    Created: 'CREATED',
-    Active: 'ACTIVE',
-    Expired: 'EXPIRED',
-    Revoked: 'REVOKED'
+export const PositionSide = {
+    Long: 'LONG',
+    Short: 'SHORT'
 } as const;
 
-export type TradingAccountCredentialStatus = typeof TradingAccountCredentialStatus[keyof typeof TradingAccountCredentialStatus];
+export type PositionSide = typeof PositionSide[keyof typeof PositionSide];
 
 
 

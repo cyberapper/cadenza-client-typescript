@@ -19,7 +19,6 @@
  */
 
 export const TimeInForce = {
-    Empty: '',
     Gtc: 'GTC',
     Ioc: 'IOC',
     Fok: 'FOK',

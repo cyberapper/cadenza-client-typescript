@@ -29,7 +29,7 @@ import type { Venue } from './venue';
 export interface RpcTradingAccountCredential {
     'credentialId'?: string;
     'nickname'?: string;
-    'credentialType'?: CredentialType;
+    'credentialType'?: CredentialType | null;
     'status'?: CredentialStatus;
     'venue'?: Venue;
     /**

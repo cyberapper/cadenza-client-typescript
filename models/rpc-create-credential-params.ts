@@ -26,7 +26,7 @@ import type { Venue } from './venue';
 export interface RpcCreateCredentialParams {
     'tradingAccountId': string;
     'venue': Venue;
-    'credentialType': CredentialType;
+    'credentialType': CredentialType | null;
     'apiKey'?: string;
     'secretKey'?: string;
     'secretPassphrase'?: string;

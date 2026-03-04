@@ -19,9 +19,8 @@
  */
 
 export const MarginMode = {
-    Empty: '',
-    Standard: 'STANDARD',
-    Portfolio: 'PORTFOLIO'
+    Isolated: 'ISOLATED',
+    Cross: 'CROSS'
 } as const;
 
 export type MarginMode = typeof MarginMode[keyof typeof MarginMode];

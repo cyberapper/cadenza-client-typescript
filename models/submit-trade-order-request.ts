@@ -47,7 +47,7 @@ export interface SubmitTradeOrderRequest {
      */
     'clientOrderId'?: string;
     'orderSide': OrderSide;
-    'orderType': OrderType;
+    'orderType': OrderType | null;
     /**
      * Decimal value as string to preserve precision
      */
@@ -66,7 +66,7 @@ export interface SubmitTradeOrderRequest {
      * UUID string
      */
     'positionId'?: string;
-    'timeInForce'?: TimeInForce;
+    'timeInForce'?: TimeInForce | null;
     /**
      * Unix timestamp in milliseconds
      */

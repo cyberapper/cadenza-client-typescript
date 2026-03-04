@@ -84,7 +84,7 @@ const configuration = new Configuration();
 const apiInstance = new TradingAccountCredentialApi(configuration);
 
 let credentialType: CredentialType; //Credential type (optional) (default to undefined)
-let credentialStatus: TradingAccountStatus; //Credential status (optional) (default to undefined)
+let credentialStatus: CredentialStatus; //Credential status (optional) (default to undefined)
 let credentialIds: Array<string>; //credentialId array (optional) (default to undefined)
 
 const { status, data } = await apiInstance.listTradingAccountCredentials(
@@ -99,7 +99,7 @@ const { status, data } = await apiInstance.listTradingAccountCredentials(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **credentialType** | **CredentialType** | Credential type | (optional) defaults to undefined|
-| **credentialStatus** | **TradingAccountStatus** | Credential status | (optional) defaults to undefined|
+| **credentialStatus** | **CredentialStatus** | Credential status | (optional) defaults to undefined|
 | **credentialIds** | **Array&lt;string&gt;** | credentialId array | (optional) defaults to undefined|
 
 

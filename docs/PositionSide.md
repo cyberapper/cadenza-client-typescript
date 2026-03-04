@@ -1,11 +1,11 @@
-# PositionStatus
+# PositionSide
 
-Status of a position
+Side of a position
 
 ## Enum
 
-* `Open` (value: `'OPEN'`)
+* `Long` (value: `'LONG'`)
 
-* `Closed` (value: `'CLOSED'`)
+* `Short` (value: `'SHORT'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

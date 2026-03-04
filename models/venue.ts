@@ -19,7 +19,6 @@
  */
 
 export const Venue = {
-    Empty: '',
     Binance: 'BINANCE',
     B2C2: 'B2C2',
     Wintermute: 'WINTERMUTE',

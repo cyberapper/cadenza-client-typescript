@@ -54,9 +54,9 @@ export interface TradingAccount {
      * Type of account on the exchange (set by market connector)
      */
     'externalAccountType': string;
-    'positionMode'?: PositionMode;
-    'collateralMode'?: CollateralMode;
-    'marginMode'?: MarginMode;
+    'positionMode'?: PositionMode | null;
+    'collateralMode'?: CollateralMode | null;
+    'marginMode'?: MarginMode | null;
     'credentials': Array<TradingAccountCredential>;
     'status': TradingAccountStatus;
     /**
