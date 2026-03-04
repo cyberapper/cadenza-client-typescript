@@ -32,7 +32,7 @@ import type { Venue } from './venue';
 export interface RpcListCredentialsParams {
     'credentialIds'?: Array<string>;
     'venue'?: Venue;
-    'credentialType'?: CredentialType;
+    'credentialType'?: CredentialType | null;
     'status'?: CredentialStatus;
     'pagination'?: RpcPagination;
 }

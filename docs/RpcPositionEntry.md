@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **instrumentId** | **string** | Instrument ID | [optional] [default to undefined]
 **securityType** | [**SecurityType**](SecurityType.md) |  | [optional] [default to undefined]
 **status** | [**PositionStatus**](PositionStatus.md) |  | [optional] [default to undefined]
+**positionSide** | [**PositionSide**](PositionSide.md) |  | [optional] [default to undefined]
 **quantity** | **string** | Position quantity | [optional] [default to undefined]
 **entryPrice** | **string** |  | [optional] [default to undefined]
 **exitPrice** | **string** |  | [optional] [default to undefined]
@@ -35,6 +36,7 @@ const instance: RpcPositionEntry = {
     instrumentId,
     securityType,
     status,
+    positionSide,
     quantity,
     entryPrice,
     exitPrice,

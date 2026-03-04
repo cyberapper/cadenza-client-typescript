@@ -1,12 +1,8 @@
 # SecurityType
 
-Type of security (base asset)
+Type of financial instrument
 
 ## Enum
-
-* `Empty` (value: `''`)
-
-* `Cash` (value: `'CASH'`)
 
 * `Stock` (value: `'STOCK'`)
 
@@ -20,16 +16,10 @@ Type of security (base asset)
 
 * `Bond` (value: `'BOND'`)
 
-* `Derivative` (value: `'DERIVATIVE'`)
-
 * `Option` (value: `'OPTION'`)
-
-* `Future` (value: `'FUTURE'`)
 
 * `Futures` (value: `'FUTURES'`)
 
 * `Perpetual` (value: `'PERPETUAL'`)
-
-* `Forex` (value: `'FOREX'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

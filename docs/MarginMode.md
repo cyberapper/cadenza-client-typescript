@@ -4,10 +4,8 @@ Margin mode - account-level margin calculation type
 
 ## Enum
 
-* `Empty` (value: `''`)
+* `Isolated` (value: `'ISOLATED'`)
 
-* `Standard` (value: `'STANDARD'`)
-
-* `Portfolio` (value: `'PORTFOLIO'`)
+* `Cross` (value: `'CROSS'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

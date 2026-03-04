@@ -19,7 +19,6 @@
  */
 
 export const OrderType = {
-    Empty: '',
     Market: 'MARKET',
     Limit: 'LIMIT',
     Stop: 'STOP',

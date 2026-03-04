@@ -69,9 +69,9 @@ export interface RpcTradingAccount {
      * Type of account on the exchange (set by market connector)
      */
     'externalAccountType'?: string;
-    'positionMode'?: PositionMode;
-    'collateralMode'?: CollateralMode;
-    'marginMode'?: MarginMode;
+    'positionMode'?: PositionMode | null;
+    'collateralMode'?: CollateralMode | null;
+    'marginMode'?: MarginMode | null;
     /**
      * Account credentials
      */

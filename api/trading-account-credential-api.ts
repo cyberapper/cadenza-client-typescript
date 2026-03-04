@@ -28,6 +28,8 @@ import type { CreateTradingAccountCredential200Response } from '../models';
 // @ts-ignore
 import type { CreateTradingAccountCredentialRequest } from '../models';
 // @ts-ignore
+import type { CredentialStatus } from '../models';
+// @ts-ignore
 import type { CredentialType } from '../models';
 // @ts-ignore
 import type { ListTradingAccountCredentials200Response } from '../models';
@@ -35,8 +37,6 @@ import type { ListTradingAccountCredentials200Response } from '../models';
 import type { RevokeTradingAccountCredentialRequest } from '../models';
 // @ts-ignore
 import type { RotateTradingAccountCredentialRequest } from '../models';
-// @ts-ignore
-import type { TradingAccountStatus } from '../models';
 // @ts-ignore
 import type { VerifyTradingAccountCredential200Response } from '../models';
 // @ts-ignore
@@ -87,12 +87,12 @@ export const TradingAccountCredentialApiAxiosParamCreator = function (configurat
          * List all credentials for a trading account
          * @summary List trading account credentials
          * @param {CredentialType} [credentialType] Credential type
-         * @param {TradingAccountStatus} [credentialStatus] Credential status
+         * @param {CredentialStatus} [credentialStatus] Credential status
          * @param {Array<string>} [credentialIds] credentialId array
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTradingAccountCredentials: async (credentialType?: CredentialType, credentialStatus?: TradingAccountStatus, credentialIds?: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listTradingAccountCredentials: async (credentialType?: CredentialType, credentialStatus?: CredentialStatus, credentialIds?: Array<string>, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v3/credential/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -269,12 +269,12 @@ export const TradingAccountCredentialApiFp = function(configuration?: Configurat
          * List all credentials for a trading account
          * @summary List trading account credentials
          * @param {CredentialType} [credentialType] Credential type
-         * @param {TradingAccountStatus} [credentialStatus] Credential status
+         * @param {CredentialStatus} [credentialStatus] Credential status
          * @param {Array<string>} [credentialIds] credentialId array
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTradingAccountCredentials(credentialType?: CredentialType, credentialStatus?: TradingAccountStatus, credentialIds?: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListTradingAccountCredentials200Response>> {
+        async listTradingAccountCredentials(credentialType?: CredentialType, credentialStatus?: CredentialStatus, credentialIds?: Array<string>, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListTradingAccountCredentials200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTradingAccountCredentials(credentialType, credentialStatus, credentialIds, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TradingAccountCredentialApi.listTradingAccountCredentials']?.[localVarOperationServerIndex]?.url;
@@ -342,12 +342,12 @@ export const TradingAccountCredentialApiFactory = function (configuration?: Conf
          * List all credentials for a trading account
          * @summary List trading account credentials
          * @param {CredentialType} [credentialType] Credential type
-         * @param {TradingAccountStatus} [credentialStatus] Credential status
+         * @param {CredentialStatus} [credentialStatus] Credential status
          * @param {Array<string>} [credentialIds] credentialId array
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTradingAccountCredentials(credentialType?: CredentialType, credentialStatus?: TradingAccountStatus, credentialIds?: Array<string>, options?: RawAxiosRequestConfig): AxiosPromise<ListTradingAccountCredentials200Response> {
+        listTradingAccountCredentials(credentialType?: CredentialType, credentialStatus?: CredentialStatus, credentialIds?: Array<string>, options?: RawAxiosRequestConfig): AxiosPromise<ListTradingAccountCredentials200Response> {
             return localVarFp.listTradingAccountCredentials(credentialType, credentialStatus, credentialIds, options).then((request) => request(axios, basePath));
         },
         /**
@@ -402,12 +402,12 @@ export class TradingAccountCredentialApi extends BaseAPI {
      * List all credentials for a trading account
      * @summary List trading account credentials
      * @param {CredentialType} [credentialType] Credential type
-     * @param {TradingAccountStatus} [credentialStatus] Credential status
+     * @param {CredentialStatus} [credentialStatus] Credential status
      * @param {Array<string>} [credentialIds] credentialId array
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public listTradingAccountCredentials(credentialType?: CredentialType, credentialStatus?: TradingAccountStatus, credentialIds?: Array<string>, options?: RawAxiosRequestConfig) {
+    public listTradingAccountCredentials(credentialType?: CredentialType, credentialStatus?: CredentialStatus, credentialIds?: Array<string>, options?: RawAxiosRequestConfig) {
         return TradingAccountCredentialApiFp(this.configuration).listTradingAccountCredentials(credentialType, credentialStatus, credentialIds, options).then((request) => request(this.axios, this.basePath));
     }
 

@@ -22,7 +22,7 @@ import type { CredentialType } from './credential-type';
  */
 export interface RpcRotateCredentialParams {
     'credentialId': string;
-    'credentialType': CredentialType;
+    'credentialType': CredentialType | null;
     'apiKey'?: string;
     'secretKey'?: string;
     'secretPassphrase'?: string;

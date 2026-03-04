@@ -20,6 +20,7 @@
 
 export const TradingAccountStatus = {
     New: 'NEW',
+    Created: 'CREATED',
     Active: 'ACTIVE',
     Inactive: 'INACTIVE',
     Locked: 'LOCKED',

@@ -4,8 +4,6 @@ Time in force - specifies how long an order remains active
 
 ## Enum
 
-* `Empty` (value: `''`)
-
 * `Gtc` (value: `'GTC'`)
 
 * `Ioc` (value: `'IOC'`)

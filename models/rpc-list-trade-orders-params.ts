@@ -43,8 +43,8 @@ export interface RpcListTradeOrdersParams {
      */
     'instrumentId'?: string;
     'side'?: OrderSide;
-    'orderType'?: OrderType;
-    'status'?: OrderStatus;
+    'orderType'?: OrderType | null;
+    'status'?: OrderStatus | null;
     /**
      * Filter orders created after this time
      */
