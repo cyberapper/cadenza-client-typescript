@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.7](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.6...v3.2.7) (2026-03-04)
+
+
+### Miscellaneous
+
+* regenerate client SDK from updated OpenAPI spec ([#20](https://github.com/cyberapper/cadenza-client-typescript/issues/20)) ([c51bc97](https://github.com/cyberapper/cadenza-client-typescript/commit/c51bc973fb2180fa86fa0db5e7d780eb88c45ef9))
+
 ## [3.2.6](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.5...v3.2.6) (2026-03-03)
 
 
