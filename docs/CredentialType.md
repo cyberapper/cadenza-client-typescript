@@ -6,6 +6,8 @@ Type of API credential
 
 * `ApiKey` (value: `'API_KEY'`)
 
+* `Token` (value: `'TOKEN'`)
+
 * `Hmac` (value: `'HMAC'`)
 
 * `Oauth` (value: `'OAUTH'`)
