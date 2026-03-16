@@ -83,6 +83,24 @@ export interface SubmitTradeOrderRequest {
      * If true, the API will wait up to 1 second for the order to reach a closed/finalized state (FILLED, REJECTED, EXPIRED, CANCELLED) before responding. If false or omitted, returns immediately with the initial order state. Useful for market orders that typically fill immediately. 
      */
     'awaitClosed'?: boolean;
+    /**
+     * Decimal value as string to preserve precision
+     */
+    'takeProfitPrice'?: string;
+    /**
+     * Decimal value as string to preserve precision
+     */
+    'takeProfitLimitPrice'?: string;
+    /**
+     * Decimal value as string to preserve precision
+     */
+    'stopLossPrice'?: string;
+    /**
+     * Decimal value as string to preserve precision
+     */
+    'stopLossLimitPrice'?: string;
+    'takeProfitTimeInForce'?: TimeInForce | null;
+    'stopLossTimeInForce'?: TimeInForce | null;
 }
 
 
