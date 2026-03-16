@@ -21,6 +21,7 @@
 export const OrderType = {
     Market: 'MARKET',
     Limit: 'LIMIT',
+    LimitMaker: 'LIMIT_MAKER',
     Stop: 'STOP',
     StopLimit: 'STOP_LIMIT',
     StopLoss: 'STOP_LOSS',
@@ -29,6 +30,7 @@ export const OrderType = {
     TakeProfitLimit: 'TAKE_PROFIT_LIMIT',
     TrailingStop: 'TRAILING_STOP',
     Quoted: 'QUOTED',
+    Oco: 'OCO',
     Unknown: 'UNKNOWN'
 } as const;
 

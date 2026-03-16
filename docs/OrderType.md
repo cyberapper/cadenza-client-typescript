@@ -8,6 +8,8 @@ Order type
 
 * `Limit` (value: `'LIMIT'`)
 
+* `LimitMaker` (value: `'LIMIT_MAKER'`)
+
 * `Stop` (value: `'STOP'`)
 
 * `StopLimit` (value: `'STOP_LIMIT'`)
@@ -23,6 +25,8 @@ Order type
 * `TrailingStop` (value: `'TRAILING_STOP'`)
 
 * `Quoted` (value: `'QUOTED'`)
+
+* `Oco` (value: `'OCO'`)
 
 * `Unknown` (value: `'UNKNOWN'`)
 

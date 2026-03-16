@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tradeOrderId** | **string** | UUID string | [default to undefined]
+**orderListId** | **string** | Exchange order list ID linking OCO/OTO/OTOCO legs. For OCO parents, externalOrderId uses \&#39;ol_\&#39; prefix. | [optional] [default to undefined]
 **tradingAccountId** | **string** | UUID string | [default to undefined]
 **venue** | [**Venue**](Venue.md) |  | [default to undefined]
 **positionId** | **string** | UUID string | [optional] [default to undefined]
@@ -21,6 +22,12 @@ Name | Type | Description | Notes
 **cancelReason** | **string** | Reason for order cancellation | [optional] [default to undefined]
 **limitPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
 **stopPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
+**takeProfitPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
+**takeProfitLimitPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
+**stopLossPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
+**stopLossLimitPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
+**takeProfitTimeInForce** | [**TimeInForce**](TimeInForce.md) |  | [optional] [default to undefined]
+**stopLossTimeInForce** | [**TimeInForce**](TimeInForce.md) |  | [optional] [default to undefined]
 **quantity** | **string** | Decimal value as string to preserve precision | [default to undefined]
 **orderQuantityType** | [**OrderQuantityType**](OrderQuantityType.md) |  | [default to undefined]
 **quantityRounding** | [**QuantityRounding**](QuantityRounding.md) |  | [optional] [default to undefined]
@@ -45,6 +52,7 @@ import { TradeOrder } from '@cyberapper/cadenza-client';
 
 const instance: TradeOrder = {
     tradeOrderId,
+    orderListId,
     tradingAccountId,
     venue,
     positionId,
@@ -60,6 +68,12 @@ const instance: TradeOrder = {
     cancelReason,
     limitPrice,
     stopPrice,
+    takeProfitPrice,
+    takeProfitLimitPrice,
+    stopLossPrice,
+    stopLossLimitPrice,
+    takeProfitTimeInForce,
+    stopLossTimeInForce,
     quantity,
     orderQuantityType,
     quantityRounding,
