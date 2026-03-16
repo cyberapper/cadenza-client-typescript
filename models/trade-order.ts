@@ -47,6 +47,10 @@ export interface TradeOrder {
      */
     'tradeOrderId': string;
     /**
+     * Exchange order list ID linking OCO/OTO/OTOCO legs. For OCO parents, externalOrderId uses \'ol_\' prefix.
+     */
+    'orderListId'?: string;
+    /**
      * UUID string
      */
     'tradingAccountId': string;
@@ -72,9 +76,9 @@ export interface TradeOrder {
      */
     'quoteAsset': string;
     'orderSide': OrderSide;
-    'orderType': OrderType | null;
-    'timeInForce': TimeInForce | null;
-    'status': OrderStatus | null;
+    'orderType': OrderType;
+    'timeInForce': TimeInForce;
+    'status': OrderStatus;
     /**
      * Reason for order rejection
      */
@@ -91,6 +95,24 @@ export interface TradeOrder {
      * Decimal value as string to preserve precision
      */
     'stopPrice'?: string;
+    /**
+     * Decimal value as string to preserve precision
+     */
+    'takeProfitPrice'?: string;
+    /**
+     * Decimal value as string to preserve precision
+     */
+    'takeProfitLimitPrice'?: string;
+    /**
+     * Decimal value as string to preserve precision
+     */
+    'stopLossPrice'?: string;
+    /**
+     * Decimal value as string to preserve precision
+     */
+    'stopLossLimitPrice'?: string;
+    'takeProfitTimeInForce'?: TimeInForce;
+    'stopLossTimeInForce'?: TimeInForce;
     /**
      * Decimal value as string to preserve precision
      */

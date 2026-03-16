@@ -29,7 +29,7 @@ export interface TradingAccountCredential {
      */
     'credentialId': string;
     'venue': Venue;
-    'credentialType': CredentialType | null;
+    'credentialType': CredentialType;
     'nickname'?: string;
     'status': TradingAccountCredentialStatus;
     /**

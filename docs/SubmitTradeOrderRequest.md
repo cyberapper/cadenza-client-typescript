@@ -22,6 +22,12 @@ Name | Type | Description | Notes
 **quoteId** | **string** | UUID string | [optional] [default to undefined]
 **leverage** | **number** | Leverage | [optional] [default to undefined]
 **awaitClosed** | **boolean** | If true, the API will wait up to 1 second for the order to reach a closed/finalized state (FILLED, REJECTED, EXPIRED, CANCELLED) before responding. If false or omitted, returns immediately with the initial order state. Useful for market orders that typically fill immediately.  | [optional] [default to false]
+**takeProfitPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
+**takeProfitLimitPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
+**stopLossPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
+**stopLossLimitPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
+**takeProfitTimeInForce** | [**TimeInForce**](TimeInForce.md) |  | [optional] [default to undefined]
+**stopLossTimeInForce** | [**TimeInForce**](TimeInForce.md) |  | [optional] [default to undefined]
 
 ## Example
 
@@ -46,6 +52,12 @@ const instance: SubmitTradeOrderRequest = {
     quoteId,
     leverage,
     awaitClosed,
+    takeProfitPrice,
+    takeProfitLimitPrice,
+    stopLossPrice,
+    stopLossLimitPrice,
+    takeProfitTimeInForce,
+    stopLossTimeInForce,
 };
 ```
 

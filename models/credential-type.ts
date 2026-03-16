@@ -19,8 +19,8 @@
  */
 
 export const CredentialType = {
+    Empty: '',
     ApiKey: 'API_KEY',
-    Token: 'TOKEN',
     Hmac: 'HMAC',
     Oauth: 'OAUTH',
     Rsa: 'RSA',

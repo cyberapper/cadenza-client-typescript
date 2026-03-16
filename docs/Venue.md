@@ -4,6 +4,8 @@ Trading venue identifier. UAT/sandbox environments are treated as separate venue
 
 ## Enum
 
+* `Empty` (value: `''`)
+
 * `Binance` (value: `'BINANCE'`)
 
 * `B2C2` (value: `'B2C2'`)

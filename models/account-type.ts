@@ -21,7 +21,8 @@
 export const AccountType = {
     Spot: 'SPOT',
     Margin: 'MARGIN',
-    Credit: 'CREDIT'
+    Futures: 'FUTURES',
+    Options: 'OPTIONS'
 } as const;
 
 export type AccountType = typeof AccountType[keyof typeof AccountType];

@@ -6,6 +6,12 @@ Type of financial instrument
 
 * `Spot` (value: `'SPOT'`)
 
-* `Contract` (value: `'CONTRACT'`)
+* `Futures` (value: `'FUTURES'`)
+
+* `Option` (value: `'OPTION'`)
+
+* `Perpetual` (value: `'PERPETUAL'`)
+
+* `Derivative` (value: `'DERIVATIVE'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

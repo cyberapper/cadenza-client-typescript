@@ -20,7 +20,10 @@
 
 export const InstrumentType = {
     Spot: 'SPOT',
-    Contract: 'CONTRACT'
+    Futures: 'FUTURES',
+    Option: 'OPTION',
+    Perpetual: 'PERPETUAL',
+    Derivative: 'DERIVATIVE'
 } as const;
 
 export type InstrumentType = typeof InstrumentType[keyof typeof InstrumentType];

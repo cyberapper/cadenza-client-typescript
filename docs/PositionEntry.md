@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [optional] [default to undefined]
 **securityType** | [**SecurityType**](SecurityType.md) |  | [default to undefined]
 **status** | [**PositionStatus**](PositionStatus.md) |  | [default to undefined]
-**positionSide** | [**PositionSide**](PositionSide.md) |  | [default to undefined]
 **quantity** | **string** | Decimal value as string to preserve precision | [default to undefined]
 **entryPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
 **exitPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
@@ -39,7 +38,6 @@ const instance: PositionEntry = {
     instrumentId,
     securityType,
     status,
-    positionSide,
     quantity,
     entryPrice,
     exitPrice,

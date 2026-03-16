@@ -26,7 +26,7 @@ export interface CreateTradingAccountCredentialRequest {
      * Nickname of the credential
      */
     'nickname'?: string;
-    'credentialType': CredentialType | null;
+    'credentialType': CredentialType;
     'apiKey'?: string;
     'apiSecret'?: string;
     'apiPassphrase'?: string;

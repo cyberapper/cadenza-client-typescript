@@ -20,9 +20,11 @@
 
 export const CredentialStatus = {
     Created: 'CREATED',
-    Active: 'ACTIVE',
-    Expired: 'EXPIRED',
-    Revoked: 'REVOKED'
+    Validated: 'VALIDATED',
+    Inactive: 'INACTIVE',
+    Revoked: 'REVOKED',
+    Error: 'ERROR',
+    Unknown: 'UNKNOWN'
 } as const;
 
 export type CredentialStatus = typeof CredentialStatus[keyof typeof CredentialStatus];

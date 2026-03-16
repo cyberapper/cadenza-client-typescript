@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **credentialId** | **string** | UUID string | [default to undefined]
-**apiKey** | **string** |  | [optional] [default to undefined]
+**apiKey** | **string** |  | [default to undefined]
 **apiSecret** | **string** |  | [optional] [default to undefined]
 **apiPassphrase** | **string** |  | [optional] [default to undefined]
 

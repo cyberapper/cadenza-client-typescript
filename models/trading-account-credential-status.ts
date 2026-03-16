@@ -20,8 +20,6 @@
 
 export const TradingAccountCredentialStatus = {
     Created: 'CREATED',
-    Active: 'ACTIVE',
-    Expired: 'EXPIRED',
     Revoked: 'REVOKED'
 } as const;
 

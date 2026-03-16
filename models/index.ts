@@ -70,7 +70,6 @@ export * from './portfolio';
 export * from './portfolio-summary';
 export * from './position-entry';
 export * from './position-mode';
-export * from './position-side';
 export * from './position-status';
 export * from './quantity-rounding';
 export * from './quantity-type';

@@ -6,10 +6,14 @@ Status of the credential
 
 * `Created` (value: `'CREATED'`)
 
-* `Active` (value: `'ACTIVE'`)
+* `Validated` (value: `'VALIDATED'`)
 
-* `Expired` (value: `'EXPIRED'`)
+* `Inactive` (value: `'INACTIVE'`)
 
 * `Revoked` (value: `'REVOKED'`)
+
+* `Error` (value: `'ERROR'`)
+
+* `Unknown` (value: `'UNKNOWN'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

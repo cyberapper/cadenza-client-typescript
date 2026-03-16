@@ -4,9 +4,9 @@ Type of API credential
 
 ## Enum
 
-* `ApiKey` (value: `'API_KEY'`)
+* `Empty` (value: `''`)
 
-* `Token` (value: `'TOKEN'`)
+* `ApiKey` (value: `'API_KEY'`)
 
 * `Hmac` (value: `'HMAC'`)
 

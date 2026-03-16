@@ -19,7 +19,7 @@ export interface RotateTradingAccountCredentialRequest {
      * UUID string
      */
     'credentialId': string;
-    'apiKey'?: string;
+    'apiKey': string;
     'apiSecret'?: string;
     'apiPassphrase'?: string;
 }

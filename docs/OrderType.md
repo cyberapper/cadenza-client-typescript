@@ -4,9 +4,13 @@ Order type
 
 ## Enum
 
+* `Empty` (value: `''`)
+
 * `Market` (value: `'MARKET'`)
 
 * `Limit` (value: `'LIMIT'`)
+
+* `LimitMaker` (value: `'LIMIT_MAKER'`)
 
 * `Stop` (value: `'STOP'`)
 
@@ -23,6 +27,8 @@ Order type
 * `TrailingStop` (value: `'TRAILING_STOP'`)
 
 * `Quoted` (value: `'QUOTED'`)
+
+* `Oco` (value: `'OCO'`)
 
 * `Unknown` (value: `'UNKNOWN'`)
 

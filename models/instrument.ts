@@ -54,8 +54,8 @@ export interface Instrument {
     'status': InstrumentStatus;
     'baseAsset': string;
     'quoteAsset': string;
-    'baseSecurityType'?: SecurityType;
-    'quoteSecurityType'?: SecurityType;
+    'baseSecurityType': SecurityType;
+    'quoteSecurityType': SecurityType;
     /**
      * Base asset precision
      */
