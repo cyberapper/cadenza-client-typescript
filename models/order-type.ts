@@ -30,7 +30,6 @@ export const OrderType = {
     TakeProfitLimit: 'TAKE_PROFIT_LIMIT',
     TrailingStop: 'TRAILING_STOP',
     Quoted: 'QUOTED',
-    Oco: 'OCO',
     Unknown: 'UNKNOWN'
 } as const;
 
