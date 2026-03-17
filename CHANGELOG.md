@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.11](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.10...v3.2.11) (2026-03-17)
+
+
+### Miscellaneous
+
+* standardize repo configuration ([#29](https://github.com/cyberapper/cadenza-client-typescript/issues/29)) ([25bb214](https://github.com/cyberapper/cadenza-client-typescript/commit/25bb2146114cb651f83b9a1cb842d07070e51752))
+
 ## [3.2.10](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.9...v3.2.10) (2026-03-17)
 
 
