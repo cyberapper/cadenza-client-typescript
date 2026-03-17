@@ -3,12 +3,14 @@ node_modules
 typings
 dist
 
+# OS
+.DS_Store
+
 # IDE
 .vscode/
 
 # Claude Code (local)
 .claude/
-CLAUDE.md
 CLAUDE.local.md
 
 # Git worktrees
