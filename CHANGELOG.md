@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.10](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.9...v3.2.10) (2026-03-17)
+
+
+### Bug Fixes
+
+* regenerate TypeScript client SDK with contingencyType field and updated orderListId description ([#27](https://github.com/cyberapper/cadenza-client-typescript/issues/27)) ([6a1625e](https://github.com/cyberapper/cadenza-client-typescript/commit/6a1625ea30b4b60193b06417d9f28313eb5ed355))
+
 ## [3.2.9](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.8...v3.2.9) (2026-03-16)
 
 
