@@ -47,9 +47,13 @@ export interface TradeOrder {
      */
     'tradeOrderId': string;
     /**
-     * Exchange order list ID linking OCO/OTO/OTOCO legs. For OCO parents, externalOrderId uses \'ol_\' prefix.
+     * Exchange order list ID linking sibling orders in OCO/OTO/OTOCO order lists. Present on all orders in a list.
      */
     'orderListId'?: string;
+    /**
+     * Order list contingency type. Present on all orders in a list.
+     */
+    'contingencyType'?: TradeOrderContingencyTypeEnum;
     /**
      * UUID string
      */
@@ -173,5 +177,12 @@ export interface TradeOrder {
     'canceledAtDateTime'?: string;
 }
 
+export const TradeOrderContingencyTypeEnum = {
+    Oco: 'OCO',
+    Oto: 'OTO',
+    Otoco: 'OTOCO'
+} as const;
+
+export type TradeOrderContingencyTypeEnum = typeof TradeOrderContingencyTypeEnum[keyof typeof TradeOrderContingencyTypeEnum];
 
 

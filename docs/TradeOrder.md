@@ -6,7 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tradeOrderId** | **string** | UUID string | [default to undefined]
-**orderListId** | **string** | Exchange order list ID linking OCO/OTO/OTOCO legs. For OCO parents, externalOrderId uses \&#39;ol_\&#39; prefix. | [optional] [default to undefined]
+**orderListId** | **string** | Exchange order list ID linking sibling orders in OCO/OTO/OTOCO order lists. Present on all orders in a list. | [optional] [default to undefined]
+**contingencyType** | **string** | Order list contingency type. Present on all orders in a list. | [optional] [default to undefined]
 **tradingAccountId** | **string** | UUID string | [default to undefined]
 **venue** | [**Venue**](Venue.md) |  | [default to undefined]
 **positionId** | **string** | UUID string | [optional] [default to undefined]
@@ -53,6 +54,7 @@ import { TradeOrder } from '@cyberapper/cadenza-client';
 const instance: TradeOrder = {
     tradeOrderId,
     orderListId,
+    contingencyType,
     tradingAccountId,
     venue,
     positionId,
