@@ -182,6 +182,42 @@ RPC method name corresponding to event types in the system. Format: `{category}.
 
 * `EventSecurityUpdated` (value: `'event.security.updated'`)
 
+* `CommandQuoteRfq` (value: `'command.quote.rfq'`)
+
+* `ResponseQuoteRfq` (value: `'response.quote.rfq'`)
+
+* `CommandFermataDealerLink` (value: `'command.fermata.dealer.link'`)
+
+* `ResponseFermataDealerLink` (value: `'response.fermata.dealer.link'`)
+
+* `CommandFermataDealerUnlink` (value: `'command.fermata.dealer.unlink'`)
+
+* `ResponseFermataDealerUnlink` (value: `'response.fermata.dealer.unlink'`)
+
+* `CommandFermataWalletCreate` (value: `'command.fermata.wallet.create'`)
+
+* `ResponseFermataWalletCreate` (value: `'response.fermata.wallet.create'`)
+
+* `QueryFermataWalletList` (value: `'query.fermata.wallet.list'`)
+
+* `ResponseFermataWalletList` (value: `'response.fermata.wallet.list'`)
+
+* `CommandFermataWalletTransfer` (value: `'command.fermata.wallet.transfer'`)
+
+* `ResponseFermataWalletTransfer` (value: `'response.fermata.wallet.transfer'`)
+
+* `CommandFermataWalletFreeze` (value: `'command.fermata.wallet.freeze'`)
+
+* `ResponseFermataWalletFreeze` (value: `'response.fermata.wallet.freeze'`)
+
+* `CommandFermataWalletUnfreeze` (value: `'command.fermata.wallet.unfreeze'`)
+
+* `ResponseFermataWalletUnfreeze` (value: `'response.fermata.wallet.unfreeze'`)
+
+* `CommandFermataWalletClose` (value: `'command.fermata.wallet.close'`)
+
+* `ResponseFermataWalletClose` (value: `'response.fermata.wallet.close'`)
+
 * `QueryVenueList` (value: `'query.venue.list'`)
 
 * `ResponseVenueList` (value: `'response.venue.list'`)

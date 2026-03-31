@@ -13,19 +13,32 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { Venue } from './venue';
 
+/**
+ * Connect a trading account. For exchange venues, credentialIds and externalTradingAccountId are required. For Fermata venue, only venue is required (no credentials).
+ */
 export interface ConnectTradingAccountRequest {
+    'venue'?: Venue;
     /**
-     * A list of credential IDs to be used to connect the trading account
+     * Credential IDs for exchange venues. Not required for Fermata.
      */
-    'credentialIds': Array<string>;
+    'credentialIds'?: Array<string>;
     /**
-     * External trading account ID
+     * External trading account ID. Not required for Fermata.
      */
-    'externalTradingAccountId': string;
+    'externalTradingAccountId'?: string;
+    /**
+     * UUID string
+     */
+    'dealerAccountId'?: string;
     /**
      * Nickname of the trading account
      */
     'nickname'?: string;
 }
+
+
 

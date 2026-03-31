@@ -14,15 +14,18 @@
 
 
 
-export * from './api/authentication-api';
-export * from './api/fermata-api';
-export * from './api/market-api';
-export * from './api/market-subscription-api';
-export * from './api/trading-api';
-export * from './api/trading-account-api';
-export * from './api/trading-account-credential-api';
-export * from './api/trading-account-portfolio-api';
-export * from './api/trading-account-subscription-api';
-export * from './api/utility-api';
-export * from './api/web-socket-api';
+/**
+ * Type of Fermata wallet
+ */
+
+export const WalletType = {
+    Dealer: 'DEALER',
+    Client: 'CLIENT',
+    Exchange: 'EXCHANGE',
+    Accounting: 'ACCOUNTING'
+} as const;
+
+export type WalletType = typeof WalletType[keyof typeof WalletType];
+
+
 

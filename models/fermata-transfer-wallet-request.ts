@@ -14,15 +14,25 @@
 
 
 
-export * from './api/authentication-api';
-export * from './api/fermata-api';
-export * from './api/market-api';
-export * from './api/market-subscription-api';
-export * from './api/trading-api';
-export * from './api/trading-account-api';
-export * from './api/trading-account-credential-api';
-export * from './api/trading-account-portfolio-api';
-export * from './api/trading-account-subscription-api';
-export * from './api/utility-api';
-export * from './api/web-socket-api';
+/**
+ * Transfer assets between wallets owned by the same user
+ */
+export interface FermataTransferWalletRequest {
+    /**
+     * UUID string
+     */
+    'sourceWalletId': string;
+    /**
+     * UUID string
+     */
+    'destWalletId': string;
+    /**
+     * Asset to transfer
+     */
+    'asset': string;
+    /**
+     * Positive decimal value as string
+     */
+    'amount': string;
+}
 

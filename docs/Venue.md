@@ -50,6 +50,8 @@ Trading venue identifier. UAT/sandbox environments are treated as separate venue
 
 * `IbkrPaper` (value: `'IBKR_PAPER'`)
 
+* `Fermata` (value: `'FERMATA'`)
+
 * `Mock` (value: `'MOCK'`)
 
 * `Paper` (value: `'PAPER'`)
