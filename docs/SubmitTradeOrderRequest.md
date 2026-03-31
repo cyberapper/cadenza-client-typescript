@@ -1,12 +1,13 @@
 # SubmitTradeOrderRequest
 
+Submit a trade order. For exchange venues, instrumentId is required. For Fermata venue, quoteId is required instead (the quote already contains all trade parameters).
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tradingAccountId** | **string** | UUID string | [default to undefined]
-**instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [default to undefined]
+**instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [optional] [default to undefined]
 **idempotencyKey** | **string** | Idempotency key to prevent duplicate request processing | [optional] [default to undefined]
 **clientOrderId** | **string** | Client-provided order ID, used as idempotency key | [optional] [default to undefined]
 **orderSide** | [**OrderSide**](OrderSide.md) |  | [default to undefined]

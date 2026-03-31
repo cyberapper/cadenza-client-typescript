@@ -29,6 +29,9 @@ import type { QuantityRounding } from './quantity-rounding';
 // @ts-ignore
 import type { TimeInForce } from './time-in-force';
 
+/**
+ * Submit a trade order. For exchange venues, instrumentId is required. For Fermata venue, quoteId is required instead (the quote already contains all trade parameters).
+ */
 export interface SubmitTradeOrderRequest {
     /**
      * UUID string
@@ -37,7 +40,7 @@ export interface SubmitTradeOrderRequest {
     /**
      * Instrument ID in format {VENUE}:{BASE}/{QUOTE}
      */
-    'instrumentId': string;
+    'instrumentId'?: string;
     /**
      * Idempotency key to prevent duplicate request processing
      */

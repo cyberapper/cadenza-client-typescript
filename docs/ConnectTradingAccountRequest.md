@@ -1,12 +1,15 @@
 # ConnectTradingAccountRequest
 
+Connect a trading account. For exchange venues, credentialIds and externalTradingAccountId are required. For Fermata venue, only venue is required (no credentials).
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**credentialIds** | **Array&lt;string&gt;** | A list of credential IDs to be used to connect the trading account | [default to undefined]
-**externalTradingAccountId** | **string** | External trading account ID | [default to undefined]
+**venue** | [**Venue**](Venue.md) |  | [optional] [default to undefined]
+**credentialIds** | **Array&lt;string&gt;** | Credential IDs for exchange venues. Not required for Fermata. | [optional] [default to undefined]
+**externalTradingAccountId** | **string** | External trading account ID. Not required for Fermata. | [optional] [default to undefined]
+**dealerAccountId** | **string** | UUID string | [optional] [default to undefined]
 **nickname** | **string** | Nickname of the trading account | [optional] [default to undefined]
 
 ## Example
@@ -15,8 +18,10 @@ Name | Type | Description | Notes
 import { ConnectTradingAccountRequest } from '@cyberapper/cadenza-client';
 
 const instance: ConnectTradingAccountRequest = {
+    venue,
     credentialIds,
     externalTradingAccountId,
+    dealerAccountId,
     nickname,
 };
 ```

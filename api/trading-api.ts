@@ -32,13 +32,17 @@ import type { ListTradeOrders200Response } from '../models';
 // @ts-ignore
 import type { OrderStatus } from '../models';
 // @ts-ignore
+import type { QuoteRfq200Response } from '../models';
+// @ts-ignore
+import type { QuoteRfqRequest } from '../models';
+// @ts-ignore
 import type { SubmitTradeOrder200Response } from '../models';
 // @ts-ignore
 import type { SubmitTradeOrderRequest } from '../models';
 /**
- * TradeOrderApi - axios parameter creator
+ * TradingApi - axios parameter creator
  */
-export const TradeOrderApiAxiosParamCreator = function (configuration?: Configuration) {
+export const TradingApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * Cancel an existing trade order
@@ -167,6 +171,43 @@ export const TradeOrderApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
+         * Request a firm quote from the RFQ dealer. The quote is a bilateral contract between the user and the dealer with a guaranteed execution price and validity period.
+         * @summary Request for Quote
+         * @param {QuoteRfqRequest} [quoteRfqRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        quoteRfq: async (quoteRfqRequest?: QuoteRfqRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v3/quote/rfq`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication SupabaseOAuth2BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(quoteRfqRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Submit a new trade order
          * @summary Submit trade order
          * @param {SubmitTradeOrderRequest} [submitTradeOrderRequest] 
@@ -207,10 +248,10 @@ export const TradeOrderApiAxiosParamCreator = function (configuration?: Configur
 };
 
 /**
- * TradeOrderApi - functional programming interface
+ * TradingApi - functional programming interface
  */
-export const TradeOrderApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = TradeOrderApiAxiosParamCreator(configuration)
+export const TradingApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = TradingApiAxiosParamCreator(configuration)
     return {
         /**
          * Cancel an existing trade order
@@ -222,7 +263,7 @@ export const TradeOrderApiFp = function(configuration?: Configuration) {
         async cancelTradeOrder(cancelTradeOrderRequest?: CancelTradeOrderRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CancelTradeOrder200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.cancelTradeOrder(cancelTradeOrderRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['TradeOrderApi.cancelTradeOrder']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['TradingApi.cancelTradeOrder']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -245,7 +286,20 @@ export const TradeOrderApiFp = function(configuration?: Configuration) {
         async listTradeOrders(tradeOrderId?: string, orderListId?: string, orderStatus?: OrderStatus, tradingAccountId?: string, instrumentId?: string, startTime?: number, endTime?: number, limit?: number, offset?: number, cursor?: string, ascending?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListTradeOrders200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listTradeOrders(tradeOrderId, orderListId, orderStatus, tradingAccountId, instrumentId, startTime, endTime, limit, offset, cursor, ascending, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['TradeOrderApi.listTradeOrders']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['TradingApi.listTradeOrders']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Request a firm quote from the RFQ dealer. The quote is a bilateral contract between the user and the dealer with a guaranteed execution price and validity period.
+         * @summary Request for Quote
+         * @param {QuoteRfqRequest} [quoteRfqRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async quoteRfq(quoteRfqRequest?: QuoteRfqRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<QuoteRfq200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.quoteRfq(quoteRfqRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['TradingApi.quoteRfq']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -258,17 +312,17 @@ export const TradeOrderApiFp = function(configuration?: Configuration) {
         async submitTradeOrder(submitTradeOrderRequest?: SubmitTradeOrderRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubmitTradeOrder200Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.submitTradeOrder(submitTradeOrderRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['TradeOrderApi.submitTradeOrder']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['TradingApi.submitTradeOrder']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
 
 /**
- * TradeOrderApi - factory interface
+ * TradingApi - factory interface
  */
-export const TradeOrderApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = TradeOrderApiFp(configuration)
+export const TradingApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = TradingApiFp(configuration)
     return {
         /**
          * Cancel an existing trade order
@@ -301,6 +355,16 @@ export const TradeOrderApiFactory = function (configuration?: Configuration, bas
             return localVarFp.listTradeOrders(tradeOrderId, orderListId, orderStatus, tradingAccountId, instrumentId, startTime, endTime, limit, offset, cursor, ascending, options).then((request) => request(axios, basePath));
         },
         /**
+         * Request a firm quote from the RFQ dealer. The quote is a bilateral contract between the user and the dealer with a guaranteed execution price and validity period.
+         * @summary Request for Quote
+         * @param {QuoteRfqRequest} [quoteRfqRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        quoteRfq(quoteRfqRequest?: QuoteRfqRequest, options?: RawAxiosRequestConfig): AxiosPromise<QuoteRfq200Response> {
+            return localVarFp.quoteRfq(quoteRfqRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Submit a new trade order
          * @summary Submit trade order
          * @param {SubmitTradeOrderRequest} [submitTradeOrderRequest] 
@@ -314,9 +378,9 @@ export const TradeOrderApiFactory = function (configuration?: Configuration, bas
 };
 
 /**
- * TradeOrderApi - object-oriented interface
+ * TradingApi - object-oriented interface
  */
-export class TradeOrderApi extends BaseAPI {
+export class TradingApi extends BaseAPI {
     /**
      * Cancel an existing trade order
      * @summary Cancel trade order
@@ -325,7 +389,7 @@ export class TradeOrderApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public cancelTradeOrder(cancelTradeOrderRequest?: CancelTradeOrderRequest, options?: RawAxiosRequestConfig) {
-        return TradeOrderApiFp(this.configuration).cancelTradeOrder(cancelTradeOrderRequest, options).then((request) => request(this.axios, this.basePath));
+        return TradingApiFp(this.configuration).cancelTradeOrder(cancelTradeOrderRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -346,7 +410,18 @@ export class TradeOrderApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public listTradeOrders(tradeOrderId?: string, orderListId?: string, orderStatus?: OrderStatus, tradingAccountId?: string, instrumentId?: string, startTime?: number, endTime?: number, limit?: number, offset?: number, cursor?: string, ascending?: boolean, options?: RawAxiosRequestConfig) {
-        return TradeOrderApiFp(this.configuration).listTradeOrders(tradeOrderId, orderListId, orderStatus, tradingAccountId, instrumentId, startTime, endTime, limit, offset, cursor, ascending, options).then((request) => request(this.axios, this.basePath));
+        return TradingApiFp(this.configuration).listTradeOrders(tradeOrderId, orderListId, orderStatus, tradingAccountId, instrumentId, startTime, endTime, limit, offset, cursor, ascending, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Request a firm quote from the RFQ dealer. The quote is a bilateral contract between the user and the dealer with a guaranteed execution price and validity period.
+     * @summary Request for Quote
+     * @param {QuoteRfqRequest} [quoteRfqRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public quoteRfq(quoteRfqRequest?: QuoteRfqRequest, options?: RawAxiosRequestConfig) {
+        return TradingApiFp(this.configuration).quoteRfq(quoteRfqRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -357,7 +432,7 @@ export class TradeOrderApi extends BaseAPI {
      * @throws {RequiredError}
      */
     public submitTradeOrder(submitTradeOrderRequest?: SubmitTradeOrderRequest, options?: RawAxiosRequestConfig) {
-        return TradeOrderApiFp(this.configuration).submitTradeOrder(submitTradeOrderRequest, options).then((request) => request(this.axios, this.basePath));
+        return TradingApiFp(this.configuration).submitTradeOrder(submitTradeOrderRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

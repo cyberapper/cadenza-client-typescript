@@ -1,4 +1,4 @@
-# TradeOrderApi
+# TradingApi
 
 All URIs are relative to *https://cadenza-api-uat.algo724.com*
 
@@ -6,6 +6,7 @@ All URIs are relative to *https://cadenza-api-uat.algo724.com*
 |------------- | ------------- | -------------|
 |[**cancelTradeOrder**](#canceltradeorder) | **POST** /api/v3/tradeOrder/cancel | Cancel trade order|
 |[**listTradeOrders**](#listtradeorders) | **GET** /api/v3/tradeOrder/list | List trade orders|
+|[**quoteRfq**](#quoterfq) | **POST** /api/v3/quote/rfq | Request for Quote|
 |[**submitTradeOrder**](#submittradeorder) | **POST** /api/v3/tradeOrder/submit | Submit trade order|
 
 # **cancelTradeOrder**
@@ -17,13 +18,13 @@ Cancel an existing trade order
 
 ```typescript
 import {
-    TradeOrderApi,
+    TradingApi,
     Configuration,
     CancelTradeOrderRequest
 } from '@cyberapper/cadenza-client';
 
 const configuration = new Configuration();
-const apiInstance = new TradeOrderApi(configuration);
+const apiInstance = new TradingApi(configuration);
 
 let cancelTradeOrderRequest: CancelTradeOrderRequest; // (optional)
 
@@ -74,12 +75,12 @@ List trade orders with filtering options
 
 ```typescript
 import {
-    TradeOrderApi,
+    TradingApi,
     Configuration
 } from '@cyberapper/cadenza-client';
 
 const configuration = new Configuration();
-const apiInstance = new TradeOrderApi(configuration);
+const apiInstance = new TradingApi(configuration);
 
 let tradeOrderId: string; //Trade order ID (optional) (default to undefined)
 let orderListId: string; //Filter by order list ID to retrieve child orders of an OCO/OTO/OTOCO parent (optional) (default to undefined)
@@ -151,6 +152,63 @@ const { status, data } = await apiInstance.listTradeOrders(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **quoteRfq**
+> QuoteRfq200Response quoteRfq()
+
+Request a firm quote from the RFQ dealer. The quote is a bilateral contract between the user and the dealer with a guaranteed execution price and validity period.
+
+### Example
+
+```typescript
+import {
+    TradingApi,
+    Configuration,
+    QuoteRfqRequest
+} from '@cyberapper/cadenza-client';
+
+const configuration = new Configuration();
+const apiInstance = new TradingApi(configuration);
+
+let quoteRfqRequest: QuoteRfqRequest; // (optional)
+
+const { status, data } = await apiInstance.quoteRfq(
+    quoteRfqRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **quoteRfqRequest** | **QuoteRfqRequest**|  | |
+
+
+### Return type
+
+**QuoteRfq200Response**
+
+### Authorization
+
+[SupabaseOAuth2BearerAuth](../README.md#SupabaseOAuth2BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | RFQ quote response |  -  |
+|**400** | Bad request |  -  |
+|**401** | Unauthorized - Authentication required |  -  |
+|**403** | Forbidden - Insufficient permissions |  -  |
+|**404** | Not found |  -  |
+|**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **submitTradeOrder**
 > SubmitTradeOrder200Response submitTradeOrder()
 
@@ -160,13 +218,13 @@ Submit a new trade order
 
 ```typescript
 import {
-    TradeOrderApi,
+    TradingApi,
     Configuration,
     SubmitTradeOrderRequest
 } from '@cyberapper/cadenza-client';
 
 const configuration = new Configuration();
-const apiInstance = new TradeOrderApi(configuration);
+const apiInstance = new TradingApi(configuration);
 
 let submitTradeOrderRequest: SubmitTradeOrderRequest; // (optional)
 

@@ -14,15 +14,13 @@
 
 
 
-export * from './api/authentication-api';
-export * from './api/fermata-api';
-export * from './api/market-api';
-export * from './api/market-subscription-api';
-export * from './api/trading-api';
-export * from './api/trading-account-api';
-export * from './api/trading-account-credential-api';
-export * from './api/trading-account-portfolio-api';
-export * from './api/trading-account-subscription-api';
-export * from './api/utility-api';
-export * from './api/web-socket-api';
+/**
+ * Create a new wallet
+ */
+export interface FermataCreateWalletRequest {
+    /**
+     * Nickname for the new wallet
+     */
+    'nickname'?: string;
+}
 

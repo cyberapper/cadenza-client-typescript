@@ -42,6 +42,7 @@ export const Venue = {
     BinanceSandbox: 'BINANCE_SANDBOX',
     B2C2Sandbox: 'B2C2_SANDBOX',
     IbkrPaper: 'IBKR_PAPER',
+    Fermata: 'FERMATA',
     Mock: 'MOCK',
     Paper: 'PAPER'
 } as const;
