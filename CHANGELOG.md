@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.3.0](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.11...v3.3.0) (2026-03-31)
+
+
+### Features
+
+* regenerate TypeScript client SDK with RFQ broker APIs ([#31](https://github.com/cyberapper/cadenza-client-typescript/issues/31)) ([6b6d49a](https://github.com/cyberapper/cadenza-client-typescript/commit/6b6d49a496caa1a528e2519a2e5f54463fd150b0))
+
 ## [3.2.11](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.10...v3.2.11) (2026-03-17)
 
 
