@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.0](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.3.0...v3.4.0) (2026-05-09)
+
+
+### Features
+
+* **openapi:** regenerate TypeScript SDK with unified market data schemas (CDZ-450) ([#33](https://github.com/cyberapper/cadenza-client-typescript/issues/33)) ([70a5180](https://github.com/cyberapper/cadenza-client-typescript/commit/70a5180c69cf81f90e59f51fbfcc352a49c32088))
+
 ## [3.3.0](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.2.11...v3.3.0) (2026-03-31)
 
 
