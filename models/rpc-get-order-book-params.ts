@@ -15,21 +15,13 @@
 
 
 /**
- * Request to get order book for an instrument
+ * Request to get order book for an instrument.
  */
 export interface RpcGetOrderBookParams {
     /**
-     * Instrument ID (e.g., BINANCE:BTC/USDT)
+     * Instrument ID in format {VENUE}:{BASE}/{QUOTE}
      */
     'instrumentId'?: string;
-    /**
-     * Venue (alternative to instrumentId)
-     */
-    'venue'?: string;
-    /**
-     * Symbol (alternative to instrumentId)
-     */
-    'symbol'?: string;
     /**
      * Order book depth
      */

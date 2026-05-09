@@ -24,9 +24,17 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { BaseResponse } from '../models';
 // @ts-ignore
+import type { DealerStatus } from '../models';
+// @ts-ignore
 import type { DeleteMarketInstrument200Response } from '../models';
 // @ts-ignore
+import type { FermataArchiveDealerRequest } from '../models';
+// @ts-ignore
 import type { FermataCloseWalletRequest } from '../models';
+// @ts-ignore
+import type { FermataCreateDealer200Response } from '../models';
+// @ts-ignore
+import type { FermataCreateDealerRequest } from '../models';
 // @ts-ignore
 import type { FermataCreateWallet200Response } from '../models';
 // @ts-ignore
@@ -36,7 +44,13 @@ import type { FermataFreezeWalletRequest } from '../models';
 // @ts-ignore
 import type { FermataLinkDealerRequest } from '../models';
 // @ts-ignore
+import type { FermataListDealers200Response } from '../models';
+// @ts-ignore
 import type { FermataListWallets200Response } from '../models';
+// @ts-ignore
+import type { FermataPauseDealerRequest } from '../models';
+// @ts-ignore
+import type { FermataResumeDealerRequest } from '../models';
 // @ts-ignore
 import type { FermataTransferWalletRequest } from '../models';
 // @ts-ignore
@@ -50,6 +64,43 @@ import type { WalletType } from '../models';
  */
 export const FermataApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * Archive a dealer — permanently stops all operations. All open positions must be closed before archiving. Admin only.
+         * @summary Archive dealer
+         * @param {FermataArchiveDealerRequest} [fermataArchiveDealerRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        fermataArchiveDealer: async (fermataArchiveDealerRequest?: FermataArchiveDealerRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v3/fermata/dealer/archive`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication SupabaseOAuth2BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(fermataArchiveDealerRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * Close a wallet. Terminal state — only a final withdrawal to zero balance is allowed after closing.
          * @summary Close wallet
@@ -81,6 +132,43 @@ export const FermataApiAxiosParamCreator = function (configuration?: Configurati
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(fermataCloseWalletRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Create a new dealer account in the Fermata venue. Admin only. Provisions a Trading Account (venue=FERMATA), a dealer wallet in the Formance Ledger, and dealer configuration.
+         * @summary Create dealer
+         * @param {FermataCreateDealerRequest} [fermataCreateDealerRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        fermataCreateDealer: async (fermataCreateDealerRequest?: FermataCreateDealerRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v3/fermata/dealer/create`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication SupabaseOAuth2BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(fermataCreateDealerRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -162,6 +250,88 @@ export const FermataApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
+         * Get a single dealer by ID, including configuration and linked accounts.
+         * @summary Get dealer
+         * @param {string} dealerAccountId Dealer account ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        fermataGetDealer: async (dealerAccountId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'dealerAccountId' is not null or undefined
+            assertParamExists('fermataGetDealer', 'dealerAccountId', dealerAccountId)
+            const localVarPath = `/api/v3/fermata/dealer/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication SupabaseOAuth2BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (dealerAccountId !== undefined) {
+                localVarQueryParameter['dealerAccountId'] = dealerAccountId;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get a single wallet by ID, including balances and status.
+         * @summary Get wallet
+         * @param {string} walletId Wallet ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        fermataGetWallet: async (walletId: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'walletId' is not null or undefined
+            assertParamExists('fermataGetWallet', 'walletId', walletId)
+            const localVarPath = `/api/v3/fermata/wallet/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication SupabaseOAuth2BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (walletId !== undefined) {
+                localVarQueryParameter['walletId'] = walletId;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Link an existing exchange trading account to the dealer as a liquidity provider for hedging.
          * @summary Link exchange account to dealer
          * @param {FermataLinkDealerRequest} [fermataLinkDealerRequest] 
@@ -192,6 +362,60 @@ export const FermataApiAxiosParamCreator = function (configuration?: Configurati
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(fermataLinkDealerRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List dealers with optional status filter. Admin only.
+         * @summary List dealers
+         * @param {DealerStatus} [status] Filter by dealer status
+         * @param {number} [limit] Limit the number of returned results
+         * @param {number} [offset] Offset of the returned results
+         * @param {string} [cursor] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        fermataListDealers: async (status?: DealerStatus, limit?: number, offset?: number, cursor?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v3/fermata/dealer/list`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication SupabaseOAuth2BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (status !== undefined) {
+                localVarQueryParameter['status'] = status;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+
+            if (cursor !== undefined) {
+                localVarQueryParameter['cursor'] = cursor;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -246,6 +470,80 @@ export const FermataApiAxiosParamCreator = function (configuration?: Configurati
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Pause a dealer — stops quoting but continues hedging open positions. Admin only.
+         * @summary Pause dealer
+         * @param {FermataPauseDealerRequest} [fermataPauseDealerRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        fermataPauseDealer: async (fermataPauseDealerRequest?: FermataPauseDealerRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v3/fermata/dealer/pause`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication SupabaseOAuth2BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(fermataPauseDealerRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Resume a paused dealer — restores quoting capability. Admin only.
+         * @summary Resume dealer
+         * @param {FermataResumeDealerRequest} [fermataResumeDealerRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        fermataResumeDealer: async (fermataResumeDealerRequest?: FermataResumeDealerRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v3/fermata/dealer/resume`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication SupabaseOAuth2BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(fermataResumeDealerRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -373,6 +671,19 @@ export const FermataApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = FermataApiAxiosParamCreator(configuration)
     return {
         /**
+         * Archive a dealer — permanently stops all operations. All open positions must be closed before archiving. Admin only.
+         * @summary Archive dealer
+         * @param {FermataArchiveDealerRequest} [fermataArchiveDealerRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async fermataArchiveDealer(fermataArchiveDealerRequest?: FermataArchiveDealerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FermataCreateDealer200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.fermataArchiveDealer(fermataArchiveDealerRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FermataApi.fermataArchiveDealer']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Close a wallet. Terminal state — only a final withdrawal to zero balance is allowed after closing.
          * @summary Close wallet
          * @param {FermataCloseWalletRequest} [fermataCloseWalletRequest] 
@@ -383,6 +694,19 @@ export const FermataApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.fermataCloseWallet(fermataCloseWalletRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['FermataApi.fermataCloseWallet']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Create a new dealer account in the Fermata venue. Admin only. Provisions a Trading Account (venue=FERMATA), a dealer wallet in the Formance Ledger, and dealer configuration.
+         * @summary Create dealer
+         * @param {FermataCreateDealerRequest} [fermataCreateDealerRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async fermataCreateDealer(fermataCreateDealerRequest?: FermataCreateDealerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FermataCreateDealer200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.fermataCreateDealer(fermataCreateDealerRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FermataApi.fermataCreateDealer']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -412,6 +736,32 @@ export const FermataApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Get a single dealer by ID, including configuration and linked accounts.
+         * @summary Get dealer
+         * @param {string} dealerAccountId Dealer account ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async fermataGetDealer(dealerAccountId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FermataCreateDealer200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.fermataGetDealer(dealerAccountId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FermataApi.fermataGetDealer']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get a single wallet by ID, including balances and status.
+         * @summary Get wallet
+         * @param {string} walletId Wallet ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async fermataGetWallet(walletId: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FermataCreateWallet200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.fermataGetWallet(walletId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FermataApi.fermataGetWallet']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Link an existing exchange trading account to the dealer as a liquidity provider for hedging.
          * @summary Link exchange account to dealer
          * @param {FermataLinkDealerRequest} [fermataLinkDealerRequest] 
@@ -422,6 +772,22 @@ export const FermataApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.fermataLinkDealer(fermataLinkDealerRequest, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['FermataApi.fermataLinkDealer']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * List dealers with optional status filter. Admin only.
+         * @summary List dealers
+         * @param {DealerStatus} [status] Filter by dealer status
+         * @param {number} [limit] Limit the number of returned results
+         * @param {number} [offset] Offset of the returned results
+         * @param {string} [cursor] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async fermataListDealers(status?: DealerStatus, limit?: number, offset?: number, cursor?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FermataListDealers200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.fermataListDealers(status, limit, offset, cursor, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FermataApi.fermataListDealers']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -438,6 +804,32 @@ export const FermataApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.fermataListWallets(walletType, limit, offset, cursor, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['FermataApi.fermataListWallets']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Pause a dealer — stops quoting but continues hedging open positions. Admin only.
+         * @summary Pause dealer
+         * @param {FermataPauseDealerRequest} [fermataPauseDealerRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async fermataPauseDealer(fermataPauseDealerRequest?: FermataPauseDealerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FermataCreateDealer200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.fermataPauseDealer(fermataPauseDealerRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FermataApi.fermataPauseDealer']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Resume a paused dealer — restores quoting capability. Admin only.
+         * @summary Resume dealer
+         * @param {FermataResumeDealerRequest} [fermataResumeDealerRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async fermataResumeDealer(fermataResumeDealerRequest?: FermataResumeDealerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FermataCreateDealer200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.fermataResumeDealer(fermataResumeDealerRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FermataApi.fermataResumeDealer']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -489,6 +881,16 @@ export const FermataApiFactory = function (configuration?: Configuration, basePa
     const localVarFp = FermataApiFp(configuration)
     return {
         /**
+         * Archive a dealer — permanently stops all operations. All open positions must be closed before archiving. Admin only.
+         * @summary Archive dealer
+         * @param {FermataArchiveDealerRequest} [fermataArchiveDealerRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        fermataArchiveDealer(fermataArchiveDealerRequest?: FermataArchiveDealerRequest, options?: RawAxiosRequestConfig): AxiosPromise<FermataCreateDealer200Response> {
+            return localVarFp.fermataArchiveDealer(fermataArchiveDealerRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Close a wallet. Terminal state — only a final withdrawal to zero balance is allowed after closing.
          * @summary Close wallet
          * @param {FermataCloseWalletRequest} [fermataCloseWalletRequest] 
@@ -497,6 +899,16 @@ export const FermataApiFactory = function (configuration?: Configuration, basePa
          */
         fermataCloseWallet(fermataCloseWalletRequest?: FermataCloseWalletRequest, options?: RawAxiosRequestConfig): AxiosPromise<FermataCreateWallet200Response> {
             return localVarFp.fermataCloseWallet(fermataCloseWalletRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Create a new dealer account in the Fermata venue. Admin only. Provisions a Trading Account (venue=FERMATA), a dealer wallet in the Formance Ledger, and dealer configuration.
+         * @summary Create dealer
+         * @param {FermataCreateDealerRequest} [fermataCreateDealerRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        fermataCreateDealer(fermataCreateDealerRequest?: FermataCreateDealerRequest, options?: RawAxiosRequestConfig): AxiosPromise<FermataCreateDealer200Response> {
+            return localVarFp.fermataCreateDealer(fermataCreateDealerRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * Create a new wallet in the Fermata ledger.
@@ -519,6 +931,26 @@ export const FermataApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.fermataFreezeWallet(fermataFreezeWalletRequest, options).then((request) => request(axios, basePath));
         },
         /**
+         * Get a single dealer by ID, including configuration and linked accounts.
+         * @summary Get dealer
+         * @param {string} dealerAccountId Dealer account ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        fermataGetDealer(dealerAccountId: string, options?: RawAxiosRequestConfig): AxiosPromise<FermataCreateDealer200Response> {
+            return localVarFp.fermataGetDealer(dealerAccountId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get a single wallet by ID, including balances and status.
+         * @summary Get wallet
+         * @param {string} walletId Wallet ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        fermataGetWallet(walletId: string, options?: RawAxiosRequestConfig): AxiosPromise<FermataCreateWallet200Response> {
+            return localVarFp.fermataGetWallet(walletId, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Link an existing exchange trading account to the dealer as a liquidity provider for hedging.
          * @summary Link exchange account to dealer
          * @param {FermataLinkDealerRequest} [fermataLinkDealerRequest] 
@@ -527,6 +959,19 @@ export const FermataApiFactory = function (configuration?: Configuration, basePa
          */
         fermataLinkDealer(fermataLinkDealerRequest?: FermataLinkDealerRequest, options?: RawAxiosRequestConfig): AxiosPromise<DeleteMarketInstrument200Response> {
             return localVarFp.fermataLinkDealer(fermataLinkDealerRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List dealers with optional status filter. Admin only.
+         * @summary List dealers
+         * @param {DealerStatus} [status] Filter by dealer status
+         * @param {number} [limit] Limit the number of returned results
+         * @param {number} [offset] Offset of the returned results
+         * @param {string} [cursor] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        fermataListDealers(status?: DealerStatus, limit?: number, offset?: number, cursor?: string, options?: RawAxiosRequestConfig): AxiosPromise<FermataListDealers200Response> {
+            return localVarFp.fermataListDealers(status, limit, offset, cursor, options).then((request) => request(axios, basePath));
         },
         /**
          * List wallets by type, owner, or dealer.
@@ -540,6 +985,26 @@ export const FermataApiFactory = function (configuration?: Configuration, basePa
          */
         fermataListWallets(walletType?: WalletType, limit?: number, offset?: number, cursor?: string, options?: RawAxiosRequestConfig): AxiosPromise<FermataListWallets200Response> {
             return localVarFp.fermataListWallets(walletType, limit, offset, cursor, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Pause a dealer — stops quoting but continues hedging open positions. Admin only.
+         * @summary Pause dealer
+         * @param {FermataPauseDealerRequest} [fermataPauseDealerRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        fermataPauseDealer(fermataPauseDealerRequest?: FermataPauseDealerRequest, options?: RawAxiosRequestConfig): AxiosPromise<FermataCreateDealer200Response> {
+            return localVarFp.fermataPauseDealer(fermataPauseDealerRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Resume a paused dealer — restores quoting capability. Admin only.
+         * @summary Resume dealer
+         * @param {FermataResumeDealerRequest} [fermataResumeDealerRequest] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        fermataResumeDealer(fermataResumeDealerRequest?: FermataResumeDealerRequest, options?: RawAxiosRequestConfig): AxiosPromise<FermataCreateDealer200Response> {
+            return localVarFp.fermataResumeDealer(fermataResumeDealerRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * Transfer assets between wallets owned by the same user under the same dealer.
@@ -579,6 +1044,17 @@ export const FermataApiFactory = function (configuration?: Configuration, basePa
  */
 export class FermataApi extends BaseAPI {
     /**
+     * Archive a dealer — permanently stops all operations. All open positions must be closed before archiving. Admin only.
+     * @summary Archive dealer
+     * @param {FermataArchiveDealerRequest} [fermataArchiveDealerRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public fermataArchiveDealer(fermataArchiveDealerRequest?: FermataArchiveDealerRequest, options?: RawAxiosRequestConfig) {
+        return FermataApiFp(this.configuration).fermataArchiveDealer(fermataArchiveDealerRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Close a wallet. Terminal state — only a final withdrawal to zero balance is allowed after closing.
      * @summary Close wallet
      * @param {FermataCloseWalletRequest} [fermataCloseWalletRequest] 
@@ -587,6 +1063,17 @@ export class FermataApi extends BaseAPI {
      */
     public fermataCloseWallet(fermataCloseWalletRequest?: FermataCloseWalletRequest, options?: RawAxiosRequestConfig) {
         return FermataApiFp(this.configuration).fermataCloseWallet(fermataCloseWalletRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Create a new dealer account in the Fermata venue. Admin only. Provisions a Trading Account (venue=FERMATA), a dealer wallet in the Formance Ledger, and dealer configuration.
+     * @summary Create dealer
+     * @param {FermataCreateDealerRequest} [fermataCreateDealerRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public fermataCreateDealer(fermataCreateDealerRequest?: FermataCreateDealerRequest, options?: RawAxiosRequestConfig) {
+        return FermataApiFp(this.configuration).fermataCreateDealer(fermataCreateDealerRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -612,6 +1099,28 @@ export class FermataApi extends BaseAPI {
     }
 
     /**
+     * Get a single dealer by ID, including configuration and linked accounts.
+     * @summary Get dealer
+     * @param {string} dealerAccountId Dealer account ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public fermataGetDealer(dealerAccountId: string, options?: RawAxiosRequestConfig) {
+        return FermataApiFp(this.configuration).fermataGetDealer(dealerAccountId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get a single wallet by ID, including balances and status.
+     * @summary Get wallet
+     * @param {string} walletId Wallet ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public fermataGetWallet(walletId: string, options?: RawAxiosRequestConfig) {
+        return FermataApiFp(this.configuration).fermataGetWallet(walletId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Link an existing exchange trading account to the dealer as a liquidity provider for hedging.
      * @summary Link exchange account to dealer
      * @param {FermataLinkDealerRequest} [fermataLinkDealerRequest] 
@@ -620,6 +1129,20 @@ export class FermataApi extends BaseAPI {
      */
     public fermataLinkDealer(fermataLinkDealerRequest?: FermataLinkDealerRequest, options?: RawAxiosRequestConfig) {
         return FermataApiFp(this.configuration).fermataLinkDealer(fermataLinkDealerRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List dealers with optional status filter. Admin only.
+     * @summary List dealers
+     * @param {DealerStatus} [status] Filter by dealer status
+     * @param {number} [limit] Limit the number of returned results
+     * @param {number} [offset] Offset of the returned results
+     * @param {string} [cursor] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public fermataListDealers(status?: DealerStatus, limit?: number, offset?: number, cursor?: string, options?: RawAxiosRequestConfig) {
+        return FermataApiFp(this.configuration).fermataListDealers(status, limit, offset, cursor, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -634,6 +1157,28 @@ export class FermataApi extends BaseAPI {
      */
     public fermataListWallets(walletType?: WalletType, limit?: number, offset?: number, cursor?: string, options?: RawAxiosRequestConfig) {
         return FermataApiFp(this.configuration).fermataListWallets(walletType, limit, offset, cursor, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Pause a dealer — stops quoting but continues hedging open positions. Admin only.
+     * @summary Pause dealer
+     * @param {FermataPauseDealerRequest} [fermataPauseDealerRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public fermataPauseDealer(fermataPauseDealerRequest?: FermataPauseDealerRequest, options?: RawAxiosRequestConfig) {
+        return FermataApiFp(this.configuration).fermataPauseDealer(fermataPauseDealerRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Resume a paused dealer — restores quoting capability. Admin only.
+     * @summary Resume dealer
+     * @param {FermataResumeDealerRequest} [fermataResumeDealerRequest] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public fermataResumeDealer(fermataResumeDealerRequest?: FermataResumeDealerRequest, options?: RawAxiosRequestConfig) {
+        return FermataApiFp(this.configuration).fermataResumeDealer(fermataResumeDealerRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

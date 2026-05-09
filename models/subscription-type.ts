@@ -15,18 +15,18 @@
 
 
 /**
- * Type of data subscription
+ * Type of data subscription. Format: `{LEVEL}.SUBSCRIPTION.{TYPE}`.  Market-level subscriptions stream public market data; trading-account-level subscriptions stream account-scoped data.  `TRADING_ACCOUNT.SUBSCRIPTION.TRADING_ACCOUNT` is deprecated — use `TRADING_ACCOUNT.SUBSCRIPTION.USER_DATA` instead (which combines `PORTFOLIO` and `EXECUTION_REPORT`). 
  */
 
 export const SubscriptionType = {
-    Orderbook: 'ORDERBOOK',
-    Trade: 'TRADE',
-    Ticker: 'TICKER',
-    Kline: 'KLINE',
-    UserData: 'USER_DATA',
-    Portfolio: 'PORTFOLIO',
-    ExecutionReport: 'EXECUTION_REPORT',
-    TradingAccount: 'TRADING_ACCOUNT'
+    MarketSubscriptionOrderbook: 'MARKET.SUBSCRIPTION.ORDERBOOK',
+    MarketSubscriptionTrade: 'MARKET.SUBSCRIPTION.TRADE',
+    MarketSubscriptionTicker: 'MARKET.SUBSCRIPTION.TICKER',
+    MarketSubscriptionKline: 'MARKET.SUBSCRIPTION.KLINE',
+    TradingAccountSubscriptionUserData: 'TRADING_ACCOUNT.SUBSCRIPTION.USER_DATA',
+    TradingAccountSubscriptionPortfolio: 'TRADING_ACCOUNT.SUBSCRIPTION.PORTFOLIO',
+    TradingAccountSubscriptionExecutionReport: 'TRADING_ACCOUNT.SUBSCRIPTION.EXECUTION_REPORT',
+    TradingAccountSubscriptionTradingAccount: 'TRADING_ACCOUNT.SUBSCRIPTION.TRADING_ACCOUNT',
 } as const;
 
 export type SubscriptionType = typeof SubscriptionType[keyof typeof SubscriptionType];

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tradingAccountId** | **string** | UUID string | [default to undefined]
-**currency** | **string** | Base currency for the portfolio summary | [default to undefined]
+**currency** | **string** | Asset symbol (e.g. currency code, base asset) | [default to undefined]
 **leverage** | **number** | Leverage multiplier | [default to undefined]
 **equity** | **string** | Decimal value as string to preserve precision | [default to undefined]
 **margin** | **string** | Decimal value as string to preserve precision | [default to undefined]

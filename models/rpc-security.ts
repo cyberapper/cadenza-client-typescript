@@ -22,6 +22,9 @@ import type { Venue } from './venue';
  */
 export interface RpcSecurity {
     'securityId'?: string;
+    /**
+     * Asset symbol (e.g. currency code, base asset)
+     */
     'symbol'?: string;
     'externalSymbol'?: string;
     'venue'?: Venue;

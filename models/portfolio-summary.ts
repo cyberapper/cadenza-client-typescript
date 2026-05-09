@@ -20,7 +20,7 @@ export interface PortfolioSummary {
      */
     'tradingAccountId': string;
     /**
-     * Base currency for the portfolio summary
+     * Asset symbol (e.g. currency code, base asset)
      */
     'currency': string;
     /**

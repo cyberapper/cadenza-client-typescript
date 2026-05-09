@@ -180,7 +180,7 @@ export interface TradeOrder {
 export const TradeOrderContingencyTypeEnum = {
     Oco: 'OCO',
     Oto: 'OTO',
-    Otoco: 'OTOCO'
+    Otoco: 'OTOCO',
 } as const;
 
 export type TradeOrderContingencyTypeEnum = typeof TradeOrderContingencyTypeEnum[keyof typeof TradeOrderContingencyTypeEnum];

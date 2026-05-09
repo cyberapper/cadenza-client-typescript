@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **credentialIds** | **Array&lt;string&gt;** |  | [optional] [default to undefined]
 **credentials** | [**Array&lt;RpcTradingAccountCredential&gt;**](RpcTradingAccountCredential.md) |  | [optional] [default to undefined]
 **credentialId** | **string** |  | [default to undefined]
-**currency** | **string** | Filter by currency | [optional] [default to undefined]
+**currency** | **string** | Asset symbol (e.g. currency code, base asset) | [optional] [default to undefined]
 **portfolio** | [**RpcPortfolio**](RpcPortfolio.md) |  | [default to undefined]
 **symbols** | **Array&lt;string&gt;** |  | [optional] [default to undefined]
 **instruments** | **Array&lt;string&gt;** |  | [default to undefined]
@@ -45,13 +45,12 @@ Name | Type | Description | Notes
 **securities** | **Array&lt;string&gt;** |  | [default to undefined]
 **securityIds** | **Array&lt;string&gt;** |  | [default to undefined]
 **externalSymbols** | **Array&lt;string&gt;** |  | [optional] [default to undefined]
-**symbol** | **string** | Symbol (alternative to instrumentId) | [optional] [default to undefined]
 **depth** | **number** | Order book depth | [optional] [default to 10]
 **instrumentIds** | **Array&lt;string&gt;** |  | [optional] [default to undefined]
-**orderBooks** | [**Array&lt;RpcOrderBook&gt;**](RpcOrderBook.md) |  | [default to undefined]
-**klines** | [**Array&lt;RpcKline&gt;**](RpcKline.md) |  | [default to undefined]
-**interval** | **string** |  | [optional] [default to undefined]
-**tickers** | [**Array&lt;RpcTicker&gt;**](RpcTicker.md) |  | [default to undefined]
+**orderBooks** | [**Array&lt;OrderBook&gt;**](OrderBook.md) |  | [default to undefined]
+**klines** | [**Array&lt;Kline&gt;**](Kline.md) |  | [default to undefined]
+**interval** | [**KlineInterval**](KlineInterval.md) |  | [optional] [default to undefined]
+**tickers** | [**Array&lt;Ticker&gt;**](Ticker.md) |  | [default to undefined]
 
 ## Example
 
@@ -98,7 +97,6 @@ const instance: WsRPCRequestData = {
     securities,
     securityIds,
     externalSymbols,
-    symbol,
     depth,
     instrumentIds,
     orderBooks,

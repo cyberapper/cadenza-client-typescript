@@ -18,13 +18,13 @@
 import type { RpcError } from './rpc-error';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcTicker } from './rpc-ticker';
+import type { Ticker } from './ticker';
 
 /**
  * Response for saving tickers
  */
 export interface RpcSaveTickersResult {
-    'data'?: Array<RpcTicker>;
+    'data'?: Array<Ticker>;
     'error'?: RpcError;
 }
 

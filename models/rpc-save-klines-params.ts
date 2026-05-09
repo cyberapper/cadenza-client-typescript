@@ -15,12 +15,12 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcKline } from './rpc-kline';
+import type { Kline } from './kline';
 
 /**
  * Request to save klines (candlestick data)
  */
 export interface RpcSaveKlinesParams {
-    'klines': Array<RpcKline>;
+    'klines': Array<Kline>;
 }
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **portfolioSummaryId** | **string** |  | [optional] [default to undefined]
 **tradingAccountId** | **string** |  | [optional] [default to undefined]
-**currency** | **string** | Summary currency | [optional] [default to undefined]
+**currency** | **string** | Asset symbol (e.g. currency code, base asset) | [optional] [default to undefined]
 **leverage** | **number** |  | [optional] [default to undefined]
 **equity** | **string** | Total equity | [optional] [default to undefined]
 **margin** | **string** | Margin collateral | [optional] [default to undefined]

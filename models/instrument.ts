@@ -39,7 +39,7 @@ export interface Instrument {
     'instrumentId': string;
     'venue': Venue;
     /**
-     * Human-readable symbol format
+     * Trading pair symbol in format {BASE}/{QUOTE}
      */
     'symbol': string;
     /**
@@ -142,7 +142,7 @@ export interface Instrument {
 
 export const InstrumentExerciseStyleEnum = {
     European: 'EUROPEAN',
-    American: 'AMERICAN'
+    American: 'AMERICAN',
 } as const;
 
 export type InstrumentExerciseStyleEnum = typeof InstrumentExerciseStyleEnum[keyof typeof InstrumentExerciseStyleEnum];

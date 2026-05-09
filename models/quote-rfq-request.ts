@@ -54,6 +54,18 @@ export interface QuoteRfqRequest {
      * Client-provided reference for idempotency and tracking
      */
     'quoteRequestId'?: string;
+    /**
+     * Time to live in seconds
+     */
+    'ttl'?: number;
+    /**
+     * Absolute expiry timestamp (ISO 8601). Mutually exclusive with ttl. If neither ttl nor expireAt is set, defaults to 10 seconds from quote creation.
+     */
+    'expireAt'?: string;
+    /**
+     * UUID string
+     */
+    'pricingProfileId'?: string;
 }
 
 

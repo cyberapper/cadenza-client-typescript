@@ -20,7 +20,7 @@
 
 export const CollateralMode = {
     Cross: 'CROSS',
-    Isolated: 'ISOLATED'
+    Isolated: 'ISOLATED',
 } as const;
 
 export type CollateralMode = typeof CollateralMode[keyof typeof CollateralMode];

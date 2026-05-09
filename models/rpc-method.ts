@@ -155,7 +155,7 @@ export const RpcMethod = {
     ResponseSubscriptionList: 'response.subscription.list',
     EventSubscriptionUpdated: 'event.subscription.updated',
     CommandSubscriptionMcCreate: 'command.subscription.mc.create',
-    ResponseSubscriptionMcCreate: 'response.subscription.mc.create'
+    ResponseSubscriptionMcCreate: 'response.subscription.mc.create',
 } as const;
 
 export type RpcMethod = typeof RpcMethod[keyof typeof RpcMethod];

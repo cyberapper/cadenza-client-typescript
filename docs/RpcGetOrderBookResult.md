@@ -6,7 +6,7 @@ Response containing order book
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**RpcOrderBook**](RpcOrderBook.md) |  | [optional] [default to undefined]
+**data** | [**OrderBook**](OrderBook.md) |  | [optional] [default to undefined]
 **error** | [**RpcError**](RpcError.md) |  | [optional] [default to undefined]
 
 ## Example

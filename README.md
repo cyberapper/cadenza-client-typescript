@@ -58,11 +58,18 @@ Class | Method | HTTP request | Description
 *AuthenticationApi* | [**authRefreshToken**](docs/AuthenticationApi.md#authrefreshtoken) | **POST** /api/v3/auth/token/refresh | Refresh access token
 *AuthenticationApi* | [**authSignup**](docs/AuthenticationApi.md#authsignup) | **POST** /api/v3/auth/signup | Sign up new user
 *AuthenticationApi* | [**authUpdateUser**](docs/AuthenticationApi.md#authupdateuser) | **PUT** /api/v3/auth/user | Update current user
+*FermataApi* | [**fermataArchiveDealer**](docs/FermataApi.md#fermataarchivedealer) | **POST** /api/v3/fermata/dealer/archive | Archive dealer
 *FermataApi* | [**fermataCloseWallet**](docs/FermataApi.md#fermataclosewallet) | **POST** /api/v3/fermata/wallet/close | Close wallet
+*FermataApi* | [**fermataCreateDealer**](docs/FermataApi.md#fermatacreatedealer) | **POST** /api/v3/fermata/dealer/create | Create dealer
 *FermataApi* | [**fermataCreateWallet**](docs/FermataApi.md#fermatacreatewallet) | **POST** /api/v3/fermata/wallet/create | Create wallet
 *FermataApi* | [**fermataFreezeWallet**](docs/FermataApi.md#fermatafreezewallet) | **POST** /api/v3/fermata/wallet/freeze | Freeze wallet
+*FermataApi* | [**fermataGetDealer**](docs/FermataApi.md#fermatagetdealer) | **GET** /api/v3/fermata/dealer/get | Get dealer
+*FermataApi* | [**fermataGetWallet**](docs/FermataApi.md#fermatagetwallet) | **GET** /api/v3/fermata/wallet/get | Get wallet
 *FermataApi* | [**fermataLinkDealer**](docs/FermataApi.md#fermatalinkdealer) | **POST** /api/v3/fermata/dealer/link | Link exchange account to dealer
+*FermataApi* | [**fermataListDealers**](docs/FermataApi.md#fermatalistdealers) | **GET** /api/v3/fermata/dealer/list | List dealers
 *FermataApi* | [**fermataListWallets**](docs/FermataApi.md#fermatalistwallets) | **GET** /api/v3/fermata/wallet/list | List wallets
+*FermataApi* | [**fermataPauseDealer**](docs/FermataApi.md#fermatapausedealer) | **POST** /api/v3/fermata/dealer/pause | Pause dealer
+*FermataApi* | [**fermataResumeDealer**](docs/FermataApi.md#fermataresumedealer) | **POST** /api/v3/fermata/dealer/resume | Resume dealer
 *FermataApi* | [**fermataTransferWallet**](docs/FermataApi.md#fermatatransferwallet) | **POST** /api/v3/fermata/wallet/transfer | Transfer between wallets
 *FermataApi* | [**fermataUnfreezeWallet**](docs/FermataApi.md#fermataunfreezewallet) | **POST** /api/v3/fermata/wallet/unfreeze | Unfreeze wallet
 *FermataApi* | [**fermataUnlinkDealer**](docs/FermataApi.md#fermataunlinkdealer) | **POST** /api/v3/fermata/dealer/unlink | Unlink exchange account from dealer
@@ -70,10 +77,13 @@ Class | Method | HTTP request | Description
 *MarketApi* | [**deleteMarketSecurity**](docs/MarketApi.md#deletemarketsecurity) | **DELETE** /api/v3/market/security/delete | Delete market security
 *MarketApi* | [**disableMarketInstrument**](docs/MarketApi.md#disablemarketinstrument) | **POST** /api/v3/market/instrument/disable | Disable market instrument
 *MarketApi* | [**enableMarketInstrument**](docs/MarketApi.md#enablemarketinstrument) | **POST** /api/v3/market/instrument/enable | Enable market instrument
+*MarketApi* | [**getMarketKline**](docs/MarketApi.md#getmarketkline) | **GET** /api/v3/market/kline/get | Get market kline
 *MarketApi* | [**getMarketOrderBook**](docs/MarketApi.md#getmarketorderbook) | **GET** /api/v3/market/orderBook/get | Get market order book
+*MarketApi* | [**getMarketTicker**](docs/MarketApi.md#getmarketticker) | **GET** /api/v3/market/ticker/get | Get market ticker
 *MarketApi* | [**listMarketInstruments**](docs/MarketApi.md#listmarketinstruments) | **GET** /api/v3/market/instrument/list | List market instruments
 *MarketApi* | [**listMarketOrderBooks**](docs/MarketApi.md#listmarketorderbooks) | **GET** /api/v3/market/orderBook/list | List market order books
 *MarketApi* | [**listMarketSecurities**](docs/MarketApi.md#listmarketsecurities) | **GET** /api/v3/market/security/list | List market securities
+*MarketApi* | [**listMarketTickers**](docs/MarketApi.md#listmarkettickers) | **GET** /api/v3/market/ticker/list | List market tickers
 *MarketApi* | [**listMarketVenues**](docs/MarketApi.md#listmarketvenues) | **GET** /api/v3/market/venue/list | List market venues
 *MarketApi* | [**syncMarketInstruments**](docs/MarketApi.md#syncmarketinstruments) | **POST** /api/v3/market/instrument/sync | Sync market instruments
 *MarketApi* | [**syncMarketSecurities**](docs/MarketApi.md#syncmarketsecurities) | **POST** /api/v3/market/security/sync | Sync market securities
@@ -135,6 +145,7 @@ Class | Method | HTTP request | Description
  - [CreateTradingAccountCredentialRequest](docs/CreateTradingAccountCredentialRequest.md)
  - [CredentialStatus](docs/CredentialStatus.md)
  - [CredentialType](docs/CredentialType.md)
+ - [DealerStatus](docs/DealerStatus.md)
  - [DeleteMarketInstrument200Response](docs/DeleteMarketInstrument200Response.md)
  - [DeleteMarketInstrumentRequest](docs/DeleteMarketInstrumentRequest.md)
  - [DeleteMarketSecurity200Response](docs/DeleteMarketSecurity200Response.md)
@@ -145,18 +156,27 @@ Class | Method | HTTP request | Description
  - [EnableMarketInstrument200Response](docs/EnableMarketInstrument200Response.md)
  - [EnableMarketInstrumentRequest](docs/EnableMarketInstrumentRequest.md)
  - [EnableTradingAccountRequest](docs/EnableTradingAccountRequest.md)
+ - [FermataArchiveDealerRequest](docs/FermataArchiveDealerRequest.md)
  - [FermataCloseWalletRequest](docs/FermataCloseWalletRequest.md)
+ - [FermataCreateDealer200Response](docs/FermataCreateDealer200Response.md)
+ - [FermataCreateDealerRequest](docs/FermataCreateDealerRequest.md)
  - [FermataCreateWallet200Response](docs/FermataCreateWallet200Response.md)
  - [FermataCreateWalletRequest](docs/FermataCreateWalletRequest.md)
+ - [FermataDealer](docs/FermataDealer.md)
  - [FermataFreezeWalletRequest](docs/FermataFreezeWalletRequest.md)
  - [FermataLinkDealerRequest](docs/FermataLinkDealerRequest.md)
+ - [FermataListDealers200Response](docs/FermataListDealers200Response.md)
  - [FermataListWallets200Response](docs/FermataListWallets200Response.md)
+ - [FermataPauseDealerRequest](docs/FermataPauseDealerRequest.md)
+ - [FermataResumeDealerRequest](docs/FermataResumeDealerRequest.md)
  - [FermataTransferWalletRequest](docs/FermataTransferWalletRequest.md)
  - [FermataUnfreezeWalletRequest](docs/FermataUnfreezeWalletRequest.md)
  - [FermataUnlinkDealerRequest](docs/FermataUnlinkDealerRequest.md)
  - [FermataWallet](docs/FermataWallet.md)
  - [FinancialSecurity](docs/FinancialSecurity.md)
+ - [GetMarketKline200Response](docs/GetMarketKline200Response.md)
  - [GetMarketOrderBook200Response](docs/GetMarketOrderBook200Response.md)
+ - [GetMarketTicker200Response](docs/GetMarketTicker200Response.md)
  - [Health200Response](docs/Health200Response.md)
  - [Health200ResponseChecks](docs/Health200ResponseChecks.md)
  - [HealthCheckComponent](docs/HealthCheckComponent.md)
@@ -165,9 +185,12 @@ Class | Method | HTTP request | Description
  - [Instrument](docs/Instrument.md)
  - [InstrumentStatus](docs/InstrumentStatus.md)
  - [InstrumentType](docs/InstrumentType.md)
+ - [Kline](docs/Kline.md)
+ - [KlineInterval](docs/KlineInterval.md)
  - [ListMarketInstruments200Response](docs/ListMarketInstruments200Response.md)
  - [ListMarketOrderBooks200Response](docs/ListMarketOrderBooks200Response.md)
  - [ListMarketSecurities200Response](docs/ListMarketSecurities200Response.md)
+ - [ListMarketTickers200Response](docs/ListMarketTickers200Response.md)
  - [ListMarketVenues200Response](docs/ListMarketVenues200Response.md)
  - [ListTradeOrders200Response](docs/ListTradeOrders200Response.md)
  - [ListTradingAccountCredentials200Response](docs/ListTradingAccountCredentials200Response.md)
@@ -179,11 +202,12 @@ Class | Method | HTTP request | Description
  - [MarketVenue](docs/MarketVenue.md)
  - [OperationStatus](docs/OperationStatus.md)
  - [OperationType](docs/OperationType.md)
+ - [OrderBook](docs/OrderBook.md)
+ - [OrderBookType](docs/OrderBookType.md)
  - [OrderQuantityType](docs/OrderQuantityType.md)
  - [OrderSide](docs/OrderSide.md)
  - [OrderStatus](docs/OrderStatus.md)
  - [OrderType](docs/OrderType.md)
- - [Orderbook](docs/Orderbook.md)
  - [Pagination](docs/Pagination.md)
  - [Portfolio](docs/Portfolio.md)
  - [PortfolioSummary](docs/PortfolioSummary.md)
@@ -244,7 +268,6 @@ Class | Method | HTTP request | Description
  - [RpcHealthCheckResult](docs/RpcHealthCheckResult.md)
  - [RpcInstrument](docs/RpcInstrument.md)
  - [RpcInstrumentUpdatedEvent](docs/RpcInstrumentUpdatedEvent.md)
- - [RpcKline](docs/RpcKline.md)
  - [RpcListCredentialsParams](docs/RpcListCredentialsParams.md)
  - [RpcListCredentialsResult](docs/RpcListCredentialsResult.md)
  - [RpcListInstrumentsParams](docs/RpcListInstrumentsParams.md)
@@ -273,9 +296,6 @@ Class | Method | HTTP request | Description
  - [RpcListTradingAccountsResult](docs/RpcListTradingAccountsResult.md)
  - [RpcListVenuesResult](docs/RpcListVenuesResult.md)
  - [RpcMethod](docs/RpcMethod.md)
- - [RpcOhlcv](docs/RpcOhlcv.md)
- - [RpcOrderBook](docs/RpcOrderBook.md)
- - [RpcOrderBookLevel](docs/RpcOrderBookLevel.md)
  - [RpcOrderBookUpdatedEvent](docs/RpcOrderBookUpdatedEvent.md)
  - [RpcPagination](docs/RpcPagination.md)
  - [RpcPortfolio](docs/RpcPortfolio.md)
@@ -321,7 +341,6 @@ Class | Method | HTTP request | Description
  - [RpcSyncSecuritiesParams](docs/RpcSyncSecuritiesParams.md)
  - [RpcSyncSecuritiesResult](docs/RpcSyncSecuritiesResult.md)
  - [RpcSystemInfo](docs/RpcSystemInfo.md)
- - [RpcTicker](docs/RpcTicker.md)
  - [RpcTradeOrder](docs/RpcTradeOrder.md)
  - [RpcTradeOrderUpdatedEvent](docs/RpcTradeOrderUpdatedEvent.md)
  - [RpcTradingAccount](docs/RpcTradingAccount.md)
@@ -357,6 +376,7 @@ Class | Method | HTTP request | Description
  - [SyncMarketInstrumentsRequest](docs/SyncMarketInstrumentsRequest.md)
  - [SyncMarketInstrumentsResponseData](docs/SyncMarketInstrumentsResponseData.md)
  - [SyncMarketSecuritiesRequest](docs/SyncMarketSecuritiesRequest.md)
+ - [Ticker](docs/Ticker.md)
  - [TimeInForce](docs/TimeInForce.md)
  - [TradeExecution](docs/TradeExecution.md)
  - [TradeOrder](docs/TradeOrder.md)
@@ -369,6 +389,7 @@ Class | Method | HTTP request | Description
  - [UnsubscribeRequest](docs/UnsubscribeRequest.md)
  - [UpdateMode](docs/UpdateMode.md)
  - [UpdateTradingAccountRequest](docs/UpdateTradingAccountRequest.md)
+ - [UpdateType](docs/UpdateType.md)
  - [Venue](docs/Venue.md)
  - [VenueStatus](docs/VenueStatus.md)
  - [VerifyTradingAccountCredential200Response](docs/VerifyTradingAccountCredential200Response.md)

@@ -22,7 +22,7 @@ export const QuantityType = {
     Base: 'BASE',
     Quote: 'QUOTE',
     PositionRatio: 'POSITION_RATIO',
-    PositionPercentage: 'POSITION_PERCENTAGE'
+    PositionPercentage: 'POSITION_PERCENTAGE',
 } as const;
 
 export type QuantityType = typeof QuantityType[keyof typeof QuantityType];

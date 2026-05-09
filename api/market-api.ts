@@ -38,15 +38,23 @@ import type { EnableMarketInstrument200Response } from '../models';
 // @ts-ignore
 import type { EnableMarketInstrumentRequest } from '../models';
 // @ts-ignore
+import type { GetMarketKline200Response } from '../models';
+// @ts-ignore
 import type { GetMarketOrderBook200Response } from '../models';
 // @ts-ignore
+import type { GetMarketTicker200Response } from '../models';
+// @ts-ignore
 import type { InstrumentStatus } from '../models';
+// @ts-ignore
+import type { KlineInterval } from '../models';
 // @ts-ignore
 import type { ListMarketInstruments200Response } from '../models';
 // @ts-ignore
 import type { ListMarketOrderBooks200Response } from '../models';
 // @ts-ignore
 import type { ListMarketSecurities200Response } from '../models';
+// @ts-ignore
+import type { ListMarketTickers200Response } from '../models';
 // @ts-ignore
 import type { ListMarketVenues200Response } from '../models';
 // @ts-ignore
@@ -213,16 +221,75 @@ export const MarketApiAxiosParamCreator = function (configuration?: Configuratio
             };
         },
         /**
-         * Get order book for a specific instrument. instrumentId or venue+symbol
+         * Get klines (candlestick data) for a specific instrument and interval. Returns a single `kline` object containing an array of OHLCV candles.  Returns `isClosed: true` for historical-only queries; `isClosed: false` only when the queried range includes the live (currently forming) bar. 
+         * @summary Get market kline
+         * @param {KlineInterval} interval Kline interval (e.g. &#x60;1m&#x60;, &#x60;5m&#x60;, &#x60;1h&#x60;, &#x60;1d&#x60;)
+         * @param {string} [instrumentId] Instrument ID
+         * @param {number} [from] Range start (Unix timestamp in milliseconds, inclusive)
+         * @param {number} [to] Range end (Unix timestamp in milliseconds, inclusive)
+         * @param {number} [limit] Limit the number of returned results
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getMarketKline: async (interval: KlineInterval, instrumentId?: string, from?: number, to?: number, limit?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'interval' is not null or undefined
+            assertParamExists('getMarketKline', 'interval', interval)
+            const localVarPath = `/api/v3/market/kline/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication SupabaseOAuth2BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (instrumentId !== undefined) {
+                localVarQueryParameter['instrumentId'] = instrumentId;
+            }
+
+            if (interval !== undefined) {
+                localVarQueryParameter['interval'] = interval;
+            }
+
+            if (from !== undefined) {
+                localVarQueryParameter['from'] = from;
+            }
+
+            if (to !== undefined) {
+                localVarQueryParameter['to'] = to;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get order book for a specific instrument.
          * @summary Get market order book
          * @param {string} [instrumentId] Instrument ID
-         * @param {Venue} [venue] Exchange type
-         * @param {string} [symbol] Instrument Symbol
          * @param {number} [depth] Order book depth
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMarketOrderBook: async (instrumentId?: string, venue?: Venue, symbol?: string, depth?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        getMarketOrderBook: async (instrumentId?: string, depth?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v3/market/orderBook/get`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -243,16 +310,47 @@ export const MarketApiAxiosParamCreator = function (configuration?: Configuratio
                 localVarQueryParameter['instrumentId'] = instrumentId;
             }
 
-            if (venue !== undefined) {
-                localVarQueryParameter['venue'] = venue;
-            }
-
-            if (symbol !== undefined) {
-                localVarQueryParameter['symbol'] = symbol;
-            }
-
             if (depth !== undefined) {
                 localVarQueryParameter['depth'] = depth;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get ticker for a specific instrument.
+         * @summary Get market ticker
+         * @param {string} [instrumentId] Instrument ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getMarketTicker: async (instrumentId?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v3/market/ticker/get`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication SupabaseOAuth2BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (instrumentId !== undefined) {
+                localVarQueryParameter['instrumentId'] = instrumentId;
             }
 
             localVarHeaderParameter['Accept'] = 'application/json';
@@ -331,16 +429,14 @@ export const MarketApiAxiosParamCreator = function (configuration?: Configuratio
             };
         },
         /**
-         * List order books for multiple instruments
+         * List order books for multiple instruments. Filter by `instrumentIds`.
          * @summary List market order books
-         * @param {Array<string>} [instrumentIds] 
-         * @param {Venue} [venue] Exchange type
-         * @param {Array<string>} [symbols] Instrument Symbols array
+         * @param {Array<string>} [instrumentIds] Instrument ID array. Repeat the param to pass multiple values.
          * @param {number} [depth] Order book depth
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listMarketOrderBooks: async (instrumentIds?: Array<string>, venue?: Venue, symbols?: Array<string>, depth?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listMarketOrderBooks: async (instrumentIds?: Array<string>, depth?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v3/market/orderBook/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -359,14 +455,6 @@ export const MarketApiAxiosParamCreator = function (configuration?: Configuratio
 
             if (instrumentIds) {
                 localVarQueryParameter['instrumentIds'] = instrumentIds;
-            }
-
-            if (venue !== undefined) {
-                localVarQueryParameter['venue'] = venue;
-            }
-
-            if (symbols) {
-                localVarQueryParameter['symbols'] = symbols;
             }
 
             if (depth !== undefined) {
@@ -425,6 +513,60 @@ export const MarketApiAxiosParamCreator = function (configuration?: Configuratio
 
             if (offset !== undefined) {
                 localVarQueryParameter['offset'] = offset;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * List tickers for screening — filter by `instrumentIds`.
+         * @summary List market tickers
+         * @param {Array<string>} [instrumentIds] Instrument ID array. Repeat the param to pass multiple values.
+         * @param {number} [limit] Limit the number of returned results
+         * @param {number} [offset] Offset of the returned results
+         * @param {string} [cursor] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listMarketTickers: async (instrumentIds?: Array<string>, limit?: number, offset?: number, cursor?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/v3/market/ticker/list`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication SupabaseOAuth2BearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (instrumentIds) {
+                localVarQueryParameter['instrumentIds'] = instrumentIds;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (offset !== undefined) {
+                localVarQueryParameter['offset'] = offset;
+            }
+
+            if (cursor !== undefined) {
+                localVarQueryParameter['cursor'] = cursor;
             }
 
             localVarHeaderParameter['Accept'] = 'application/json';
@@ -608,19 +750,47 @@ export const MarketApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Get order book for a specific instrument. instrumentId or venue+symbol
+         * Get klines (candlestick data) for a specific instrument and interval. Returns a single `kline` object containing an array of OHLCV candles.  Returns `isClosed: true` for historical-only queries; `isClosed: false` only when the queried range includes the live (currently forming) bar. 
+         * @summary Get market kline
+         * @param {KlineInterval} interval Kline interval (e.g. &#x60;1m&#x60;, &#x60;5m&#x60;, &#x60;1h&#x60;, &#x60;1d&#x60;)
+         * @param {string} [instrumentId] Instrument ID
+         * @param {number} [from] Range start (Unix timestamp in milliseconds, inclusive)
+         * @param {number} [to] Range end (Unix timestamp in milliseconds, inclusive)
+         * @param {number} [limit] Limit the number of returned results
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getMarketKline(interval: KlineInterval, instrumentId?: string, from?: number, to?: number, limit?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMarketKline200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getMarketKline(interval, instrumentId, from, to, limit, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MarketApi.getMarketKline']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get order book for a specific instrument.
          * @summary Get market order book
          * @param {string} [instrumentId] Instrument ID
-         * @param {Venue} [venue] Exchange type
-         * @param {string} [symbol] Instrument Symbol
          * @param {number} [depth] Order book depth
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getMarketOrderBook(instrumentId?: string, venue?: Venue, symbol?: string, depth?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMarketOrderBook200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getMarketOrderBook(instrumentId, venue, symbol, depth, options);
+        async getMarketOrderBook(instrumentId?: string, depth?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMarketOrderBook200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getMarketOrderBook(instrumentId, depth, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MarketApi.getMarketOrderBook']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Get ticker for a specific instrument.
+         * @summary Get market ticker
+         * @param {string} [instrumentId] Instrument ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getMarketTicker(instrumentId?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GetMarketTicker200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getMarketTicker(instrumentId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MarketApi.getMarketTicker']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -642,17 +812,15 @@ export const MarketApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * List order books for multiple instruments
+         * List order books for multiple instruments. Filter by `instrumentIds`.
          * @summary List market order books
-         * @param {Array<string>} [instrumentIds] 
-         * @param {Venue} [venue] Exchange type
-         * @param {Array<string>} [symbols] Instrument Symbols array
+         * @param {Array<string>} [instrumentIds] Instrument ID array. Repeat the param to pass multiple values.
          * @param {number} [depth] Order book depth
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listMarketOrderBooks(instrumentIds?: Array<string>, venue?: Venue, symbols?: Array<string>, depth?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListMarketOrderBooks200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listMarketOrderBooks(instrumentIds, venue, symbols, depth, options);
+        async listMarketOrderBooks(instrumentIds?: Array<string>, depth?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListMarketOrderBooks200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listMarketOrderBooks(instrumentIds, depth, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MarketApi.listMarketOrderBooks']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -671,6 +839,22 @@ export const MarketApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.listMarketSecurities(venue, securityId, limit, offset, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['MarketApi.listMarketSecurities']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * List tickers for screening — filter by `instrumentIds`.
+         * @summary List market tickers
+         * @param {Array<string>} [instrumentIds] Instrument ID array. Repeat the param to pass multiple values.
+         * @param {number} [limit] Limit the number of returned results
+         * @param {number} [offset] Offset of the returned results
+         * @param {string} [cursor] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listMarketTickers(instrumentIds?: Array<string>, limit?: number, offset?: number, cursor?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListMarketTickers200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listMarketTickers(instrumentIds, limit, offset, cursor, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['MarketApi.listMarketTickers']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -761,17 +945,39 @@ export const MarketApiFactory = function (configuration?: Configuration, basePat
             return localVarFp.enableMarketInstrument(enableMarketInstrumentRequest, options).then((request) => request(axios, basePath));
         },
         /**
-         * Get order book for a specific instrument. instrumentId or venue+symbol
+         * Get klines (candlestick data) for a specific instrument and interval. Returns a single `kline` object containing an array of OHLCV candles.  Returns `isClosed: true` for historical-only queries; `isClosed: false` only when the queried range includes the live (currently forming) bar. 
+         * @summary Get market kline
+         * @param {KlineInterval} interval Kline interval (e.g. &#x60;1m&#x60;, &#x60;5m&#x60;, &#x60;1h&#x60;, &#x60;1d&#x60;)
+         * @param {string} [instrumentId] Instrument ID
+         * @param {number} [from] Range start (Unix timestamp in milliseconds, inclusive)
+         * @param {number} [to] Range end (Unix timestamp in milliseconds, inclusive)
+         * @param {number} [limit] Limit the number of returned results
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getMarketKline(interval: KlineInterval, instrumentId?: string, from?: number, to?: number, limit?: number, options?: RawAxiosRequestConfig): AxiosPromise<GetMarketKline200Response> {
+            return localVarFp.getMarketKline(interval, instrumentId, from, to, limit, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get order book for a specific instrument.
          * @summary Get market order book
          * @param {string} [instrumentId] Instrument ID
-         * @param {Venue} [venue] Exchange type
-         * @param {string} [symbol] Instrument Symbol
          * @param {number} [depth] Order book depth
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getMarketOrderBook(instrumentId?: string, venue?: Venue, symbol?: string, depth?: number, options?: RawAxiosRequestConfig): AxiosPromise<GetMarketOrderBook200Response> {
-            return localVarFp.getMarketOrderBook(instrumentId, venue, symbol, depth, options).then((request) => request(axios, basePath));
+        getMarketOrderBook(instrumentId?: string, depth?: number, options?: RawAxiosRequestConfig): AxiosPromise<GetMarketOrderBook200Response> {
+            return localVarFp.getMarketOrderBook(instrumentId, depth, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get ticker for a specific instrument.
+         * @summary Get market ticker
+         * @param {string} [instrumentId] Instrument ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getMarketTicker(instrumentId?: string, options?: RawAxiosRequestConfig): AxiosPromise<GetMarketTicker200Response> {
+            return localVarFp.getMarketTicker(instrumentId, options).then((request) => request(axios, basePath));
         },
         /**
          * List available market instruments
@@ -789,17 +995,15 @@ export const MarketApiFactory = function (configuration?: Configuration, basePat
             return localVarFp.listMarketInstruments(venue, symbols, securityType, instrumentStatus, limit, offset, options).then((request) => request(axios, basePath));
         },
         /**
-         * List order books for multiple instruments
+         * List order books for multiple instruments. Filter by `instrumentIds`.
          * @summary List market order books
-         * @param {Array<string>} [instrumentIds] 
-         * @param {Venue} [venue] Exchange type
-         * @param {Array<string>} [symbols] Instrument Symbols array
+         * @param {Array<string>} [instrumentIds] Instrument ID array. Repeat the param to pass multiple values.
          * @param {number} [depth] Order book depth
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listMarketOrderBooks(instrumentIds?: Array<string>, venue?: Venue, symbols?: Array<string>, depth?: number, options?: RawAxiosRequestConfig): AxiosPromise<ListMarketOrderBooks200Response> {
-            return localVarFp.listMarketOrderBooks(instrumentIds, venue, symbols, depth, options).then((request) => request(axios, basePath));
+        listMarketOrderBooks(instrumentIds?: Array<string>, depth?: number, options?: RawAxiosRequestConfig): AxiosPromise<ListMarketOrderBooks200Response> {
+            return localVarFp.listMarketOrderBooks(instrumentIds, depth, options).then((request) => request(axios, basePath));
         },
         /**
          * List available financial securities
@@ -813,6 +1017,19 @@ export const MarketApiFactory = function (configuration?: Configuration, basePat
          */
         listMarketSecurities(venue?: Venue, securityId?: string, limit?: number, offset?: number, options?: RawAxiosRequestConfig): AxiosPromise<ListMarketSecurities200Response> {
             return localVarFp.listMarketSecurities(venue, securityId, limit, offset, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * List tickers for screening — filter by `instrumentIds`.
+         * @summary List market tickers
+         * @param {Array<string>} [instrumentIds] Instrument ID array. Repeat the param to pass multiple values.
+         * @param {number} [limit] Limit the number of returned results
+         * @param {number} [offset] Offset of the returned results
+         * @param {string} [cursor] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listMarketTickers(instrumentIds?: Array<string>, limit?: number, offset?: number, cursor?: string, options?: RawAxiosRequestConfig): AxiosPromise<ListMarketTickers200Response> {
+            return localVarFp.listMarketTickers(instrumentIds, limit, offset, cursor, options).then((request) => request(axios, basePath));
         },
         /**
          * List available market venues/exchanges
@@ -895,17 +1112,41 @@ export class MarketApi extends BaseAPI {
     }
 
     /**
-     * Get order book for a specific instrument. instrumentId or venue+symbol
+     * Get klines (candlestick data) for a specific instrument and interval. Returns a single `kline` object containing an array of OHLCV candles.  Returns `isClosed: true` for historical-only queries; `isClosed: false` only when the queried range includes the live (currently forming) bar. 
+     * @summary Get market kline
+     * @param {KlineInterval} interval Kline interval (e.g. &#x60;1m&#x60;, &#x60;5m&#x60;, &#x60;1h&#x60;, &#x60;1d&#x60;)
+     * @param {string} [instrumentId] Instrument ID
+     * @param {number} [from] Range start (Unix timestamp in milliseconds, inclusive)
+     * @param {number} [to] Range end (Unix timestamp in milliseconds, inclusive)
+     * @param {number} [limit] Limit the number of returned results
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public getMarketKline(interval: KlineInterval, instrumentId?: string, from?: number, to?: number, limit?: number, options?: RawAxiosRequestConfig) {
+        return MarketApiFp(this.configuration).getMarketKline(interval, instrumentId, from, to, limit, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get order book for a specific instrument.
      * @summary Get market order book
      * @param {string} [instrumentId] Instrument ID
-     * @param {Venue} [venue] Exchange type
-     * @param {string} [symbol] Instrument Symbol
      * @param {number} [depth] Order book depth
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public getMarketOrderBook(instrumentId?: string, venue?: Venue, symbol?: string, depth?: number, options?: RawAxiosRequestConfig) {
-        return MarketApiFp(this.configuration).getMarketOrderBook(instrumentId, venue, symbol, depth, options).then((request) => request(this.axios, this.basePath));
+    public getMarketOrderBook(instrumentId?: string, depth?: number, options?: RawAxiosRequestConfig) {
+        return MarketApiFp(this.configuration).getMarketOrderBook(instrumentId, depth, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get ticker for a specific instrument.
+     * @summary Get market ticker
+     * @param {string} [instrumentId] Instrument ID
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public getMarketTicker(instrumentId?: string, options?: RawAxiosRequestConfig) {
+        return MarketApiFp(this.configuration).getMarketTicker(instrumentId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -925,17 +1166,15 @@ export class MarketApi extends BaseAPI {
     }
 
     /**
-     * List order books for multiple instruments
+     * List order books for multiple instruments. Filter by `instrumentIds`.
      * @summary List market order books
-     * @param {Array<string>} [instrumentIds] 
-     * @param {Venue} [venue] Exchange type
-     * @param {Array<string>} [symbols] Instrument Symbols array
+     * @param {Array<string>} [instrumentIds] Instrument ID array. Repeat the param to pass multiple values.
      * @param {number} [depth] Order book depth
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public listMarketOrderBooks(instrumentIds?: Array<string>, venue?: Venue, symbols?: Array<string>, depth?: number, options?: RawAxiosRequestConfig) {
-        return MarketApiFp(this.configuration).listMarketOrderBooks(instrumentIds, venue, symbols, depth, options).then((request) => request(this.axios, this.basePath));
+    public listMarketOrderBooks(instrumentIds?: Array<string>, depth?: number, options?: RawAxiosRequestConfig) {
+        return MarketApiFp(this.configuration).listMarketOrderBooks(instrumentIds, depth, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -950,6 +1189,20 @@ export class MarketApi extends BaseAPI {
      */
     public listMarketSecurities(venue?: Venue, securityId?: string, limit?: number, offset?: number, options?: RawAxiosRequestConfig) {
         return MarketApiFp(this.configuration).listMarketSecurities(venue, securityId, limit, offset, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * List tickers for screening — filter by `instrumentIds`.
+     * @summary List market tickers
+     * @param {Array<string>} [instrumentIds] Instrument ID array. Repeat the param to pass multiple values.
+     * @param {number} [limit] Limit the number of returned results
+     * @param {number} [offset] Offset of the returned results
+     * @param {string} [cursor] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public listMarketTickers(instrumentIds?: Array<string>, limit?: number, offset?: number, cursor?: string, options?: RawAxiosRequestConfig) {
+        return MarketApiFp(this.configuration).listMarketTickers(instrumentIds, limit, offset, cursor, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

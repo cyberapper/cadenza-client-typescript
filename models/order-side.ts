@@ -21,7 +21,7 @@
 export const OrderSide = {
     Buy: 'BUY',
     Sell: 'SELL',
-    Unknown: 'UNKNOWN'
+    Unknown: 'UNKNOWN',
 } as const;
 
 export type OrderSide = typeof OrderSide[keyof typeof OrderSide];

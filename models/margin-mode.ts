@@ -20,7 +20,7 @@
 
 export const MarginMode = {
     Isolated: 'ISOLATED',
-    Cross: 'CROSS'
+    Cross: 'CROSS',
 } as const;
 
 export type MarginMode = typeof MarginMode[keyof typeof MarginMode];

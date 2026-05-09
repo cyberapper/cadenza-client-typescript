@@ -20,7 +20,7 @@
 
 export const PositionStatus = {
     Open: 'OPEN',
-    Closed: 'CLOSED'
+    Closed: 'CLOSED',
 } as const;
 
 export type PositionStatus = typeof PositionStatus[keyof typeof PositionStatus];

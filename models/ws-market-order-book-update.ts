@@ -15,11 +15,11 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Orderbook } from './orderbook';
+import type { OrderBook } from './order-book';
 
 export interface WsMarketOrderBookUpdate {
     'channel': WsMarketOrderBookUpdateChannelEnum;
-    'data': Orderbook;
+    'data': OrderBook;
     /**
      * UUID string
      */
@@ -31,7 +31,7 @@ export interface WsMarketOrderBookUpdate {
 }
 
 export const WsMarketOrderBookUpdateChannelEnum = {
-    MarketOrderBook: 'market.orderBook'
+    MarketOrderBook: 'market.orderBook',
 } as const;
 
 export type WsMarketOrderBookUpdateChannelEnum = typeof WsMarketOrderBookUpdateChannelEnum[keyof typeof WsMarketOrderBookUpdateChannelEnum];

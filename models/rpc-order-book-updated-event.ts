@@ -15,12 +15,12 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcOrderBook } from './rpc-order-book';
+import type { OrderBook } from './order-book';
 
 /**
  * Order book update event (pushed via WebSocket)
  */
 export interface RpcOrderBookUpdatedEvent {
-    'data'?: RpcOrderBook;
+    'data'?: OrderBook;
 }
 

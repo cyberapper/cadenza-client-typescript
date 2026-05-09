@@ -15,12 +15,12 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcTicker } from './rpc-ticker';
+import type { Ticker } from './ticker';
 
 /**
  * Request to save tickers
  */
 export interface RpcSaveTickersParams {
-    'tickers': Array<RpcTicker>;
+    'tickers': Array<Ticker>;
 }
 

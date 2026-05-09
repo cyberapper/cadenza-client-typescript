@@ -6,7 +6,7 @@ Request to save tickers
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tickers** | [**Array&lt;RpcTicker&gt;**](RpcTicker.md) |  | [default to undefined]
+**tickers** | [**Array&lt;Ticker&gt;**](Ticker.md) |  | [default to undefined]
 
 ## Example
 

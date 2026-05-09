@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { KlineInterval } from './kline-interval';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { Venue } from './venue';
 
 /**
@@ -24,7 +27,7 @@ export interface RpcListKlinesParams {
     'instrumentIds'?: Array<string>;
     'venue'?: Venue;
     'symbols'?: Array<string>;
-    'interval'?: string;
+    'interval'?: KlineInterval;
 }
 
 

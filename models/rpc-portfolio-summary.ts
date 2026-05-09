@@ -21,7 +21,7 @@ export interface RpcPortfolioSummary {
     'portfolioSummaryId'?: string;
     'tradingAccountId'?: string;
     /**
-     * Summary currency
+     * Asset symbol (e.g. currency code, base asset)
      */
     'currency'?: string;
     'leverage'?: number;

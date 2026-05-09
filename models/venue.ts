@@ -44,7 +44,7 @@ export const Venue = {
     IbkrPaper: 'IBKR_PAPER',
     Fermata: 'FERMATA',
     Mock: 'MOCK',
-    Paper: 'PAPER'
+    Paper: 'PAPER',
 } as const;
 
 export type Venue = typeof Venue[keyof typeof Venue];

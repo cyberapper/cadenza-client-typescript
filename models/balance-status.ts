@@ -20,7 +20,7 @@
 
 export const BalanceStatus = {
     Active: 'ACTIVE',
-    Locked: 'LOCKED'
+    Locked: 'LOCKED',
 } as const;
 
 export type BalanceStatus = typeof BalanceStatus[keyof typeof BalanceStatus];

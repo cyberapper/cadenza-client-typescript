@@ -15,18 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { KlineInterval } from './kline-interval';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { SubscriptionType } from './subscription-type';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Venue } from './venue';
 
 /**
- * Request to create a market data subscription
+ * Request to create a market data subscription.  `subscriptionType` selects the data stream — for unified market data surfaces, use `MARKET.SUBSCRIPTION.ORDERBOOK`, `MARKET.SUBSCRIPTION.TICKER`, or `MARKET.SUBSCRIPTION.KLINE`. `interval` is required when `subscriptionType: MARKET.SUBSCRIPTION.KLINE` and ignored otherwise. 
  */
 export interface RpcCreateSubscriptionParams {
     'venue': Venue;
     'instruments'?: Array<string>;
     'subscriptionType': SubscriptionType;
+    'interval'?: KlineInterval;
 }
 
 

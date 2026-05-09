@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **channel** | **string** |  | [default to undefined]
-**data** | [**Orderbook**](Orderbook.md) |  | [default to undefined]
+**data** | [**OrderBook**](OrderBook.md) |  | [default to undefined]
 **subscriptionId** | **string** | UUID string | [default to undefined]
 **timestamp** | **number** | Unix timestamp in milliseconds | [default to undefined]
 
