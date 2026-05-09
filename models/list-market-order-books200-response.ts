@@ -21,7 +21,7 @@ import type { BaseResponse } from './base-response';
 import type { BaseResponseDetails } from './base-response-details';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { Orderbook } from './orderbook';
+import type { OrderBook } from './order-book';
 
 /**
  * @type ListMarketOrderBooks200Response

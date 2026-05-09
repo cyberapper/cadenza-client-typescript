@@ -31,7 +31,7 @@ export const OrderStatus = {
     Rejected: 'REJECTED',
     Expired: 'EXPIRED',
     Revoked: 'REVOKED',
-    Unknown: 'UNKNOWN'
+    Unknown: 'UNKNOWN',
 } as const;
 
 export type OrderStatus = typeof OrderStatus[keyof typeof OrderStatus];

@@ -20,7 +20,7 @@
 
 export const PositionMode = {
     Hedge: 'HEDGE',
-    Netting: 'NETTING'
+    Netting: 'NETTING',
 } as const;
 
 export type PositionMode = typeof PositionMode[keyof typeof PositionMode];

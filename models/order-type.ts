@@ -30,7 +30,7 @@ export const OrderType = {
     TakeProfitLimit: 'TAKE_PROFIT_LIMIT',
     TrailingStop: 'TRAILING_STOP',
     Quoted: 'QUOTED',
-    Unknown: 'UNKNOWN'
+    Unknown: 'UNKNOWN',
 } as const;
 
 export type OrderType = typeof OrderType[keyof typeof OrderType];

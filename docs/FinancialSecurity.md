@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **securityId** | **string** | Security ID, id in the format of venue:symbol | [optional] [default to undefined]
-**symbol** | **string** | Symbol | [optional] [default to undefined]
+**symbol** | **string** | Asset symbol (e.g. currency code, base asset) | [optional] [default to undefined]
 **venue** | [**Venue**](Venue.md) |  | [optional] [default to undefined]
 **securityType** | [**SecurityType**](SecurityType.md) |  | [optional] [default to undefined]
 **precision** | **number** | Precision | [optional] [default to undefined]

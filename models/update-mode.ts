@@ -20,7 +20,7 @@
 
 export const UpdateMode = {
     Delta: 'DELTA',
-    Snapshot: 'SNAPSHOT'
+    Snapshot: 'SNAPSHOT',
 } as const;
 
 export type UpdateMode = typeof UpdateMode[keyof typeof UpdateMode];

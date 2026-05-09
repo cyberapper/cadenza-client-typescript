@@ -22,7 +22,7 @@ export const TradingAccountCredentialStatus = {
     Created: 'CREATED',
     Active: 'ACTIVE',
     Expired: 'EXPIRED',
-    Revoked: 'REVOKED'
+    Revoked: 'REVOKED',
 } as const;
 
 export type TradingAccountCredentialStatus = typeof TradingAccountCredentialStatus[keyof typeof TradingAccountCredentialStatus];

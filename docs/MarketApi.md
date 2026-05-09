@@ -8,10 +8,13 @@ All URIs are relative to *https://cadenza-api-uat.algo724.com*
 |[**deleteMarketSecurity**](#deletemarketsecurity) | **DELETE** /api/v3/market/security/delete | Delete market security|
 |[**disableMarketInstrument**](#disablemarketinstrument) | **POST** /api/v3/market/instrument/disable | Disable market instrument|
 |[**enableMarketInstrument**](#enablemarketinstrument) | **POST** /api/v3/market/instrument/enable | Enable market instrument|
+|[**getMarketKline**](#getmarketkline) | **GET** /api/v3/market/kline/get | Get market kline|
 |[**getMarketOrderBook**](#getmarketorderbook) | **GET** /api/v3/market/orderBook/get | Get market order book|
+|[**getMarketTicker**](#getmarketticker) | **GET** /api/v3/market/ticker/get | Get market ticker|
 |[**listMarketInstruments**](#listmarketinstruments) | **GET** /api/v3/market/instrument/list | List market instruments|
 |[**listMarketOrderBooks**](#listmarketorderbooks) | **GET** /api/v3/market/orderBook/list | List market order books|
 |[**listMarketSecurities**](#listmarketsecurities) | **GET** /api/v3/market/security/list | List market securities|
+|[**listMarketTickers**](#listmarkettickers) | **GET** /api/v3/market/ticker/list | List market tickers|
 |[**listMarketVenues**](#listmarketvenues) | **GET** /api/v3/market/venue/list | List market venues|
 |[**syncMarketInstruments**](#syncmarketinstruments) | **POST** /api/v3/market/instrument/sync | Sync market instruments|
 |[**syncMarketSecurities**](#syncmarketsecurities) | **POST** /api/v3/market/security/sync | Sync market securities|
@@ -244,10 +247,78 @@ const { status, data } = await apiInstance.enableMarketInstrument(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **getMarketKline**
+> GetMarketKline200Response getMarketKline()
+
+Get klines (candlestick data) for a specific instrument and interval. Returns a single `kline` object containing an array of OHLCV candles.  Returns `isClosed: true` for historical-only queries; `isClosed: false` only when the queried range includes the live (currently forming) bar. 
+
+### Example
+
+```typescript
+import {
+    MarketApi,
+    Configuration
+} from '@cyberapper/cadenza-client';
+
+const configuration = new Configuration();
+const apiInstance = new MarketApi(configuration);
+
+let interval: KlineInterval; //Kline interval (e.g. `1m`, `5m`, `1h`, `1d`) (default to undefined)
+let instrumentId: string; //Instrument ID (optional) (default to undefined)
+let from: number; //Range start (Unix timestamp in milliseconds, inclusive) (optional) (default to undefined)
+let to: number; //Range end (Unix timestamp in milliseconds, inclusive) (optional) (default to undefined)
+let limit: number; //Limit the number of returned results (optional) (default to 50)
+
+const { status, data } = await apiInstance.getMarketKline(
+    interval,
+    instrumentId,
+    from,
+    to,
+    limit
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **interval** | **KlineInterval** | Kline interval (e.g. &#x60;1m&#x60;, &#x60;5m&#x60;, &#x60;1h&#x60;, &#x60;1d&#x60;) | defaults to undefined|
+| **instrumentId** | [**string**] | Instrument ID | (optional) defaults to undefined|
+| **from** | [**number**] | Range start (Unix timestamp in milliseconds, inclusive) | (optional) defaults to undefined|
+| **to** | [**number**] | Range end (Unix timestamp in milliseconds, inclusive) | (optional) defaults to undefined|
+| **limit** | [**number**] | Limit the number of returned results | (optional) defaults to 50|
+
+
+### Return type
+
+**GetMarketKline200Response**
+
+### Authorization
+
+[SupabaseOAuth2BearerAuth](../README.md#SupabaseOAuth2BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Get market kline response |  -  |
+|**400** | Bad request |  -  |
+|**401** | Unauthorized - Authentication required |  -  |
+|**403** | Forbidden - Insufficient permissions |  -  |
+|**404** | Not found |  -  |
+|**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **getMarketOrderBook**
 > GetMarketOrderBook200Response getMarketOrderBook()
 
-Get order book for a specific instrument. instrumentId or venue+symbol
+Get order book for a specific instrument.
 
 ### Example
 
@@ -261,14 +332,10 @@ const configuration = new Configuration();
 const apiInstance = new MarketApi(configuration);
 
 let instrumentId: string; //Instrument ID (optional) (default to undefined)
-let venue: Venue; //Exchange type (optional) (default to undefined)
-let symbol: string; //Instrument Symbol (optional) (default to undefined)
 let depth: number; //Order book depth (optional) (default to 10)
 
 const { status, data } = await apiInstance.getMarketOrderBook(
     instrumentId,
-    venue,
-    symbol,
     depth
 );
 ```
@@ -278,8 +345,6 @@ const { status, data } = await apiInstance.getMarketOrderBook(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **instrumentId** | [**string**] | Instrument ID | (optional) defaults to undefined|
-| **venue** | **Venue** | Exchange type | (optional) defaults to undefined|
-| **symbol** | [**string**] | Instrument Symbol | (optional) defaults to undefined|
 | **depth** | [**number**] | Order book depth | (optional) defaults to 10|
 
 
@@ -301,6 +366,62 @@ const { status, data } = await apiInstance.getMarketOrderBook(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Get market order book response |  -  |
+|**400** | Bad request |  -  |
+|**401** | Unauthorized - Authentication required |  -  |
+|**403** | Forbidden - Insufficient permissions |  -  |
+|**404** | Not found |  -  |
+|**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getMarketTicker**
+> GetMarketTicker200Response getMarketTicker()
+
+Get ticker for a specific instrument.
+
+### Example
+
+```typescript
+import {
+    MarketApi,
+    Configuration
+} from '@cyberapper/cadenza-client';
+
+const configuration = new Configuration();
+const apiInstance = new MarketApi(configuration);
+
+let instrumentId: string; //Instrument ID (optional) (default to undefined)
+
+const { status, data } = await apiInstance.getMarketTicker(
+    instrumentId
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **instrumentId** | [**string**] | Instrument ID | (optional) defaults to undefined|
+
+
+### Return type
+
+**GetMarketTicker200Response**
+
+### Authorization
+
+[SupabaseOAuth2BearerAuth](../README.md#SupabaseOAuth2BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Get market ticker response |  -  |
 |**400** | Bad request |  -  |
 |**401** | Unauthorized - Authentication required |  -  |
 |**403** | Forbidden - Insufficient permissions |  -  |
@@ -383,7 +504,7 @@ const { status, data } = await apiInstance.listMarketInstruments(
 # **listMarketOrderBooks**
 > ListMarketOrderBooks200Response listMarketOrderBooks()
 
-List order books for multiple instruments
+List order books for multiple instruments. Filter by `instrumentIds`.
 
 ### Example
 
@@ -396,15 +517,11 @@ import {
 const configuration = new Configuration();
 const apiInstance = new MarketApi(configuration);
 
-let instrumentIds: Array<string>; // (optional) (default to undefined)
-let venue: Venue; //Exchange type (optional) (default to undefined)
-let symbols: Array<string>; //Instrument Symbols array (optional) (default to undefined)
+let instrumentIds: Array<string>; //Instrument ID array. Repeat the param to pass multiple values. (optional) (default to undefined)
 let depth: number; //Order book depth (optional) (default to 10)
 
 const { status, data } = await apiInstance.listMarketOrderBooks(
     instrumentIds,
-    venue,
-    symbols,
     depth
 );
 ```
@@ -413,9 +530,7 @@ const { status, data } = await apiInstance.listMarketOrderBooks(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **instrumentIds** | **Array&lt;string&gt;** |  | (optional) defaults to undefined|
-| **venue** | **Venue** | Exchange type | (optional) defaults to undefined|
-| **symbols** | **Array&lt;string&gt;** | Instrument Symbols array | (optional) defaults to undefined|
+| **instrumentIds** | **Array&lt;string&gt;** | Instrument ID array. Repeat the param to pass multiple values. | (optional) defaults to undefined|
 | **depth** | [**number**] | Order book depth | (optional) defaults to 10|
 
 
@@ -502,6 +617,71 @@ const { status, data } = await apiInstance.listMarketSecurities(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | List market securities response |  -  |
+|**400** | Bad request |  -  |
+|**401** | Unauthorized - Authentication required |  -  |
+|**403** | Forbidden - Insufficient permissions |  -  |
+|**404** | Not found |  -  |
+|**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **listMarketTickers**
+> ListMarketTickers200Response listMarketTickers()
+
+List tickers for screening — filter by `instrumentIds`.
+
+### Example
+
+```typescript
+import {
+    MarketApi,
+    Configuration
+} from '@cyberapper/cadenza-client';
+
+const configuration = new Configuration();
+const apiInstance = new MarketApi(configuration);
+
+let instrumentIds: Array<string>; //Instrument ID array. Repeat the param to pass multiple values. (optional) (default to undefined)
+let limit: number; //Limit the number of returned results (optional) (default to 50)
+let offset: number; //Offset of the returned results (optional) (default to 0)
+let cursor: string; // (optional) (default to undefined)
+
+const { status, data } = await apiInstance.listMarketTickers(
+    instrumentIds,
+    limit,
+    offset,
+    cursor
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **instrumentIds** | **Array&lt;string&gt;** | Instrument ID array. Repeat the param to pass multiple values. | (optional) defaults to undefined|
+| **limit** | [**number**] | Limit the number of returned results | (optional) defaults to 50|
+| **offset** | [**number**] | Offset of the returned results | (optional) defaults to 0|
+| **cursor** | [**string**] |  | (optional) defaults to undefined|
+
+
+### Return type
+
+**ListMarketTickers200Response**
+
+### Authorization
+
+[SupabaseOAuth2BearerAuth](../README.md#SupabaseOAuth2BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | List market tickers response |  -  |
 |**400** | Bad request |  -  |
 |**401** | Unauthorized - Authentication required |  -  |
 |**403** | Forbidden - Insufficient permissions |  -  |

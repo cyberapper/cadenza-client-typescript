@@ -20,7 +20,7 @@
 
 export const PositionSide = {
     Long: 'LONG',
-    Short: 'SHORT'
+    Short: 'SHORT',
 } as const;
 
 export type PositionSide = typeof PositionSide[keyof typeof PositionSide];

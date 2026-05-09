@@ -22,7 +22,7 @@ export const SubscriptionStatus = {
     Inactive: 'INACTIVE',
     Active: 'ACTIVE',
     Paused: 'PAUSED',
-    Terminated: 'TERMINATED'
+    Terminated: 'TERMINATED',
 } as const;
 
 export type SubscriptionStatus = typeof SubscriptionStatus[keyof typeof SubscriptionStatus];

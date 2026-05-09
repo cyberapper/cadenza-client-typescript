@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcError } from './rpc-error';
+import type { Kline } from './kline';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcKline } from './rpc-kline';
+import type { RpcError } from './rpc-error';
 
 /**
  * Response for listing klines
  */
 export interface RpcListKlinesResult {
-    'data'?: Array<RpcKline>;
+    'data'?: Array<Kline>;
     'error'?: RpcError;
 }
 

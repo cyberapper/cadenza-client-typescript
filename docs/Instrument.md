@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [default to undefined]
 **venue** | [**Venue**](Venue.md) |  | [default to undefined]
-**symbol** | **string** | Human-readable symbol format | [default to undefined]
+**symbol** | **string** | Trading pair symbol in format {BASE}/{QUOTE} | [default to undefined]
 **externalSymbol** | **string** | Symbol format used by the exchange | [default to undefined]
 **description** | **string** | Symbol description, human readable description of the instrument | [optional] [default to undefined]
 **instrumentType** | [**InstrumentType**](InstrumentType.md) |  | [default to undefined]

@@ -22,7 +22,7 @@ export const InstrumentStatus = {
     Active: 'ACTIVE',
     Inactive: 'INACTIVE',
     Disabled: 'DISABLED',
-    Delisted: 'DELISTED'
+    Delisted: 'DELISTED',
 } as const;
 
 export type InstrumentStatus = typeof InstrumentStatus[keyof typeof InstrumentStatus];

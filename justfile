@@ -30,7 +30,8 @@ openapi:
         -g typescript-axios \
         -o . \
         --git-user-id cyberapper \
-        --git-repo-id cadenza-client-typescript
+        --git-repo-id cadenza-client-typescript \
+        --additional-properties=npmName=@cyberapper/cadenza-client,npmVersion=1.0.0,supportsES6=true,withSeparateModelsAndApi=true,modelPackage=models,apiPackage=api,disallowAdditionalPropertiesIfNotPresent=false
     echo "Cleaning up unwanted generated files..."
     rm -f git_push.sh
     echo "Generation complete!"

@@ -21,7 +21,7 @@
 export const WalletStatus = {
     Active: 'ACTIVE',
     Frozen: 'FROZEN',
-    Closed: 'CLOSED'
+    Closed: 'CLOSED',
 } as const;
 
 export type WalletStatus = typeof WalletStatus[keyof typeof WalletStatus];

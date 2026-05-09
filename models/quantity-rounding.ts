@@ -27,7 +27,7 @@ export const QuantityRounding = {
     Floor: 'FLOOR',
     HalfUp: 'HALF_UP',
     HalfDown: 'HALF_DOWN',
-    HalfEven: 'HALF_EVEN'
+    HalfEven: 'HALF_EVEN',
 } as const;
 
 export type QuantityRounding = typeof QuantityRounding[keyof typeof QuantityRounding];

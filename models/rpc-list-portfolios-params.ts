@@ -30,7 +30,7 @@ export interface RpcListPortfoliosParams {
      */
     'venue'?: string;
     /**
-     * Filter by currency
+     * Asset symbol (e.g. currency code, base asset)
      */
     'currency'?: string;
     'pagination'?: RpcPagination;

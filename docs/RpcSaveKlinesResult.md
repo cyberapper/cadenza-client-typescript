@@ -6,7 +6,7 @@ Response for saving klines
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**Array&lt;RpcKline&gt;**](RpcKline.md) |  | [optional] [default to undefined]
+**data** | [**Array&lt;Kline&gt;**](Kline.md) |  | [optional] [default to undefined]
 **error** | [**RpcError**](RpcError.md) |  | [optional] [default to undefined]
 
 ## Example

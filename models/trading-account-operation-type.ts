@@ -27,7 +27,7 @@ export const TradingAccountOperationType = {
     Enabled: 'ENABLED',
     Disable: 'DISABLE',
     Disabled: 'DISABLED',
-    Deleted: 'DELETED'
+    Deleted: 'DELETED',
 } as const;
 
 export type TradingAccountOperationType = typeof TradingAccountOperationType[keyof typeof TradingAccountOperationType];

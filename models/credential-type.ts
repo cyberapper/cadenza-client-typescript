@@ -24,7 +24,7 @@ export const CredentialType = {
     Hmac: 'HMAC',
     Oauth: 'OAUTH',
     Rsa: 'RSA',
-    Ed25519: 'ED25519'
+    Ed25519: 'ED25519',
 } as const;
 
 export type CredentialType = typeof CredentialType[keyof typeof CredentialType];

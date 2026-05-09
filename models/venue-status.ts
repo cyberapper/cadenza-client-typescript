@@ -21,7 +21,7 @@
 export const VenueStatus = {
     Online: 'ONLINE',
     Offline: 'OFFLINE',
-    Maintenance: 'MAINTENANCE'
+    Maintenance: 'MAINTENANCE',
 } as const;
 
 export type VenueStatus = typeof VenueStatus[keyof typeof VenueStatus];

@@ -23,7 +23,7 @@ export const QuoteStatus = {
     Accepted: 'ACCEPTED',
     Rejected: 'REJECTED',
     Expired: 'EXPIRED',
-    Replaced: 'REPLACED'
+    Replaced: 'REPLACED',
 } as const;
 
 export type QuoteStatus = typeof QuoteStatus[keyof typeof QuoteStatus];

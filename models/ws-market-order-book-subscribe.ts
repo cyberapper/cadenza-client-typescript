@@ -24,12 +24,12 @@ export interface WsMarketOrderBookSubscribe {
 }
 
 export const WsMarketOrderBookSubscribeActionEnum = {
-    Subscribe: 'subscribe'
+    Subscribe: 'subscribe',
 } as const;
 
 export type WsMarketOrderBookSubscribeActionEnum = typeof WsMarketOrderBookSubscribeActionEnum[keyof typeof WsMarketOrderBookSubscribeActionEnum];
 export const WsMarketOrderBookSubscribeChannelEnum = {
-    MarketOrderBook: 'market.orderBook'
+    MarketOrderBook: 'market.orderBook',
 } as const;
 
 export type WsMarketOrderBookSubscribeChannelEnum = typeof WsMarketOrderBookSubscribeChannelEnum[keyof typeof WsMarketOrderBookSubscribeChannelEnum];

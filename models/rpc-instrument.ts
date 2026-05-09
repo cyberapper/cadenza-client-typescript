@@ -31,10 +31,13 @@ import type { Venue } from './venue';
  */
 export interface RpcInstrument {
     /**
-     * Unique instrument identifier (format: VENUE:BASE/QUOTE)
+     * Instrument ID in format {VENUE}:{BASE}/{QUOTE}
      */
     'instrumentId'?: string;
     'venue'?: Venue;
+    /**
+     * Trading pair symbol in format {BASE}/{QUOTE}
+     */
     'symbol'?: string;
     'externalSymbol'?: string;
     'description'?: string;

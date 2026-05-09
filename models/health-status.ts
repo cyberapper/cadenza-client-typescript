@@ -21,7 +21,7 @@
 export const HealthStatus = {
     Healthy: 'healthy',
     Degraded: 'degraded',
-    Unhealthy: 'unhealthy'
+    Unhealthy: 'unhealthy',
 } as const;
 
 export type HealthStatus = typeof HealthStatus[keyof typeof HealthStatus];

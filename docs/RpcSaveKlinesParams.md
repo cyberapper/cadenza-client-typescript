@@ -6,7 +6,7 @@ Request to save klines (candlestick data)
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**klines** | [**Array&lt;RpcKline&gt;**](RpcKline.md) |  | [default to undefined]
+**klines** | [**Array&lt;Kline&gt;**](Kline.md) |  | [default to undefined]
 
 ## Example
 

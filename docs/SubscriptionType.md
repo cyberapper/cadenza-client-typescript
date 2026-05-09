@@ -1,23 +1,23 @@
 # SubscriptionType
 
-Type of data subscription
+Type of data subscription. Format: `{LEVEL}.SUBSCRIPTION.{TYPE}`.  Market-level subscriptions stream public market data; trading-account-level subscriptions stream account-scoped data.  `TRADING_ACCOUNT.SUBSCRIPTION.TRADING_ACCOUNT` is deprecated — use `TRADING_ACCOUNT.SUBSCRIPTION.USER_DATA` instead (which combines `PORTFOLIO` and `EXECUTION_REPORT`). 
 
 ## Enum
 
-* `Orderbook` (value: `'ORDERBOOK'`)
+* `MarketSubscriptionOrderbook` (value: `'MARKET.SUBSCRIPTION.ORDERBOOK'`)
 
-* `Trade` (value: `'TRADE'`)
+* `MarketSubscriptionTrade` (value: `'MARKET.SUBSCRIPTION.TRADE'`)
 
-* `Ticker` (value: `'TICKER'`)
+* `MarketSubscriptionTicker` (value: `'MARKET.SUBSCRIPTION.TICKER'`)
 
-* `Kline` (value: `'KLINE'`)
+* `MarketSubscriptionKline` (value: `'MARKET.SUBSCRIPTION.KLINE'`)
 
-* `UserData` (value: `'USER_DATA'`)
+* `TradingAccountSubscriptionUserData` (value: `'TRADING_ACCOUNT.SUBSCRIPTION.USER_DATA'`)
 
-* `Portfolio` (value: `'PORTFOLIO'`)
+* `TradingAccountSubscriptionPortfolio` (value: `'TRADING_ACCOUNT.SUBSCRIPTION.PORTFOLIO'`)
 
-* `ExecutionReport` (value: `'EXECUTION_REPORT'`)
+* `TradingAccountSubscriptionExecutionReport` (value: `'TRADING_ACCOUNT.SUBSCRIPTION.EXECUTION_REPORT'`)
 
-* `TradingAccount` (value: `'TRADING_ACCOUNT'`)
+* `TradingAccountSubscriptionTradingAccount` (value: `'TRADING_ACCOUNT.SUBSCRIPTION.TRADING_ACCOUNT'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

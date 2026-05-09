@@ -33,7 +33,7 @@ export const TimeInForce = {
     Moo: 'MOO',
     Moc: 'MOC',
     Ext: 'EXT',
-    Unknown: 'UNKNOWN'
+    Unknown: 'UNKNOWN',
 } as const;
 
 export type TimeInForce = typeof TimeInForce[keyof typeof TimeInForce];

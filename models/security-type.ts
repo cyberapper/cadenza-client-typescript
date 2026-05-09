@@ -27,7 +27,7 @@ export const SecurityType = {
     Bond: 'BOND',
     Option: 'OPTION',
     Futures: 'FUTURES',
-    Perpetual: 'PERPETUAL'
+    Perpetual: 'PERPETUAL',
 } as const;
 
 export type SecurityType = typeof SecurityType[keyof typeof SecurityType];

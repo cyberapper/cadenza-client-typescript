@@ -25,7 +25,7 @@ export const OperationType = {
     Disable: 'DISABLE',
     Update: 'UPDATE',
     CredentialRevoke: 'CREDENTIAL_REVOKE',
-    CredentialRotate: 'CREDENTIAL_ROTATE'
+    CredentialRotate: 'CREDENTIAL_ROTATE',
 } as const;
 
 export type OperationType = typeof OperationType[keyof typeof OperationType];

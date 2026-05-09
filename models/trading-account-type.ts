@@ -21,7 +21,7 @@
 export const TradingAccountType = {
     Spot: 'SPOT',
     Margin: 'MARGIN',
-    Credit: 'CREDIT'
+    Credit: 'CREDIT',
 } as const;
 
 export type TradingAccountType = typeof TradingAccountType[keyof typeof TradingAccountType];

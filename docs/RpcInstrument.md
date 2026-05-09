@@ -6,9 +6,9 @@ Financial instrument
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**instrumentId** | **string** | Unique instrument identifier (format: VENUE:BASE/QUOTE) | [optional] [default to undefined]
+**instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [optional] [default to undefined]
 **venue** | [**Venue**](Venue.md) |  | [optional] [default to undefined]
-**symbol** | **string** |  | [optional] [default to undefined]
+**symbol** | **string** | Trading pair symbol in format {BASE}/{QUOTE} | [optional] [default to undefined]
 **externalSymbol** | **string** |  | [optional] [default to undefined]
 **description** | **string** |  | [optional] [default to undefined]
 **instrumentType** | [**InstrumentType**](InstrumentType.md) |  | [optional] [default to undefined]

@@ -22,7 +22,7 @@ export const WalletType = {
     Dealer: 'DEALER',
     Client: 'CLIENT',
     Exchange: 'EXCHANGE',
-    Accounting: 'ACCOUNTING'
+    Accounting: 'ACCOUNTING',
 } as const;
 
 export type WalletType = typeof WalletType[keyof typeof WalletType];

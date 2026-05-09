@@ -6,7 +6,7 @@ Request to save order books
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**orderBooks** | [**Array&lt;RpcOrderBook&gt;**](RpcOrderBook.md) |  | [default to undefined]
+**orderBooks** | [**Array&lt;OrderBook&gt;**](OrderBook.md) |  | [default to undefined]
 
 ## Example
 

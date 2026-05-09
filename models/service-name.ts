@@ -26,7 +26,7 @@ export const ServiceName = {
     ExecutionEngine: 'EXECUTION_ENGINE',
     HttpServer: 'HTTP_SERVER',
     MarketQuery: 'MARKET_QUERY',
-    MarketRealtime: 'MARKET_REALTIME'
+    MarketRealtime: 'MARKET_REALTIME',
 } as const;
 
 export type ServiceName = typeof ServiceName[keyof typeof ServiceName];

@@ -1,14 +1,12 @@
 # RpcGetOrderBookParams
 
-Request to get order book for an instrument
+Request to get order book for an instrument.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**instrumentId** | **string** | Instrument ID (e.g., BINANCE:BTC/USDT) | [optional] [default to undefined]
-**venue** | **string** | Venue (alternative to instrumentId) | [optional] [default to undefined]
-**symbol** | **string** | Symbol (alternative to instrumentId) | [optional] [default to undefined]
+**instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [optional] [default to undefined]
 **depth** | **number** | Order book depth | [optional] [default to 10]
 
 ## Example
@@ -18,8 +16,6 @@ import { RpcGetOrderBookParams } from '@cyberapper/cadenza-client';
 
 const instance: RpcGetOrderBookParams = {
     instrumentId,
-    venue,
-    symbol,
     depth,
 };
 ```

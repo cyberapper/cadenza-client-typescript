@@ -21,6 +21,15 @@ import type { CredentialStatus } from './credential-status';
 import type { CredentialType } from './credential-type';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { Kline } from './kline';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { KlineInterval } from './kline-interval';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { OrderBook } from './order-book';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { OrderSide } from './order-side';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -78,9 +87,6 @@ import type { RpcGetTradeOrderByIdParams } from './rpc-get-trade-order-by-id-par
 import type { RpcGetTradeOrderParams } from './rpc-get-trade-order-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcKline } from './rpc-kline';
-// May contain unused imports in some cases
-// @ts-ignore
 import type { RpcListCredentialsParams } from './rpc-list-credentials-params';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -118,9 +124,6 @@ import type { RpcListTradingAccountSubscriptionsParams } from './rpc-list-tradin
 // May contain unused imports in some cases
 // @ts-ignore
 import type { RpcListTradingAccountsParams } from './rpc-list-trading-accounts-params';
-// May contain unused imports in some cases
-// @ts-ignore
-import type { RpcOrderBook } from './rpc-order-book';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { RpcPagination } from './rpc-pagination';
@@ -177,9 +180,6 @@ import type { RpcSyncInstrumentsParams } from './rpc-sync-instruments-params';
 import type { RpcSyncSecuritiesParams } from './rpc-sync-securities-params';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcTicker } from './rpc-ticker';
-// May contain unused imports in some cases
-// @ts-ignore
 import type { RpcTradeOrder } from './rpc-trade-order';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -205,6 +205,9 @@ import type { RpcVerifyCredentialParams } from './rpc-verify-credential-params';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { SubscriptionType } from './subscription-type';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { Ticker } from './ticker';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { Venue } from './venue';

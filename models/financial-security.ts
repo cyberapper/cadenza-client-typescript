@@ -26,7 +26,7 @@ export interface FinancialSecurity {
      */
     'securityId'?: string;
     /**
-     * Symbol
+     * Asset symbol (e.g. currency code, base asset)
      */
     'symbol'?: string;
     'venue'?: Venue;

@@ -21,7 +21,7 @@
 export const OperationStatus = {
     Pending: 'PENDING',
     Success: 'SUCCESS',
-    Failed: 'FAILED'
+    Failed: 'FAILED',
 } as const;
 
 export type OperationStatus = typeof OperationStatus[keyof typeof OperationStatus];

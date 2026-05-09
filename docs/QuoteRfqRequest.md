@@ -15,6 +15,9 @@ Name | Type | Description | Notes
 **quantity** | **string** | Positive decimal value as string | [optional] [default to undefined]
 **quoteQuantity** | **string** | Positive decimal value as string | [optional] [default to undefined]
 **quoteRequestId** | **string** | Client-provided reference for idempotency and tracking | [optional] [default to undefined]
+**ttl** | **number** | Time to live in seconds | [optional] [default to 10]
+**expireAt** | **string** | Absolute expiry timestamp (ISO 8601). Mutually exclusive with ttl. If neither ttl nor expireAt is set, defaults to 10 seconds from quote creation. | [optional] [default to undefined]
+**pricingProfileId** | **string** | UUID string | [optional] [default to undefined]
 
 ## Example
 
@@ -31,6 +34,9 @@ const instance: QuoteRfqRequest = {
     quantity,
     quoteQuantity,
     quoteRequestId,
+    ttl,
+    expireAt,
+    pricingProfileId,
 };
 ```
 

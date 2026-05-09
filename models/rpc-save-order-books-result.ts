@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcError } from './rpc-error';
+import type { OrderBook } from './order-book';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { RpcOrderBook } from './rpc-order-book';
+import type { RpcError } from './rpc-error';
 
 /**
  * Response for saving order books
  */
 export interface RpcSaveOrderBooksResult {
-    'data'?: Array<RpcOrderBook>;
+    'data'?: Array<OrderBook>;
     'error'?: RpcError;
 }
 

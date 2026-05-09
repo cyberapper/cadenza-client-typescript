@@ -6,7 +6,7 @@ Response for saving tickers
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**Array&lt;RpcTicker&gt;**](RpcTicker.md) |  | [optional] [default to undefined]
+**data** | [**Array&lt;Ticker&gt;**](Ticker.md) |  | [optional] [default to undefined]
 **error** | [**RpcError**](RpcError.md) |  | [optional] [default to undefined]
 
 ## Example
