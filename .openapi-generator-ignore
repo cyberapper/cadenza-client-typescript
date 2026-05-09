@@ -29,3 +29,6 @@ CLAUDE.md
 
 # Protect package manifest (version managed by release-please)
 package.json
+
+# Protect openapi-generator-cli version pin
+openapitools.json
