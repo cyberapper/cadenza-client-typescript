@@ -4,36 +4,36 @@ Kline (candlestick) interval. Not all venues support every interval — refer to
 
 ## Enum
 
-* `_1s` (value: `'1s'`)
+* `SECOND_1` (value: `'1s'`)
 
-* `_1m` (value: `'1m'`)
+* `MINUTE_1` (value: `'1m'`)
 
-* `_3m` (value: `'3m'`)
+* `MINUTE_3` (value: `'3m'`)
 
-* `_5m` (value: `'5m'`)
+* `MINUTE_5` (value: `'5m'`)
 
-* `_15m` (value: `'15m'`)
+* `MINUTE_15` (value: `'15m'`)
 
-* `_30m` (value: `'30m'`)
+* `MINUTE_30` (value: `'30m'`)
 
-* `_1h` (value: `'1h'`)
+* `HOUR_1` (value: `'1h'`)
 
-* `_2h` (value: `'2h'`)
+* `HOUR_2` (value: `'2h'`)
 
-* `_4h` (value: `'4h'`)
+* `HOUR_4` (value: `'4h'`)
 
-* `_6h` (value: `'6h'`)
+* `HOUR_6` (value: `'6h'`)
 
-* `_8h` (value: `'8h'`)
+* `HOUR_8` (value: `'8h'`)
 
-* `_12h` (value: `'12h'`)
+* `HOUR_12` (value: `'12h'`)
 
-* `_1d` (value: `'1d'`)
+* `DAY_1` (value: `'1d'`)
 
-* `_3d` (value: `'3d'`)
+* `DAY_3` (value: `'3d'`)
 
-* `_1w` (value: `'1w'`)
+* `WEEK_1` (value: `'1w'`)
 
-* `_1M` (value: `'1M'`)
+* `MONTH_1` (value: `'1M'`)
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

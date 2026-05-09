@@ -19,22 +19,22 @@
  */
 
 export const KlineInterval = {
-    _1s: '1s',
-    _1m: '1m',
-    _3m: '3m',
-    _5m: '5m',
-    _15m: '15m',
-    _30m: '30m',
-    _1h: '1h',
-    _2h: '2h',
-    _4h: '4h',
-    _6h: '6h',
-    _8h: '8h',
-    _12h: '12h',
-    _1d: '1d',
-    _3d: '3d',
-    _1w: '1w',
-    _1M: '1M',
+    SECOND_1: '1s',
+    MINUTE_1: '1m',
+    MINUTE_3: '3m',
+    MINUTE_5: '5m',
+    MINUTE_15: '15m',
+    MINUTE_30: '30m',
+    HOUR_1: '1h',
+    HOUR_2: '2h',
+    HOUR_4: '4h',
+    HOUR_6: '6h',
+    HOUR_8: '8h',
+    HOUR_12: '12h',
+    DAY_1: '1d',
+    DAY_3: '3d',
+    WEEK_1: '1w',
+    MONTH_1: '1M',
 } as const;
 
 export type KlineInterval = typeof KlineInterval[keyof typeof KlineInterval];
