@@ -40,7 +40,7 @@ import type { TimeInForce } from './time-in-force';
  */
 export interface RpcTradeOrder {
     /**
-     * Unique trade order ID
+     * Internal trade order ID (UUID)
      */
     'tradeOrderId'?: string;
     /**
@@ -64,7 +64,7 @@ export interface RpcTradeOrder {
      */
     'venue'?: string;
     /**
-     * Trading account ID
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId'?: string;
     /**
@@ -80,11 +80,11 @@ export interface RpcTradeOrder {
      */
     'externalSymbol'?: string;
     /**
-     * Base asset
+     * Asset symbol (e.g. currency code, base asset)
      */
     'baseAsset'?: string;
     /**
-     * Quote asset
+     * Asset symbol (e.g. currency code, base asset)
      */
     'quoteAsset'?: string;
     'orderType'?: OrderType | null;

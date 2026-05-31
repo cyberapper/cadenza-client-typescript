@@ -6,18 +6,18 @@ Trade order model
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradeOrderId** | **string** | Unique trade order ID | [optional] [default to undefined]
+**tradeOrderId** | **string** | Internal trade order ID (UUID) | [optional] [default to undefined]
 **clientOrderId** | **string** | Client-assigned order ID | [optional] [default to undefined]
 **originalClientOrderId** | **string** | Original client order ID (for cancel/replace) | [optional] [default to undefined]
 **externalOrderId** | **string** | Order ID from external venue | [optional] [default to undefined]
 **idempotencyKey** | **string** | Idempotency key | [optional] [default to undefined]
 **venue** | **string** | Trading venue | [optional] [default to undefined]
-**tradingAccountId** | **string** | Trading account ID | [optional] [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [optional] [default to undefined]
 **externalTradingAccountId** | **string** | External account ID at venue | [optional] [default to undefined]
 **instrumentId** | **string** | Instrument ID (VENUE:BASE/QUOTE) | [optional] [default to undefined]
 **externalSymbol** | **string** | Symbol at external venue | [optional] [default to undefined]
-**baseAsset** | **string** | Base asset | [optional] [default to undefined]
-**quoteAsset** | **string** | Quote asset | [optional] [default to undefined]
+**baseAsset** | **string** | Asset symbol (e.g. currency code, base asset) | [optional] [default to undefined]
+**quoteAsset** | **string** | Asset symbol (e.g. currency code, base asset) | [optional] [default to undefined]
 **orderType** | [**OrderType**](OrderType.md) |  | [optional] [default to undefined]
 **orderSide** | [**OrderSide**](OrderSide.md) |  | [optional] [default to undefined]
 **quantityType** | [**QuantityType**](QuantityType.md) |  | [optional] [default to undefined]

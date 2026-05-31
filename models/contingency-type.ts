@@ -14,18 +14,17 @@
 
 
 
-export interface UnsubscribeRequest {
-    /**
-     * UUID string
-     */
-    'subscriptionId'?: string;
-    /**
-     * Internal trading account ID (UUID)
-     */
-    'tradingAccountId'?: string;
-    /**
-     * Instrument ID in format {VENUE}:{BASE}/{QUOTE}
-     */
-    'instrumentId'?: string;
-}
+/**
+ * Order list contingency type
+ */
+
+export const ContingencyType = {
+    Oco: 'OCO',
+    Oto: 'OTO',
+    Otoco: 'OTOCO',
+} as const;
+
+export type ContingencyType = typeof ContingencyType[keyof typeof ContingencyType];
+
+
 

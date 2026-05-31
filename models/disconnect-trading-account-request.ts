@@ -16,7 +16,7 @@
 
 export interface DisconnectTradingAccountRequest {
     /**
-     * UUID string
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
 }

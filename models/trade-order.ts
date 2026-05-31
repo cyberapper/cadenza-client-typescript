@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { ContingencyType } from './contingency-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { OrderQuantityType } from './order-quantity-type';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -43,19 +46,20 @@ import type { Venue } from './venue';
 
 export interface TradeOrder {
     /**
-     * UUID string
+     * Internal trade order ID (UUID)
      */
     'tradeOrderId': string;
     /**
-     * Exchange order list ID linking sibling orders in OCO/OTO/OTOCO order lists. Present on all orders in a list.
+     * Internal order list ID (UUID) linking sibling orders in OCO/OTO/OTOCO order lists
      */
     'orderListId'?: string;
     /**
-     * Order list contingency type. Present on all orders in a list.
+     * Exchange-assigned order list ID linking sibling OCO/OTO/OTOCO legs
      */
-    'contingencyType'?: TradeOrderContingencyTypeEnum;
+    'externalOrderListId'?: string;
+    'contingencyType'?: ContingencyType;
     /**
-     * UUID string
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
     'venue': Venue;
@@ -72,11 +76,11 @@ export interface TradeOrder {
      */
     'quoteId'?: string;
     /**
-     * Base asset in the trading pair
+     * Asset symbol (e.g. currency code, base asset)
      */
     'baseAsset': string;
     /**
-     * Quote asset in the trading pair
+     * Asset symbol (e.g. currency code, base asset)
      */
     'quoteAsset': string;
     'orderSide': OrderSide;
@@ -177,12 +181,5 @@ export interface TradeOrder {
     'canceledAtDateTime'?: string;
 }
 
-export const TradeOrderContingencyTypeEnum = {
-    Oco: 'OCO',
-    Oto: 'OTO',
-    Otoco: 'OTOCO',
-} as const;
-
-export type TradeOrderContingencyTypeEnum = typeof TradeOrderContingencyTypeEnum[keyof typeof TradeOrderContingencyTypeEnum];
 
 

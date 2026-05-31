@@ -22,6 +22,7 @@ export * from './cancel-trade-order-request';
 export * from './collateral-mode';
 export * from './connect-trading-account200-response';
 export * from './connect-trading-account-request';
+export * from './contingency-type';
 export * from './create-trading-account-credential200-response';
 export * from './create-trading-account-credential-request';
 export * from './credential-status';

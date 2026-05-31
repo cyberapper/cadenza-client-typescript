@@ -6,7 +6,7 @@ Request to create a credential
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradingAccountId** | **string** |  | [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [default to undefined]
 **venue** | [**Venue**](Venue.md) |  | [default to undefined]
 **credentialType** | [**CredentialType**](CredentialType.md) |  | [default to undefined]
 **apiKey** | **string** |  | [optional] [default to undefined]

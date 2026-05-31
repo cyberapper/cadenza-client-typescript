@@ -21,6 +21,9 @@ import type { RpcPagination } from './rpc-pagination';
  * Request to list trading account operations
  */
 export interface RpcListTradingAccountOperationsParams {
+    /**
+     * Internal trading account ID (UUID)
+     */
     'tradingAccountId': string;
     'pagination'?: RpcPagination;
 }

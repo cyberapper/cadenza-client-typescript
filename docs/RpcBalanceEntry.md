@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **balanceId** | **string** |  | [optional] [default to undefined]
 **externalBalanceId** | **string** |  | [optional] [default to undefined]
-**tradingAccountId** | **string** |  | [optional] [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [optional] [default to undefined]
 **securitySymbol** | **string** | Asset symbol | [optional] [default to undefined]
 **securityType** | [**SecurityType**](SecurityType.md) |  | [optional] [default to undefined]
 **status** | [**BalanceStatus**](BalanceStatus.md) |  | [optional] [default to undefined]

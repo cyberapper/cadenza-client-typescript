@@ -25,7 +25,7 @@ import type { TradingAccountStatus } from './trading-account-status';
  */
 export interface RpcListTradingAccountsParams {
     /**
-     * Filter by specific account ID
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId'?: string;
     /**

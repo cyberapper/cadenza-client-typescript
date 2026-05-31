@@ -18,6 +18,9 @@
  * Request to enable a trading account
  */
 export interface RpcEnableTradingAccountParams {
+    /**
+     * Internal trading account ID (UUID)
+     */
     'tradingAccountId': string;
 }
 

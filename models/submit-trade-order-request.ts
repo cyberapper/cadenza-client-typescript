@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { ContingencyType } from './contingency-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { OrderQuantityType } from './order-quantity-type';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,7 +37,7 @@ import type { TimeInForce } from './time-in-force';
  */
 export interface SubmitTradeOrderRequest {
     /**
-     * UUID string
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
     /**
@@ -51,6 +54,7 @@ export interface SubmitTradeOrderRequest {
     'clientOrderId'?: string;
     'orderSide': OrderSide;
     'orderType': OrderType | null;
+    'contingencyType'?: ContingencyType;
     /**
      * Decimal value as string to preserve precision
      */

@@ -31,11 +31,11 @@ import type { RpcPagination } from './rpc-pagination';
  */
 export interface RpcListTradeOrdersParams {
     /**
-     * Filter by specific trade order ID
+     * Internal trade order ID (UUID)
      */
     'tradeOrderId'?: string;
     /**
-     * Filter by trading account ID
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId'?: string;
     /**

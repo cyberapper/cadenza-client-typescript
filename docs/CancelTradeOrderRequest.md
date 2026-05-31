@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradingAccountId** | **string** | UUID string | [default to undefined]
-**tradeOrderId** | **string** | UUID string | [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [default to undefined]
+**tradeOrderId** | **string** | Internal trade order ID (UUID) | [default to undefined]
 
 ## Example
 

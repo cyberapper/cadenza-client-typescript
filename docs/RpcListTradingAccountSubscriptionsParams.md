@@ -6,7 +6,7 @@ Request to list trading account subscriptions
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradingAccountId** | **string** |  | [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [default to undefined]
 **subscriptionType** | [**SubscriptionType**](SubscriptionType.md) |  | [optional] [default to undefined]
 **status** | [**SubscriptionStatus**](SubscriptionStatus.md) |  | [optional] [default to undefined]
 **pagination** | [**RpcPagination**](RpcPagination.md) |  | [optional] [default to undefined]

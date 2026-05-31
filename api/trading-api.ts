@@ -85,7 +85,8 @@ export const TradingApiAxiosParamCreator = function (configuration?: Configurati
          * List trade orders with filtering options
          * @summary List trade orders
          * @param {string} [tradeOrderId] Trade order ID
-         * @param {string} [orderListId] Filter by order list ID to retrieve child orders of an OCO/OTO/OTOCO parent
+         * @param {string} [orderListId] Filter by internal order list ID (UUID) to retrieve child orders of an OCO/OTO/OTOCO parent
+         * @param {string} [externalOrderListId] Filter by exchange-assigned order list ID to retrieve child orders of an OCO/OTO/OTOCO parent
          * @param {OrderStatus} [orderStatus] Order status
          * @param {string} [tradingAccountId] Trading account ID
          * @param {string} [instrumentId] Instrument ID
@@ -98,7 +99,7 @@ export const TradingApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTradeOrders: async (tradeOrderId?: string, orderListId?: string, orderStatus?: OrderStatus, tradingAccountId?: string, instrumentId?: string, startTime?: number, endTime?: number, limit?: number, offset?: number, cursor?: string, ascending?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listTradeOrders: async (tradeOrderId?: string, orderListId?: string, externalOrderListId?: string, orderStatus?: OrderStatus, tradingAccountId?: string, instrumentId?: string, startTime?: number, endTime?: number, limit?: number, offset?: number, cursor?: string, ascending?: boolean, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v3/tradeOrder/list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -121,6 +122,10 @@ export const TradingApiAxiosParamCreator = function (configuration?: Configurati
 
             if (orderListId !== undefined) {
                 localVarQueryParameter['orderListId'] = orderListId;
+            }
+
+            if (externalOrderListId !== undefined) {
+                localVarQueryParameter['externalOrderListId'] = externalOrderListId;
             }
 
             if (orderStatus !== undefined) {
@@ -270,7 +275,8 @@ export const TradingApiFp = function(configuration?: Configuration) {
          * List trade orders with filtering options
          * @summary List trade orders
          * @param {string} [tradeOrderId] Trade order ID
-         * @param {string} [orderListId] Filter by order list ID to retrieve child orders of an OCO/OTO/OTOCO parent
+         * @param {string} [orderListId] Filter by internal order list ID (UUID) to retrieve child orders of an OCO/OTO/OTOCO parent
+         * @param {string} [externalOrderListId] Filter by exchange-assigned order list ID to retrieve child orders of an OCO/OTO/OTOCO parent
          * @param {OrderStatus} [orderStatus] Order status
          * @param {string} [tradingAccountId] Trading account ID
          * @param {string} [instrumentId] Instrument ID
@@ -283,8 +289,8 @@ export const TradingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listTradeOrders(tradeOrderId?: string, orderListId?: string, orderStatus?: OrderStatus, tradingAccountId?: string, instrumentId?: string, startTime?: number, endTime?: number, limit?: number, offset?: number, cursor?: string, ascending?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListTradeOrders200Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listTradeOrders(tradeOrderId, orderListId, orderStatus, tradingAccountId, instrumentId, startTime, endTime, limit, offset, cursor, ascending, options);
+        async listTradeOrders(tradeOrderId?: string, orderListId?: string, externalOrderListId?: string, orderStatus?: OrderStatus, tradingAccountId?: string, instrumentId?: string, startTime?: number, endTime?: number, limit?: number, offset?: number, cursor?: string, ascending?: boolean, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListTradeOrders200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listTradeOrders(tradeOrderId, orderListId, externalOrderListId, orderStatus, tradingAccountId, instrumentId, startTime, endTime, limit, offset, cursor, ascending, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['TradingApi.listTradeOrders']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -338,7 +344,8 @@ export const TradingApiFactory = function (configuration?: Configuration, basePa
          * List trade orders with filtering options
          * @summary List trade orders
          * @param {string} [tradeOrderId] Trade order ID
-         * @param {string} [orderListId] Filter by order list ID to retrieve child orders of an OCO/OTO/OTOCO parent
+         * @param {string} [orderListId] Filter by internal order list ID (UUID) to retrieve child orders of an OCO/OTO/OTOCO parent
+         * @param {string} [externalOrderListId] Filter by exchange-assigned order list ID to retrieve child orders of an OCO/OTO/OTOCO parent
          * @param {OrderStatus} [orderStatus] Order status
          * @param {string} [tradingAccountId] Trading account ID
          * @param {string} [instrumentId] Instrument ID
@@ -351,8 +358,8 @@ export const TradingApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listTradeOrders(tradeOrderId?: string, orderListId?: string, orderStatus?: OrderStatus, tradingAccountId?: string, instrumentId?: string, startTime?: number, endTime?: number, limit?: number, offset?: number, cursor?: string, ascending?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<ListTradeOrders200Response> {
-            return localVarFp.listTradeOrders(tradeOrderId, orderListId, orderStatus, tradingAccountId, instrumentId, startTime, endTime, limit, offset, cursor, ascending, options).then((request) => request(axios, basePath));
+        listTradeOrders(tradeOrderId?: string, orderListId?: string, externalOrderListId?: string, orderStatus?: OrderStatus, tradingAccountId?: string, instrumentId?: string, startTime?: number, endTime?: number, limit?: number, offset?: number, cursor?: string, ascending?: boolean, options?: RawAxiosRequestConfig): AxiosPromise<ListTradeOrders200Response> {
+            return localVarFp.listTradeOrders(tradeOrderId, orderListId, externalOrderListId, orderStatus, tradingAccountId, instrumentId, startTime, endTime, limit, offset, cursor, ascending, options).then((request) => request(axios, basePath));
         },
         /**
          * Request a firm quote from the RFQ dealer. The quote is a bilateral contract between the user and the dealer with a guaranteed execution price and validity period.
@@ -396,7 +403,8 @@ export class TradingApi extends BaseAPI {
      * List trade orders with filtering options
      * @summary List trade orders
      * @param {string} [tradeOrderId] Trade order ID
-     * @param {string} [orderListId] Filter by order list ID to retrieve child orders of an OCO/OTO/OTOCO parent
+     * @param {string} [orderListId] Filter by internal order list ID (UUID) to retrieve child orders of an OCO/OTO/OTOCO parent
+     * @param {string} [externalOrderListId] Filter by exchange-assigned order list ID to retrieve child orders of an OCO/OTO/OTOCO parent
      * @param {OrderStatus} [orderStatus] Order status
      * @param {string} [tradingAccountId] Trading account ID
      * @param {string} [instrumentId] Instrument ID
@@ -409,8 +417,8 @@ export class TradingApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public listTradeOrders(tradeOrderId?: string, orderListId?: string, orderStatus?: OrderStatus, tradingAccountId?: string, instrumentId?: string, startTime?: number, endTime?: number, limit?: number, offset?: number, cursor?: string, ascending?: boolean, options?: RawAxiosRequestConfig) {
-        return TradingApiFp(this.configuration).listTradeOrders(tradeOrderId, orderListId, orderStatus, tradingAccountId, instrumentId, startTime, endTime, limit, offset, cursor, ascending, options).then((request) => request(this.axios, this.basePath));
+    public listTradeOrders(tradeOrderId?: string, orderListId?: string, externalOrderListId?: string, orderStatus?: OrderStatus, tradingAccountId?: string, instrumentId?: string, startTime?: number, endTime?: number, limit?: number, offset?: number, cursor?: string, ascending?: boolean, options?: RawAxiosRequestConfig) {
+        return TradingApiFp(this.configuration).listTradeOrders(tradeOrderId, orderListId, externalOrderListId, orderStatus, tradingAccountId, instrumentId, startTime, endTime, limit, offset, cursor, ascending, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

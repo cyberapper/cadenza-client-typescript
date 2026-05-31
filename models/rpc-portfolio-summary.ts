@@ -19,6 +19,9 @@
  */
 export interface RpcPortfolioSummary {
     'portfolioSummaryId'?: string;
+    /**
+     * Internal trading account ID (UUID)
+     */
     'tradingAccountId'?: string;
     /**
      * Asset symbol (e.g. currency code, base asset)

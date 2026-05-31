@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **subscriptionId** | **string** | UUID string | [default to undefined]
 **venue** | [**Venue**](Venue.md) |  | [default to undefined]
-**tradingAccountId** | **string** | UUID string | [optional] [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [optional] [default to undefined]
 **instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [optional] [default to undefined]
 **subscriptionType** | [**SubscriptionType**](SubscriptionType.md) |  | [default to undefined]
 **status** | [**SubscriptionStatus**](SubscriptionStatus.md) |  | [default to undefined]

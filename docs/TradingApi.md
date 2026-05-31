@@ -83,7 +83,8 @@ const configuration = new Configuration();
 const apiInstance = new TradingApi(configuration);
 
 let tradeOrderId: string; //Trade order ID (optional) (default to undefined)
-let orderListId: string; //Filter by order list ID to retrieve child orders of an OCO/OTO/OTOCO parent (optional) (default to undefined)
+let orderListId: string; //Filter by internal order list ID (UUID) to retrieve child orders of an OCO/OTO/OTOCO parent (optional) (default to undefined)
+let externalOrderListId: string; //Filter by exchange-assigned order list ID to retrieve child orders of an OCO/OTO/OTOCO parent (optional) (default to undefined)
 let orderStatus: OrderStatus; //Order status (optional) (default to undefined)
 let tradingAccountId: string; //Trading account ID (optional) (default to undefined)
 let instrumentId: string; //Instrument ID (optional) (default to undefined)
@@ -97,6 +98,7 @@ let ascending: boolean; //Return records in ascending order (optional) (default 
 const { status, data } = await apiInstance.listTradeOrders(
     tradeOrderId,
     orderListId,
+    externalOrderListId,
     orderStatus,
     tradingAccountId,
     instrumentId,
@@ -114,7 +116,8 @@ const { status, data } = await apiInstance.listTradeOrders(
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **tradeOrderId** | [**string**] | Trade order ID | (optional) defaults to undefined|
-| **orderListId** | [**string**] | Filter by order list ID to retrieve child orders of an OCO/OTO/OTOCO parent | (optional) defaults to undefined|
+| **orderListId** | [**string**] | Filter by internal order list ID (UUID) to retrieve child orders of an OCO/OTO/OTOCO parent | (optional) defaults to undefined|
+| **externalOrderListId** | [**string**] | Filter by exchange-assigned order list ID to retrieve child orders of an OCO/OTO/OTOCO parent | (optional) defaults to undefined|
 | **orderStatus** | **OrderStatus** | Order status | (optional) defaults to undefined|
 | **tradingAccountId** | [**string**] | Trading account ID | (optional) defaults to undefined|
 | **instrumentId** | [**string**] | Instrument ID | (optional) defaults to undefined|

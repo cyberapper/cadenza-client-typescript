@@ -6,8 +6,8 @@ Request to cancel an existing trade order
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradeOrderId** | **string** | Trade order ID to cancel | [optional] [default to undefined]
-**tradingAccountId** | **string** | Trading account ID | [default to undefined]
+**tradeOrderId** | **string** | Internal trade order ID (UUID) | [optional] [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [default to undefined]
 **clientOrderId** | **string** | Client order ID (alternative to tradeOrderId) | [optional] [default to undefined]
 **externalOrderId** | **string** | External order ID from venue | [optional] [default to undefined]
 

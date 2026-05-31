@@ -37,7 +37,7 @@ export interface PositionEntry {
      */
     'externalPositionId'?: string | null;
     /**
-     * UUID string
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
     /**

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **operationId** | **string** | UUID string | [default to undefined]
-**tradingAccountId** | **string** | UUID string | [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [default to undefined]
 **operationType** | [**OperationType**](OperationType.md) |  | [default to undefined]
 **status** | [**OperationStatus**](OperationStatus.md) |  | [default to undefined]
 **createdAt** | **number** | Unix timestamp in milliseconds | [default to undefined]

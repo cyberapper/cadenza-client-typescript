@@ -6,8 +6,8 @@ Request to get a specific trade order
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradeOrderId** | **string** | Trade order ID | [optional] [default to undefined]
-**tradingAccountId** | **string** | Trading account ID | [optional] [default to undefined]
+**tradeOrderId** | **string** | Internal trade order ID (UUID) | [optional] [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [optional] [default to undefined]
 **clientOrderId** | **string** | Client order ID | [optional] [default to undefined]
 **externalOrderId** | **string** | External order ID | [optional] [default to undefined]
 

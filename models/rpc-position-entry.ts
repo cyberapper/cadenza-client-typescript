@@ -29,6 +29,9 @@ import type { SecurityType } from './security-type';
 export interface RpcPositionEntry {
     'positionId'?: string;
     'externalPositionId'?: string;
+    /**
+     * Internal trading account ID (UUID)
+     */
     'tradingAccountId'?: string;
     'securitySymbol'?: string;
     /**

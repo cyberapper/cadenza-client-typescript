@@ -19,7 +19,7 @@
  */
 export interface RpcGetPortfolioParams {
     /**
-     * Trading account ID
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
 }

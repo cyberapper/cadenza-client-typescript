@@ -6,7 +6,7 @@ Trading account model
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradingAccountId** | **string** | Unique trading account ID | [optional] [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [optional] [default to undefined]
 **userId** | **string** | User ID | [optional] [default to undefined]
 **tenantId** | **string** | Tenant identifier for multi-tenancy | [optional] [default to undefined]
 **nickname** | **string** | Account nickname | [optional] [default to undefined]

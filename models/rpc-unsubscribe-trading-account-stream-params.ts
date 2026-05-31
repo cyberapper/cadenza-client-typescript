@@ -19,6 +19,9 @@
  */
 export interface RpcUnsubscribeTradingAccountStreamParams {
     'subscriptionId'?: string;
+    /**
+     * Internal trading account ID (UUID)
+     */
     'tradingAccountId': string;
 }
 

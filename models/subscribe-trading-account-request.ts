@@ -16,7 +16,7 @@
 
 export interface SubscribeTradingAccountRequest {
     /**
-     * UUID string
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
 }

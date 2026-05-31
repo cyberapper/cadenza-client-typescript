@@ -56,11 +56,11 @@ export interface Quote {
      */
     'traderAccountId'?: string;
     /**
-     * Base asset being traded
+     * Asset symbol (e.g. currency code, base asset)
      */
     'baseAsset': string;
     /**
-     * Quote asset (payment currency)
+     * Asset symbol (e.g. currency code, base asset)
      */
     'quoteAsset': string;
     'orderSide': OrderSide;

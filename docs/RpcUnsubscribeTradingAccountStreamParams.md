@@ -7,7 +7,7 @@ Request to unsubscribe from trading account stream
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **subscriptionId** | **string** |  | [optional] [default to undefined]
-**tradingAccountId** | **string** |  | [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [default to undefined]
 
 ## Example
 

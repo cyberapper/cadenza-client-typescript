@@ -34,11 +34,11 @@ export interface QuoteRfqRequest {
      */
     'instrumentId'?: string;
     /**
-     * Base asset to trade. Used with quoteAsset for symbol-based venues.
+     * Asset symbol (e.g. currency code, base asset)
      */
     'baseAsset'?: string;
     /**
-     * Quote asset (payment currency). Used with baseAsset for symbol-based venues.
+     * Asset symbol (e.g. currency code, base asset)
      */
     'quoteAsset'?: string;
     'orderSide': OrderSide;

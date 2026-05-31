@@ -26,6 +26,9 @@ import type { SecurityType } from './security-type';
 export interface RpcBalanceEntry {
     'balanceId'?: string;
     'externalBalanceId'?: string;
+    /**
+     * Internal trading account ID (UUID)
+     */
     'tradingAccountId'?: string;
     /**
      * Asset symbol
