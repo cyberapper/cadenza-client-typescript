@@ -6,7 +6,7 @@ Request to list trading accounts
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradingAccountId** | **string** | Filter by specific account ID | [optional] [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [optional] [default to undefined]
 **venue** | **string** | Filter by venue | [optional] [default to undefined]
 **status** | [**TradingAccountStatus**](TradingAccountStatus.md) |  | [optional] [default to undefined]
 **pagination** | [**RpcPagination**](RpcPagination.md) |  | [optional] [default to undefined]

@@ -22,6 +22,9 @@ import type { TradingAccountOperationType } from './trading-account-operation-ty
  */
 export interface RpcTradingAccountOperationHistory {
     'tradingAccountHistoryId'?: string;
+    /**
+     * Internal trading account ID (UUID)
+     */
     'tradingAccountId'?: string;
     'timestamp'?: string;
     'operationType'?: TradingAccountOperationType;

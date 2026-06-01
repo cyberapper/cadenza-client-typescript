@@ -6,12 +6,13 @@ Submit a trade order. For exchange venues, instrumentId is required. For Fermata
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradingAccountId** | **string** | UUID string | [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [default to undefined]
 **instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [optional] [default to undefined]
 **idempotencyKey** | **string** | Idempotency key to prevent duplicate request processing | [optional] [default to undefined]
 **clientOrderId** | **string** | Client-provided order ID, used as idempotency key | [optional] [default to undefined]
 **orderSide** | [**OrderSide**](OrderSide.md) |  | [default to undefined]
 **orderType** | [**OrderType**](OrderType.md) |  | [default to undefined]
+**contingencyType** | [**ContingencyType**](ContingencyType.md) |  | [optional] [default to undefined]
 **limitPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
 **stopPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
 **quantity** | **string** | Decimal value as string to preserve precision | [default to undefined]
@@ -42,6 +43,7 @@ const instance: SubmitTradeOrderRequest = {
     clientOrderId,
     orderSide,
     orderType,
+    contingencyType,
     limitPrice,
     stopPrice,
     quantity,

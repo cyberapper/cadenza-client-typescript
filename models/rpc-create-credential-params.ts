@@ -24,6 +24,9 @@ import type { Venue } from './venue';
  * Request to create a credential
  */
 export interface RpcCreateCredentialParams {
+    /**
+     * Internal trading account ID (UUID)
+     */
     'tradingAccountId': string;
     'venue': Venue;
     'credentialType': CredentialType | null;

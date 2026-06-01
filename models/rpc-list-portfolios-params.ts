@@ -22,7 +22,7 @@ import type { RpcPagination } from './rpc-pagination';
  */
 export interface RpcListPortfoliosParams {
     /**
-     * Filter by trading account ID
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId'?: string;
     /**

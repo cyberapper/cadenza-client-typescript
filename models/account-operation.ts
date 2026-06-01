@@ -26,7 +26,7 @@ export interface AccountOperation {
      */
     'operationId': string;
     /**
-     * UUID string
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
     'operationType': OperationType;

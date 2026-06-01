@@ -19,7 +19,7 @@
  */
 export interface RpcDisconnectTradingAccountParams {
     /**
-     * Trading account ID to disconnect
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
 }

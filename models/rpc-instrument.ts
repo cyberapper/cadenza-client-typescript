@@ -43,7 +43,13 @@ export interface RpcInstrument {
     'description'?: string;
     'instrumentType'?: InstrumentType;
     'status'?: InstrumentStatus;
+    /**
+     * Asset symbol (e.g. currency code, base asset)
+     */
     'baseAsset'?: string;
+    /**
+     * Asset symbol (e.g. currency code, base asset)
+     */
     'quoteAsset'?: string;
     'baseSecurityType'?: SecurityType;
     'quoteSecurityType'?: SecurityType;

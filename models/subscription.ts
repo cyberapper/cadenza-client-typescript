@@ -30,7 +30,7 @@ export interface Subscription {
     'subscriptionId': string;
     'venue': Venue;
     /**
-     * UUID string
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId'?: string;
     /**

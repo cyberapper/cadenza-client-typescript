@@ -37,7 +37,7 @@ import type { Venue } from './venue';
 
 export interface TradingAccount {
     /**
-     * UUID string
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
     /**

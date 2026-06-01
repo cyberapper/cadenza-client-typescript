@@ -6,7 +6,7 @@ Portfolio model containing balances and positions
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradingAccountId** | **string** |  | [optional] [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [optional] [default to undefined]
 **accountInfo** | [**RpcTradingAccount**](RpcTradingAccount.md) |  | [optional] [default to undefined]
 **balances** | [**Array&lt;RpcBalanceEntry&gt;**](RpcBalanceEntry.md) |  | [optional] [default to undefined]
 **positions** | [**Array&lt;RpcPositionEntry&gt;**](RpcPositionEntry.md) |  | [optional] [default to undefined]

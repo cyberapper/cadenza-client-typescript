@@ -16,11 +16,11 @@
 
 export interface CancelTradeOrderRequest {
     /**
-     * UUID string
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
     /**
-     * UUID string
+     * Internal trade order ID (UUID)
      */
     'tradeOrderId': string;
 }

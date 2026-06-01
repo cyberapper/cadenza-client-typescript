@@ -18,6 +18,9 @@
  * Request to disable a trading account
  */
 export interface RpcDisableTradingAccountParams {
+    /**
+     * Internal trading account ID (UUID)
+     */
     'tradingAccountId': string;
 }
 

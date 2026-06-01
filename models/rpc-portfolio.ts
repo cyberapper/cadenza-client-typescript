@@ -33,6 +33,9 @@ import type { UpdateMode } from './update-mode';
  * Portfolio model containing balances and positions
  */
 export interface RpcPortfolio {
+    /**
+     * Internal trading account ID (UUID)
+     */
     'tradingAccountId'?: string;
     'accountInfo'?: RpcTradingAccount;
     'balances'?: Array<RpcBalanceEntry>;

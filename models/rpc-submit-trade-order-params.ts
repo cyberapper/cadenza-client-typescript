@@ -23,7 +23,7 @@ import type { RpcTradeOrder } from './rpc-trade-order';
 export interface RpcSubmitTradeOrderParams {
     'tradeOrder': RpcTradeOrder;
     /**
-     * Trading account ID to place order on
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
     /**

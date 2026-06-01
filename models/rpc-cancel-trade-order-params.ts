@@ -19,11 +19,11 @@
  */
 export interface RpcCancelTradeOrderParams {
     /**
-     * Trade order ID to cancel
+     * Internal trade order ID (UUID)
      */
     'tradeOrderId'?: string;
     /**
-     * Trading account ID
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
     /**

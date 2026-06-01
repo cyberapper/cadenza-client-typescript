@@ -27,6 +27,9 @@ import type { SubscriptionType } from './subscription-type';
  * Request to list trading account subscriptions
  */
 export interface RpcListTradingAccountSubscriptionsParams {
+    /**
+     * Internal trading account ID (UUID)
+     */
     'tradingAccountId': string;
     'subscriptionType'?: SubscriptionType;
     'status'?: SubscriptionStatus;

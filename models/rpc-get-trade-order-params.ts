@@ -19,11 +19,11 @@
  */
 export interface RpcGetTradeOrderParams {
     /**
-     * Trade order ID
+     * Internal trade order ID (UUID)
      */
     'tradeOrderId'?: string;
     /**
-     * Trading account ID
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId'?: string;
     /**

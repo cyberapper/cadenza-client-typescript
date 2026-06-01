@@ -5,16 +5,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradeOrderId** | **string** | UUID string | [default to undefined]
-**orderListId** | **string** | Exchange order list ID linking sibling orders in OCO/OTO/OTOCO order lists. Present on all orders in a list. | [optional] [default to undefined]
-**contingencyType** | **string** | Order list contingency type. Present on all orders in a list. | [optional] [default to undefined]
-**tradingAccountId** | **string** | UUID string | [default to undefined]
+**tradeOrderId** | **string** | Internal trade order ID (UUID) | [default to undefined]
+**orderListId** | **string** | Internal order list ID (UUID) linking sibling orders in OCO/OTO/OTOCO order lists | [optional] [default to undefined]
+**externalOrderListId** | **string** | Exchange-assigned order list ID linking sibling OCO/OTO/OTOCO legs | [optional] [default to undefined]
+**contingencyType** | [**ContingencyType**](ContingencyType.md) |  | [optional] [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [default to undefined]
 **venue** | [**Venue**](Venue.md) |  | [default to undefined]
 **positionId** | **string** | UUID string | [optional] [default to undefined]
 **instrumentId** | **string** | Instrument ID in format {VENUE}:{BASE}/{QUOTE} | [default to undefined]
 **quoteId** | **string** | UUID string | [optional] [default to undefined]
-**baseAsset** | **string** | Base asset in the trading pair | [default to undefined]
-**quoteAsset** | **string** | Quote asset in the trading pair | [default to undefined]
+**baseAsset** | **string** | Asset symbol (e.g. currency code, base asset) | [default to undefined]
+**quoteAsset** | **string** | Asset symbol (e.g. currency code, base asset) | [default to undefined]
 **orderSide** | [**OrderSide**](OrderSide.md) |  | [default to undefined]
 **orderType** | [**OrderType**](OrderType.md) |  | [default to undefined]
 **timeInForce** | [**TimeInForce**](TimeInForce.md) |  | [default to undefined]
@@ -54,6 +55,7 @@ import { TradeOrder } from '@cyberapper/cadenza-client';
 const instance: TradeOrder = {
     tradeOrderId,
     orderListId,
+    externalOrderListId,
     contingencyType,
     tradingAccountId,
     venue,

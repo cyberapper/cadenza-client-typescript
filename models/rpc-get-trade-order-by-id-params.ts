@@ -18,6 +18,9 @@
  * Request to get a trade order by ID
  */
 export interface RpcGetTradeOrderByIdParams {
+    /**
+     * Internal trade order ID (UUID)
+     */
     'tradeOrderId': string;
 }
 

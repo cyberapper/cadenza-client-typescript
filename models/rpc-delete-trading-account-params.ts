@@ -18,6 +18,9 @@
  * Request to delete a trading account
  */
 export interface RpcDeleteTradingAccountParams {
+    /**
+     * Internal trading account ID (UUID)
+     */
     'tradingAccountId': string;
 }
 

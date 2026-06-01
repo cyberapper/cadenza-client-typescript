@@ -7,7 +7,7 @@ Request to submit a new trade order
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tradeOrder** | [**RpcTradeOrder**](RpcTradeOrder.md) |  | [default to undefined]
-**tradingAccountId** | **string** | Trading account ID to place order on | [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [default to undefined]
 **idempotencyKey** | **string** | Idempotency key to prevent duplicate orders | [optional] [default to undefined]
 **awaitClosed** | **boolean** | Wait for order to reach terminal state before responding | [optional] [default to false]
 

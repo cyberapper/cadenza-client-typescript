@@ -6,7 +6,7 @@ Request to enable a trading account
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradingAccountId** | **string** |  | [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [default to undefined]
 
 ## Example
 

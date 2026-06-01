@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **positionId** | **string** |  | [optional] [default to undefined]
 **externalPositionId** | **string** |  | [optional] [default to undefined]
-**tradingAccountId** | **string** |  | [optional] [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [optional] [default to undefined]
 **securitySymbol** | **string** |  | [optional] [default to undefined]
 **instrumentId** | **string** | Instrument ID | [optional] [default to undefined]
 **securityType** | [**SecurityType**](SecurityType.md) |  | [optional] [default to undefined]

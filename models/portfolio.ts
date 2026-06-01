@@ -28,7 +28,7 @@ import type { Venue } from './venue';
 
 export interface Portfolio {
     /**
-     * UUID string
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
     'venue': Venue;

@@ -6,7 +6,7 @@ Request to get a trade order by ID
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradeOrderId** | **string** |  | [default to undefined]
+**tradeOrderId** | **string** | Internal trade order ID (UUID) | [default to undefined]
 
 ## Example
 

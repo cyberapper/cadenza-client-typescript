@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradingAccountId** | **string** | UUID string | [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [default to undefined]
 **currency** | **string** | Asset symbol (e.g. currency code, base asset) | [default to undefined]
 **leverage** | **number** | Leverage multiplier | [default to undefined]
 **equity** | **string** | Decimal value as string to preserve precision | [default to undefined]

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **securitySymbol** | **string** | Security symbol | [default to undefined]
 **securityType** | [**SecurityType**](SecurityType.md) |  | [default to undefined]
 **externalBalanceId** | **string** | External balance ID from the exchange | [optional] [default to undefined]
-**tradingAccountId** | **string** | UUID string | [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [default to undefined]
 **status** | [**BalanceStatus**](BalanceStatus.md) |  | [default to undefined]
 **positionId** | **string** | UUID string | [optional] [default to undefined]
 **free** | **string** | Decimal value as string to preserve precision | [default to undefined]

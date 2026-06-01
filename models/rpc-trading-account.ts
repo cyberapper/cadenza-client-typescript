@@ -43,7 +43,7 @@ import type { Venue } from './venue';
  */
 export interface RpcTradingAccount {
     /**
-     * Unique trading account ID
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId'?: string;
     /**

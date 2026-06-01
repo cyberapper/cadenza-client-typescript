@@ -40,6 +40,7 @@ docs/CancelTradeOrderRequest.md
 docs/CollateralMode.md
 docs/ConnectTradingAccount200Response.md
 docs/ConnectTradingAccountRequest.md
+docs/ContingencyType.md
 docs/CreateTradingAccountCredential200Response.md
 docs/CreateTradingAccountCredentialRequest.md
 docs/CredentialStatus.md
@@ -372,6 +373,7 @@ models/cancel-trade-order200-response.ts
 models/collateral-mode.ts
 models/connect-trading-account-request.ts
 models/connect-trading-account200-response.ts
+models/contingency-type.ts
 models/create-trading-account-credential-request.ts
 models/create-trading-account-credential200-response.ts
 models/credential-status.ts

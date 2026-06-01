@@ -16,7 +16,7 @@
 
 export interface EnableTradingAccountRequest {
     /**
-     * UUID string
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
 }

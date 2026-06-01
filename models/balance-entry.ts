@@ -31,7 +31,7 @@ export interface BalanceEntry {
      */
     'externalBalanceId'?: string | null;
     /**
-     * UUID string
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
     'status': BalanceStatus;

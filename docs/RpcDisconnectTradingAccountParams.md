@@ -6,7 +6,7 @@ Request to disconnect a trading account
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradingAccountId** | **string** | Trading account ID to disconnect | [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [default to undefined]
 
 ## Example
 

@@ -23,7 +23,7 @@ export interface FermataUnlinkDealerRequest {
      */
     'dealerAccountId': string;
     /**
-     * UUID string
+     * Internal trading account ID (UUID)
      */
     'tradingAccountId': string;
 }

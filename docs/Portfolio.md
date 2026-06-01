@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradingAccountId** | **string** | UUID string | [default to undefined]
+**tradingAccountId** | **string** | Internal trading account ID (UUID) | [default to undefined]
 **venue** | [**Venue**](Venue.md) |  | [default to undefined]
 **positions** | [**Array&lt;PositionEntry&gt;**](PositionEntry.md) |  | [default to undefined]
 **balances** | [**Array&lt;BalanceEntry&gt;**](BalanceEntry.md) |  | [default to undefined]
