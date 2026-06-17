@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.2](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.4.1...v3.4.2) (2026-06-17)
+
+
+### Miscellaneous
+
+* regenerate TypeScript client SDK for HYPERLIQUID venue ([#37](https://github.com/cyberapper/cadenza-client-typescript/issues/37)) ([ec251b7](https://github.com/cyberapper/cadenza-client-typescript/commit/ec251b7b7b11118027c29ad811f9639f03fddccf))
+
 ## [3.4.1](https://github.com/cyberapper/cadenza-client-typescript/compare/v3.4.0...v3.4.1) (2026-06-01)
 
 
