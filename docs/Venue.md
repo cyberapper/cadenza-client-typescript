@@ -24,6 +24,8 @@ Trading venue identifier. UAT/sandbox environments are treated as separate venue
 
 * `Okx` (value: `'OKX'`)
 
+* `Hyperliquid` (value: `'HYPERLIQUID'`)
+
 * `BinanceUat` (value: `'BINANCE_UAT'`)
 
 * `B2C2Uat` (value: `'B2C2_UAT'`)
@@ -43,6 +45,8 @@ Trading venue identifier. UAT/sandbox environments are treated as separate venue
 * `BitfinexUat` (value: `'BITFINEX_UAT'`)
 
 * `OkxUat` (value: `'OKX_UAT'`)
+
+* `HyperliquidUat` (value: `'HYPERLIQUID_UAT'`)
 
 * `BinanceSandbox` (value: `'BINANCE_SANDBOX'`)
 
