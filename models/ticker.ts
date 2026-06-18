@@ -55,6 +55,10 @@ export interface Ticker {
      */
     'askQuantity'?: string;
     /**
+     * Decimal value as string to preserve precision
+     */
+    'priceChangePercent'?: string;
+    /**
      * Unix timestamp in milliseconds
      */
     'timestamp': number;
