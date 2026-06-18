@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **bidQuantity** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
 **askPrice** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
 **askQuantity** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
+**priceChangePercent** | **string** | Decimal value as string to preserve precision | [optional] [default to undefined]
 **timestamp** | **number** | Unix timestamp in milliseconds | [default to undefined]
 
 ## Example
@@ -32,6 +33,7 @@ const instance: Ticker = {
     bidQuantity,
     askPrice,
     askQuantity,
+    priceChangePercent,
     timestamp,
 };
 ```
